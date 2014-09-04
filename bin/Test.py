@@ -40,17 +40,17 @@ def call_spider(file):
             log.start(loglevel=log.DEBUG)
             reactor.run()  # the script will block here
 
-            """ La ultima vez que abre el archivo sacar la (,) coma y poner ]} """
-            fileItems = open('items.json', 'ab+')
-            fileItems.seek(0,2)
-            val = fileItems.read(1)
+            """ Copiar los datos al archivo final """
+            data_spider.copy_items_to_file()
+            file_items = open('items.json', 'ab+')
+            file_items.seek(0,2)
+            file_items.seek(file_items.tell()-1,0)
+            val = file_items.read()
             print val
-            size = fileItems.tell()
-            #if (val == ','):
-            #    fileItems.truncate(size-1)
-            fileItems.truncate(size-1)
-            fileItems.write(']}')
-            fileItems.close()
+            if (val == ','):
+                file_items.truncate(file_items.tell()-1)
+            file_items.write(']}')
+            file_items.close()
 
             """ Convertir el json extraido al json con formato POD """
             #DataJson.DataJson().convert("items.json")
@@ -67,7 +67,6 @@ results = []
 
 
 def spider_closed(spider):
-    data_spider.copy_items_to_file()
     print results
 
 

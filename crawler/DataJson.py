@@ -103,6 +103,9 @@ class DataJson:
                             for provider in dataproperty["provider"]:
                                 providerproperty = provider["properties"]
 
+                            for distributions in dataproperty["distributions"]:
+                                distributionproperty = distributions["properties"]
+
                                 """
                                 Name cambia por title
                                 Url cambia por uniqueid
@@ -133,4 +136,4 @@ class DataJson:
         fileResponse.write(json.dumps(response, indent=2))
 
 
-#DataJson().convert("/home/desa2/PycharmProjects/DataCrawler/bin/items.json")
+DataJson().convert("/home/desa2/PycharmProjects/DataCrawler/bin/items.json")

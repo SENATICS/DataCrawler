@@ -88,7 +88,7 @@ html = """<!DOCTYPE html>
     <ul>
    """
 
-itemsList = []
+items_list = []
 
 
 class DataSpider(CrawlSpider):
@@ -132,7 +132,7 @@ class DataSpider(CrawlSpider):
         #links = response.xpath('//a[contains(@href, "/")]')
         #item['links'] = links.extract()
         transformar(response.url)
-        yield item
+        #yield item
 
 
 def transformar(url):
@@ -142,20 +142,20 @@ def transformar(url):
     microdata = {}
     microdata['items'] = items = []
 
-    urlSplash = "http://localhost:8050/render.html?url=" + url + "&timeout=20&wait=1.5"
+    url_splash = "http://localhost:8050/render.html?url=" + url + "&timeout=20&wait=1.5"
     #fileSplash = open('splash.html', 'w')
     #html = urllib.urlopen(urlSplash)
     #fileSplash.write(str(html.read()))
     #urlFinal = "splash.html"
 
     # serialization = requests.get("http://rdf-translator.appspot.com/convert/rdfa/microdata/html/" + url)
-    serialization = rdfa_to_microdata(urlSplash)
+    serialization = rdfa_to_microdata(url_splash)
     if serialization:
         file = open('aux.html', 'wb')
         file.write(serialization.encode('utf-8'))
-        urlSplash = "aux.html"
+        url_splash = "aux.html"
 
-    items = get_items(urllib.urlopen(urlSplash))
+    items = get_items(urllib.urlopen(url_splash))
     # Para solucionar el problema de que viene mas de un item nomas, esto deberia arreglarse
     if len(items) > 1:
         indice = 1
@@ -164,16 +164,16 @@ def transformar(url):
     # Si tiene atributos se agrega o modifca en la lista
     if items:
         if items[indice].props:
-            refreshItemsList(items[indice])
+            refresh_items_list(items[indice])
         items.append(items[indice].json_dict())
 
 
-def refreshItemsList(item_nuevo):
+def refresh_items_list(item_nuevo):
     # OJO: se tiene que pasar siempre -1, estas anotaciones hay que arreglar
     addItem = True
 
     # Itera sobre la lista de items existentes
-    for item in itemsList:
+    for item in items_list:
 
         # Si el item a comparar es DataCatalog
         if item.itemtype == "[http://schema.org/Datacatalog]":
@@ -221,13 +221,13 @@ def refreshItemsList(item_nuevo):
 
     # Si es un nuevo item agrega a la lista
     if addItem:
-        itemsList.append(item_nuevo)
+        items_list.append(item_nuevo)
 
 
 def copy_items_to_file():
     file = open('items.json', 'ab')
-    for item in itemsList:
-        file.write(str("{\"items\": [{" + item.json() + "}],}"))
+    for item in items_list:
+        file.write(str("{\"items\": [" + item.json() + "]},"))
     file.close()
 
 
