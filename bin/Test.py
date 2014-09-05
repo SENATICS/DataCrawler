@@ -24,15 +24,15 @@ def call_spider(file):
         list_url = f.readlines()
         domains = []
         urls = []
-        for url in list_url:
-            domain = url
-            urlFinal = "http://" + url.strip('\n') + "/"
+        for u in list_url:
+            domain = u.strip('\n')
+            url = "http://" + u.strip('\n') + "/"
             print "============= Domain " + domain
-            print "============= Url semilla " + urlFinal
+            print "============= Url semilla " + url
             domains.append(domain)
-            urls.append(urlFinal)
+            urls.append(url)
 
-        spider = DataSpider(domain=domains, start_url=urls)
+        spider = DataSpider(domains=domains, start_urls=urls)
         settings = get_project_settings()
         #settings.overrides['FEED_FORMAT'] = 'json'
         #settings.overrides['FEED_URI'] = 'result.json'
@@ -45,26 +45,11 @@ def call_spider(file):
         reactor.run()  # the script will block here
 
         """ Copiar los datos al archivo final """
-        data_spider.copy_items_to_file()
-        file_items = open('items.json', 'ab+')
-        file_items.seek(0,2)
-        file_items.seek(file_items.tell()-1,0)
-        val = file_items.read()
-        print val
-        if (val == ','):
-            file_items.truncate(file_items.tell()-1)
-        file_items.write(']}')
-        file_items.close()
+        file_name = domain + ".json"
+        data_spider.copy_items_to_file(file_name)
 
         """ Convertir el json extraido al json con formato POD """
         DataJson.DataJson().convert("items.json", domain)
-
-        #""" Completar el archivo html """
-        #fileHTML = open('resources.html', 'ab')
-        #htmlFinal = """</ul></body>
-    #</html>"""
-        #fileHTML.write(htmlFinal)
-        #fileHTML.close()
 
 
 results = []

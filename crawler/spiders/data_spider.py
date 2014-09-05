@@ -12,7 +12,6 @@ from scrapy.utils.project import get_project_settings
 from microdata import get_items
 from crawler.items import DataItem
 from rdflib.serializer import Serializer
-from scrapy import Spider
 
 try:
     import json
@@ -61,39 +60,11 @@ known_vocabs = {
     "dv": "http://data-vocabulary.org/"
 }
 
-html = """<!DOCTYPE html>
-<html>
-    <head>
-    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    	<title>List</title>
-    	<style type="text/css">
-    	<!--
-    	body {
-    	  margin: 0 auto;
-    	  paddin: 0
-    	}
-    	div, pre {
-    	  margin: 0;
-    	  padding: 0;
-    	}
-    	.highlight {
-    	  padding: 12px;
-    	  background-color: #FFFFFF;
-    	}
-    	-->
-    	</style>
-    	<meta name="author" content="Alex Stolz">
-    </head>
-    <body>
-    <ul>
-   """
-
 items_list = []
 
 
 class DataSpider(CrawlSpider):
-    #name = "dspider"
-    name = "a"
+    name = "dspider"
     # allowed_domains = ["mec.gov.py"]
     # start_urls = [
     # "http://datos.mec.gov.py/",
@@ -107,19 +78,12 @@ class DataSpider(CrawlSpider):
     ]
 
 
-    def __init__(self, domain, start_url, *args, **kwargs):
-        #self.name = domain
-        self.start_urls = start_url
-        #self.domain = domain[0]
-        self.allowed_domains = domain
+    def __init__(self, domains, start_urls, *args, **kwargs):
+        self.start_urls = start_urls
+        self.allowed_domains = domains
         super(DataSpider, self).__init__(*args, **kwargs)
-        """ La primera vez que abre el archivo poner { "root": [ """
-        file = open('items.json', 'ab')
-        file.write('{ "root": [')
+        self._compile_rules()  # ?
 
-        #""" Escribir la cabecera para el archivo html con la lista de enlaces """
-        #fileHTML = open('resources.html', 'ab')
-        #fileHTML.write(html)
 
     def __del__(self):
         CrawlSpider.__del__(self)
@@ -128,12 +92,12 @@ class DataSpider(CrawlSpider):
     def parse_item(self, response):
         self.log('A response from %s just arrived!' % response.url)
         time.sleep(3)
-        #item = DataItem()
-        #item['title'] = response.xpath('//title/text()').extract()
-        #links = response.xpath('//a[contains(@href, "/")]')
-        #item['links'] = links.extract()
+        # item = DataItem()
+        # item['title'] = response.xpath('//title/text()').extract()
+        # links = response.xpath('//a[contains(@href, "/")]')
+        # item['links'] = links.extract()
         transformar(response.url)
-        #yield item
+        # yield item
 
 
 def transformar(url):
@@ -143,18 +107,18 @@ def transformar(url):
     microdata = {}
     microdata['items'] = items = []
 
-    url_splash = "http://192.168.200.101:8050/render.html?url=" + url + "&timeout=20&wait=2.5"
+    url_splash = "http://192.168.0.21:8050/render.html?url=" + url + "&timeout=20&wait=2.5"
     file_splash = open('splash.html', 'w')
     html = urllib.urlopen(url_splash)
     file_splash.write(str(html.read()))
     url_final = "splash.html"
 
     # serialization = requests.get("http://rdf-translator.appspot.com/convert/rdfa/microdata/html/" + url)
-    #serialization = rdfa_to_microdata(url_splash)
-    #if serialization:
-    #    file = open('aux.html', 'wb')
-    #    file.write(serialization.encode('utf-8'))
-    #    url_final = "aux.html"
+    serialization = rdfa_to_microdata(url_splash)
+    if serialization:
+        file = open('aux.html', 'wb')
+        file.write(serialization.encode('utf-8'))
+        url_final = "aux.html"
 
     items = get_items(urllib.urlopen(url_final))
     # Para solucionar el problema de que viene mas de un item nomas, esto deberia arreglarse
@@ -166,8 +130,6 @@ def transformar(url):
     if items:
         if items[indice].props:
             refresh_items_list(items[indice])
-            #items_list.append(items[indice])
-        #items.append(items[indice].json_dict())
 
 
 def refresh_items_list(item_nuevo):
@@ -212,28 +174,38 @@ def refresh_items_list(item_nuevo):
         else:
             add_item = True
             # Si el item ya existe modifica
-            #if item.props['url'] == item_nuevo.props['url']:
-            #    addItem = False
+            """if item.props['url'] == item_nuevo.props['url']:
+                addItem = False
 
                 # Agrega los nuevos atributos del item
-                #for name, values in item_nuevo.props.items():
-                #    if not item.props[name]:
-                #        for v in values:
-                #            item.props[name].append(v)
+                for name, values in item_nuevo.props.items():
+                    if not item.props[name]:
+                        for v in values:
+                            item.props[name].append(v)"""
 
     # Si es un nuevo item agrega a la lista
     if add_item:
         items_list.append(item_nuevo)
 
 
-def copy_items_to_file():
-    file = open('items.json', 'ab')
+def copy_items_to_file(file_name):
+    file = open(file_name, 'ab+')
+    file.write('{ "root": [')
     for item in items_list:
         file.write(str("{\"items\": [" + item.json() + "]},"))
+    file.seek(0, 2)
+    file.seek(file.tell() - 1, 0)
+    val = file.read()
+    print val
+    if (val == ','):
+        file.truncate(file.tell() - 1)
+    file.write(']}')
     file.close()
 
 
 """ Version de prueba para transformar paginas anotadas con rdfa a mircrodata """
+
+
 def rdfa_to_microdata(url):
     global known_vocabs
     target_format = "microdata"

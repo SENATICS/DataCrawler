@@ -1,373 +1,350 @@
 [
   {
-    "url": "\n          ", 
-    "description": "\n          ", 
-    "name": "\n          ", 
-    "title": "Data Catalog"
-  }, 
-  {
-    "description": "\n\t\t\t\t\t\t\tContiene informaci\u00f3n sobre la ubicaci\u00f3n geogr\u00e1fica de los establecimientos escolares tales como el departamento, distrito,barrio/localidad donde se encuentran asentados, adem\u00e1s de la zona (urbana o rural) a la cual pertenecen, y los datos georreferenciadas como las coordenadas planas (en metros) y geograficas. El Sistema de informacion de Estad\u00edstica Continua (SIEC) considera \u201cEstablecimiento Escolar\u201d a la construcci\u00f3n que existe dentro de un predio (terreno) que se emplea para la ense\u00f1anza, donde puede funcionar una o m\u00e1s instituciones educativas con sus respectivos niveles/modalidades de educaci\u00f3n.\n\t\t\t\t\t\t", 
-    "uniqueid": "http://datos.mec.gov.py/data/establecimientos", 
+    "description": "Contiene informaci\u00f3n sobre la ubicaci\u00f3n geogr\u00e1fica de los establecimientos escolares tales como el departamento, distrito,barrio/localidad donde se encuentran asentados, adem\u00e1s de la zona (urbana o rural) a la cual pertenecen, y los datos georreferenciadas como las coordenadas planas (en metros) y geograficas. El Sistema de informacion de Estad\u00edstica Continua (SIEC) considera \u201cEstablecimiento Escolar\u201d a la construcci\u00f3n que existe dentro de un predio (terreno) que se emplea para la ense\u00f1anza, donde puede funcionar una o m\u00e1s instituciones educativas con sus respectivos niveles/modalidades de educaci\u00f3n.", 
+    "contactName": "Juan Barrios", 
     "keywords": [
       "educaci\u00f3n,establecimientos,escolar,geografico"
     ], 
     "accessLevel": "public", 
     "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "", 
     "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "ESTABLECIMIENTOS ESCOLARES", 
+    "title": "", 
     "temporal": "2012-01-01/2012-12-31", 
     "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n\t\t\t\t\t\t\t\tContiene datos de los niveles/modalidades de educaci\u00f3n ofertados por las instituciones educativas; regi\u00f3n administrativa a la que pertenece la instituci\u00f3n educativa; tipo de organizaci\u00f3n, participaci\u00f3n comunitaria, direcci\u00f3n del establecimiento escolar, servicio disponible (internet, telefono, correo electronico, etc.). Una instituci\u00f3n educativa puede poseer diferentes locales escolares ubicados en un mismo o en diferentes departamentos geogr\u00e1ficos. El SIEC considera una misma instituci\u00f3n cuando varios niveles o modalidades tienen una organizaci\u00f3n, gesti\u00f3n y administraci\u00f3n \u00fanica. Por ejemplo: Centro Regional de Educaci\u00f3n Gral. Patricio Escobar de Encarnaci\u00f3n, Colegio Santa Clara de Asunci\u00f3n.\n\t\t\t\t\t\t", 
-    "uniqueid": "http://datos.mec.gov.py/data/instituciones", 
-    "keywords": [
-      "educaci\u00f3n,instituciones"
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "INSTITUCIONES EDUCATIVAS", 
-    "temporal": "2012-01-01/2012-12-31", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n\t\t\t\t\t\t  Se refiere a la cantidad de alumnos matriculados del 1.\u00ba al 9.\u00ba grado con sus correspondientes c\u00f3digos identificatorios.\n\t\t\t\t\t\t", 
-    "uniqueid": "http://datos.mec.gov.py/data/matriculaciones_educacion_escolar_basica", 
-    "keywords": [
-      "educaci\u00f3n,matriculaciones,escolar b\u00e1sica"
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "MATRICULA EDUCACION ESCOLAR BASICA - CICLOS", 
-    "temporal": "2012-01-01/2012-12-31", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n\t\t\t\t\t\t\tCorresponde a la cantidad de matriculados por ciclo/niveles/programas especiales de educaci\u00f3n inclusiva con sus correspondientes c\u00f3digos identificatorios.\n\t\t\t\t\t\t", 
-    "uniqueid": "http://datos.mec.gov.py/data/matriculaciones_educacion_inclusiva", 
-    "keywords": [
-      "educaci\u00f3n,matriculaciones,educaci\u00f3n inclusiva"
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "MATRICULA EDUCACION INCLUSIVA", 
-    "temporal": "2012-01-01/2012-12-31", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n\t\t\t\t\t\t  Se refiere a la cantidad de matriculados en las diferentes modalidades de educaci\u00f3n permanente con sus correspondientes c\u00f3digos identificatorios.\n\t\t\t\t\t\t", 
-    "uniqueid": "http://datos.mec.gov.py/data/matriculaciones_educacion_permanente", 
-    "keywords": [
-      "educaci\u00f3n,matriculaciones,educaci\u00f3n permanente"
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "MATRICULA EDUCACION PERMANENTE", 
-    "temporal": "2012-01-01/2012-12-31", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n\t\t\t\t\t\t\t\tSe refiere a la cantidad de matriculados en las diferentes modalidades de educaci\u00f3n superior con sus correspondientes c\u00f3digos identificatorios.\n\t\t\t\t\t\t", 
-    "uniqueid": "http://datos.mec.gov.py/data/matriculaciones_educacion_superior", 
-    "keywords": [
-      "educaci\u00f3n,matriculaciones,educaci\u00f3n superior"
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "MATRICULA EDUCACION SUPERIOR", 
-    "temporal": "2012-01-01/2012-12-31", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n\t\t\t\t\t\t\tSe refiere a la cantidad de matriculados en las etapas maternal, prejard\u00edn, jard\u00edn y preescolar con sus correspondientes c\u00f3digos identificatorios.\n\t\t\t\t\t\t", 
-    "uniqueid": "http://datos.mec.gov.py/data/matriculaciones_inicial", 
-    "keywords": [
-      "educaci\u00f3n,matriculaciones,educaci\u00f3n inicial"
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "MATRICULA EDUCACION INICIAL", 
-    "temporal": "2012-01-01/2012-12-31", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n\t\t\t\t\t\t\tSe refiere a la cantidad de matriculados del 1.\u00ba al 3er. curso en las diferentes modalidades de educaci\u00f3n media con sus correspondientes c\u00f3digos identificatorios.\n\t\t\t\t\t\t", 
-    "uniqueid": "http://datos.mec.gov.py/data/matriculaciones_educacion_media", 
-    "keywords": [
-      "educaci\u00f3n,matriculaciones,educaci\u00f3n media"
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "MATRICULA EDUCACION MEDIA", 
-    "temporal": "2012-01-01/2012-12-31", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n\t\t\t\t\t\t  Se refiere a la cantidad total de matriculados por departamento/distrito seg\u00fan sector y zona.\n\t\t\t\t\t\t", 
-    "uniqueid": "http://datos.mec.gov.py/data/matriculaciones_departamentos_distritos", 
-    "keywords": [
-      "educaci\u00f3n,matriculaciones,departamentos, distritos"
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "MATRICULA POR DEPARTAMENTO Y DISTRITO", 
-    "temporal": "2012-01-01/2012-12-31", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n              Contiene todos los datos de la n\u00f3mina de funcionarios docentes, conforme a lo establecido en la ley 5189/14. El formato de los datos sigue la recomendaci\u00f3n propuesta por la Secretar\u00eda de la Funci\u00f3n P\u00fablica\n            ", 
-    "uniqueid": "http://datos.mec.gov.py/data/nomina_docentes", 
-    "keywords": [
-      ""
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "NOMINA DE FUNCIONARIOS DOCENTES", 
-    "temporal": "", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n              Contiene todos los datos de la n\u00f3mina de funcionarios administrativos, conforme a lo establecido en la ley 5189/14. El formato de los datos sigue la recomendaci\u00f3n propuesta por la Secretar\u00eda de la Funci\u00f3n P\u00fablica\n\t\t\t\t\t\t", 
-    "uniqueid": "http://datos.mec.gov.py/data/nomina_administrativos", 
-    "keywords": [
-      ""
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "NOMINA DE FUNCIONARIOS ADMINISTRATIVOS", 
-    "temporal": "", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n              Contiene todos los datos de la n\u00f3mina de los funcionarios que fueron comisionados del MEC a otros organismos del Estado.\n\t\t\t\t\t\t", 
-    "uniqueid": "", 
-    "keywords": [
-      ""
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "NOMINA DE FUNCIONARIOS COMISIONADOS DEL MEC A OTROS ORGANISMOS DEL ESTADO", 
-    "temporal": "", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n              Contiene todos los datos de la n\u00f3mina de los funcionarios que fueron comisionados desde otros organismos del Estado al MEC.\n\t\t\t\t\t\t", 
-    "uniqueid": "", 
-    "keywords": [
-      ""
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "NOMINA DE FUNCIONARIOS COMISIONADOS AL MEC DESDE OTROS ORGANISMOS DEL ESTADO", 
-    "temporal": "", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n              Contiene todos los datos del inventario de bienes, muebles, inmuebles y veh\u00edculos con que cuenta el MEC.\n\t\t\t\t\t\t", 
-    "uniqueid": "", 
-    "keywords": [
-      ""
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "INVENTARIO DE BIENES", 
-    "temporal": "", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n\t\t\t\t\t\t  Se refiere a los llamados para contrataciones de bienes y/o servicios del Ministerio de Educaci\u00f3n y Cultura.\n\t\t\t\t\t\t", 
-    "uniqueid": "http://datos.mec.gov.py/data/contrataciones", 
-    "keywords": [
-      "educaci\u00f3n,matriculaciones,departamentos, distritos,contrataciones"
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "CONTRATACIONES", 
-    "temporal": "2012-01-01/2012-12-31", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
     "distribution": [], 
     "mbox": "datosabiertos@mec.gov.py"
   }, 
   {
     "description": "", 
-    "uniqueid": "", 
+    "contactName": "Juan Barrios", 
     "keywords": [
       "educaci\u00f3n,instituciones"
     ], 
     "accessLevel": "public", 
     "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "", 
     "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
     "title": "Contrataciones", 
     "temporal": "2014-01-01/2014-12-31", 
     "version": "1.0", 
-    "contactName": "Juan Barrios", 
     "distribution": [
       {
-        "accessURL": "http://datos.mec.gov.pyhttp://datos.mec.gov.py/data/contrataciones_lista.xlsx?form_buscar_contrataciones%5Bejercicio_fiscal%5D=2014", 
+        "accessURL": "http://datos.mec.gov.py/data/contrataciones_lista.xlsx?form_buscar_contrataciones%5Bejercicio_fiscal%5D=2014", 
         "format": "xls"
       }, 
       {
-        "accessURL": "http://datos.mec.gov.pyhttp://datos.mec.gov.py/data/contrataciones_lista.csv?form_buscar_contrataciones%5Bejercicio_fiscal%5D=2014", 
+        "accessURL": "http://datos.mec.gov.py/data/contrataciones_lista.csv?form_buscar_contrataciones%5Bejercicio_fiscal%5D=2014", 
         "format": "csv"
       }, 
       {
-        "accessURL": "http://datos.mec.gov.pyhttp://datos.mec.gov.py/data/contrataciones_lista.json?form_buscar_contrataciones%5Bejercicio_fiscal%5D=2014", 
+        "accessURL": "http://datos.mec.gov.py/data/contrataciones_lista.json?form_buscar_contrataciones%5Bejercicio_fiscal%5D=2014", 
         "format": "json"
       }
     ], 
     "mbox": "datosabiertos@mec.gov.py"
   }, 
   {
-    "description": "Contiene informaci\u00f3n sobre la ubicaci\u00f3n geogr\u00e1fica de los establecimientos escolares tales como el departamento, distrito,barrio/localidad donde se encuentran asentados, adem\u00e1s de la zona (urbana o rural) a la cual pertenecen, y los datos georreferenciadas como las coordenadas planas (en metros) y geograficas. El Sistema de informacion de Estad\u00edstica Continua (SIEC) considera \u201cEstablecimiento Escolar\u201d a la construcci\u00f3n que existe dentro de un predio (terreno) que se emplea para la ense\u00f1anza, donde puede funcionar una o m\u00e1s instituciones educativas con sus respectivos niveles/modalidades de educaci\u00f3n.", 
-    "uniqueid": "", 
-    "keywords": [
-      "educaci\u00f3n,establecimientos,escolar,geografico"
-    ], 
+    "publisher": "", 
     "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "", 
-    "temporal": "2012-01-01/2012-12-31", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [
-      {
-        "accessURL": "http://datos.mec.gov.pyhttps://mega.co.nz/#!dk5F0Cxb!oJgF9cQ_3gC8N4bHPqKER1eiOzsV81N7gdf-PMbBOzY", 
-        "format": "pdf"
-      }, 
-      {
-        "accessURL": "http://datos.mec.gov.pyhttps://mega.co.nz/#!FoByxCpC!kqiue2krvjtukETMOx4QHj7iXkprIly96LjGpA9AqkQ", 
-        "format": "pdf"
-      }
+    "description": "\n          ", 
+    "contactName": "", 
+    "title": "Data Catalog", 
+    "keywords": [
+      "catalog"
     ], 
-    "mbox": "datosabiertos@mec.gov.py"
+    "landingPage": "\n          ", 
+    "mbox": ""
   }, 
   {
-    "description": "Contiene informaci\u00f3n sobre la ubicaci\u00f3n geogr\u00e1fica de los establecimientos escolares tales como el departamento, distrito,barrio/localidad donde se encuentran asentados, adem\u00e1s de la zona (urbana o rural) a la cual pertenecen, y los datos georreferenciadas como las coordenadas planas (en metros) y geograficas. El Sistema de informacion de Estad\u00edstica Continua (SIEC) considera \u201cEstablecimiento Escolar\u201d a la construcci\u00f3n que existe dentro de un predio (terreno) que se emplea para la ense\u00f1anza, donde puede funcionar una o m\u00e1s instituciones educativas con sus respectivos niveles/modalidades de educaci\u00f3n.", 
-    "uniqueid": "", 
+    "description": "\n\t\t\t\t\t\t\tContiene informaci\u00f3n sobre la ubicaci\u00f3n geogr\u00e1fica de los establecimientos escolares tales como el departamento, distrito,barrio/localidad donde se encuentran asentados, adem\u00e1s de la zona (urbana o rural) a la cual pertenecen, y los datos georreferenciadas como las coordenadas planas (en metros) y geograficas. El Sistema de informacion de Estad\u00edstica Continua (SIEC) considera \u201cEstablecimiento Escolar\u201d a la construcci\u00f3n que existe dentro de un predio (terreno) que se emplea para la ense\u00f1anza, donde puede funcionar una o m\u00e1s instituciones educativas con sus respectivos niveles/modalidades de educaci\u00f3n.\n\t\t\t\t\t\t", 
+    "contactName": "Juan Barrios", 
     "keywords": [
       "educaci\u00f3n,establecimientos,escolar,geografico"
     ], 
     "accessLevel": "public", 
     "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "http://datos.mec.gov.py/data/establecimientos", 
     "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "", 
+    "title": "ESTABLECIMIENTOS ESCOLARES", 
     "temporal": "2012-01-01/2012-12-31", 
     "version": "1.0", 
-    "contactName": "Juan Barrios", 
     "distribution": [], 
     "mbox": "datosabiertos@mec.gov.py"
   }, 
   {
-    "description": "Se refiere a la cantidad total de matriculados por departamento/distrito seg\u00fan sector y zona.", 
-    "uniqueid": "", 
+    "description": "\n\t\t\t\t\t\t\t\tContiene datos de los niveles/modalidades de educaci\u00f3n ofertados por las instituciones educativas; regi\u00f3n administrativa a la que pertenece la instituci\u00f3n educativa; tipo de organizaci\u00f3n, participaci\u00f3n comunitaria, direcci\u00f3n del establecimiento escolar, servicio disponible (internet, telefono, correo electronico, etc.). Una instituci\u00f3n educativa puede poseer diferentes locales escolares ubicados en un mismo o en diferentes departamentos geogr\u00e1ficos. El SIEC considera una misma instituci\u00f3n cuando varios niveles o modalidades tienen una organizaci\u00f3n, gesti\u00f3n y administraci\u00f3n \u00fanica. Por ejemplo: Centro Regional de Educaci\u00f3n Gral. Patricio Escobar de Encarnaci\u00f3n, Colegio Santa Clara de Asunci\u00f3n.\n\t\t\t\t\t\t", 
+    "contactName": "Juan Barrios", 
     "keywords": [
-      "educaci\u00f3n,matriculaciones,departamentos, distritos"
+      "educaci\u00f3n,instituciones"
     ], 
     "accessLevel": "public", 
     "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "http://datos.mec.gov.py/data/instituciones", 
     "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "Matriculaciones por Departamento y Distrito", 
+    "title": "INSTITUCIONES EDUCATIVAS", 
     "temporal": "2012-01-01/2012-12-31", 
     "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [
-      {
-        "accessURL": "http://datos.mec.gov.pyhttp://datos.mec.gov.py/data/matriculaciones_departamentos_distritos_lista.xlsx?form_buscar_matriculaciones_departamentos_distritos%5Banio%5D=2012", 
-        "format": "xls"
-      }, 
-      {
-        "accessURL": "http://datos.mec.gov.pyhttp://datos.mec.gov.py/data/matriculaciones_departamentos_distritos_lista.csv?form_buscar_matriculaciones_departamentos_distritos%5Banio%5D=2012", 
-        "format": "csv"
-      }, 
-      {
-        "accessURL": "http://datos.mec.gov.pyhttp://datos.mec.gov.py/data/matriculaciones_departamentos_distritos_lista.json?form_buscar_matriculaciones_departamentos_distritos%5Banio%5D=2012", 
-        "format": "json"
-      }
-    ], 
+    "distribution": [], 
     "mbox": "datosabiertos@mec.gov.py"
   }, 
   {
-    "description": "\n    Se refiere a la cantidad de matriculados del 1.\u00ba al 3er. curso en las diferentes modalidades de educaci\u00f3n media con sus correspondientes c\u00f3digos identificatorios.", 
-    "uniqueid": "", 
+    "description": "\n\t\t\t\t\t\t  Se refiere a la cantidad de alumnos matriculados del 1.\u00ba al 9.\u00ba grado con sus correspondientes c\u00f3digos identificatorios.\n\t\t\t\t\t\t", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      "educaci\u00f3n,matriculaciones,escolar b\u00e1sica"
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "http://datos.mec.gov.py/data/matriculaciones_educacion_escolar_basica", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "MATRICULA EDUCACION ESCOLAR BASICA - CICLOS", 
+    "temporal": "2012-01-01/2012-12-31", 
+    "version": "1.0", 
+    "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n\t\t\t\t\t\t\tCorresponde a la cantidad de matriculados por ciclo/niveles/programas especiales de educaci\u00f3n inclusiva con sus correspondientes c\u00f3digos identificatorios.\n\t\t\t\t\t\t", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      "educaci\u00f3n,matriculaciones,educaci\u00f3n inclusiva"
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "http://datos.mec.gov.py/data/matriculaciones_educacion_inclusiva", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "MATRICULA EDUCACION INCLUSIVA", 
+    "temporal": "2012-01-01/2012-12-31", 
+    "version": "1.0", 
+    "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n\t\t\t\t\t\t  Se refiere a la cantidad de matriculados en las diferentes modalidades de educaci\u00f3n permanente con sus correspondientes c\u00f3digos identificatorios.\n\t\t\t\t\t\t", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      "educaci\u00f3n,matriculaciones,educaci\u00f3n permanente"
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "http://datos.mec.gov.py/data/matriculaciones_educacion_permanente", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "MATRICULA EDUCACION PERMANENTE", 
+    "temporal": "2012-01-01/2012-12-31", 
+    "version": "1.0", 
+    "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n\t\t\t\t\t\t\t\tSe refiere a la cantidad de matriculados en las diferentes modalidades de educaci\u00f3n superior con sus correspondientes c\u00f3digos identificatorios.\n\t\t\t\t\t\t", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      "educaci\u00f3n,matriculaciones,educaci\u00f3n superior"
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "http://datos.mec.gov.py/data/matriculaciones_educacion_superior", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "MATRICULA EDUCACION SUPERIOR", 
+    "temporal": "2012-01-01/2012-12-31", 
+    "version": "1.0", 
+    "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n\t\t\t\t\t\t\tSe refiere a la cantidad de matriculados en las etapas maternal, prejard\u00edn, jard\u00edn y preescolar con sus correspondientes c\u00f3digos identificatorios.\n\t\t\t\t\t\t", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      "educaci\u00f3n,matriculaciones,educaci\u00f3n inicial"
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "http://datos.mec.gov.py/data/matriculaciones_inicial", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "MATRICULA EDUCACION INICIAL", 
+    "temporal": "2012-01-01/2012-12-31", 
+    "version": "1.0", 
+    "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n\t\t\t\t\t\t\tSe refiere a la cantidad de matriculados del 1.\u00ba al 3er. curso en las diferentes modalidades de educaci\u00f3n media con sus correspondientes c\u00f3digos identificatorios.\n\t\t\t\t\t\t", 
+    "contactName": "Juan Barrios", 
     "keywords": [
       "educaci\u00f3n,matriculaciones,educaci\u00f3n media"
     ], 
     "accessLevel": "public", 
     "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "http://datos.mec.gov.py/data/matriculaciones_educacion_media", 
     "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "Matriculaciones Educaci\u00f3n Media", 
+    "title": "MATRICULA EDUCACION MEDIA", 
     "temporal": "2012-01-01/2012-12-31", 
     "version": "1.0", 
+    "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n\t\t\t\t\t\t  Se refiere a la cantidad total de matriculados por departamento/distrito seg\u00fan sector y zona.\n\t\t\t\t\t\t", 
     "contactName": "Juan Barrios", 
+    "keywords": [
+      "educaci\u00f3n,matriculaciones,departamentos, distritos"
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "http://datos.mec.gov.py/data/matriculaciones_departamentos_distritos", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "MATRICULA POR DEPARTAMENTO Y DISTRITO", 
+    "temporal": "2012-01-01/2012-12-31", 
+    "version": "1.0", 
+    "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n              Contiene todos los datos de la n\u00f3mina de funcionarios docentes, conforme a lo establecido en la ley 5189/14. El formato de los datos sigue la recomendaci\u00f3n propuesta por la Secretar\u00eda de la Funci\u00f3n P\u00fablica\n            ", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      ""
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "http://datos.mec.gov.py/data/nomina_docentes", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "NOMINA DE FUNCIONARIOS DOCENTES", 
+    "temporal": "", 
+    "version": "1.0", 
+    "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n              Contiene todos los datos de la n\u00f3mina de funcionarios administrativos, conforme a lo establecido en la ley 5189/14. El formato de los datos sigue la recomendaci\u00f3n propuesta por la Secretar\u00eda de la Funci\u00f3n P\u00fablica\n\t\t\t\t\t\t", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      ""
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "http://datos.mec.gov.py/data/nomina_administrativos", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "NOMINA DE FUNCIONARIOS ADMINISTRATIVOS", 
+    "temporal": "", 
+    "version": "1.0", 
+    "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n              Contiene todos los datos de la n\u00f3mina de los funcionarios que fueron comisionados del MEC a otros organismos del Estado.\n\t\t\t\t\t\t", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      ""
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "NOMINA DE FUNCIONARIOS COMISIONADOS DEL MEC A OTROS ORGANISMOS DEL ESTADO", 
+    "temporal": "", 
+    "version": "1.0", 
+    "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n              Contiene todos los datos de la n\u00f3mina de los funcionarios que fueron comisionados desde otros organismos del Estado al MEC.\n\t\t\t\t\t\t", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      ""
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "NOMINA DE FUNCIONARIOS COMISIONADOS AL MEC DESDE OTROS ORGANISMOS DEL ESTADO", 
+    "temporal": "", 
+    "version": "1.0", 
+    "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n              Contiene todos los datos del inventario de bienes, muebles, inmuebles y veh\u00edculos con que cuenta el MEC.\n\t\t\t\t\t\t", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      ""
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "INVENTARIO DE BIENES", 
+    "temporal": "", 
+    "version": "1.0", 
+    "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n\t\t\t\t\t\t  Se refiere a los llamados para contrataciones de bienes y/o servicios del Ministerio de Educaci\u00f3n y Cultura.\n\t\t\t\t\t\t", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      "educaci\u00f3n,matriculaciones,departamentos, distritos,contrataciones"
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "http://datos.mec.gov.py/data/contrataciones", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "CONTRATACIONES", 
+    "temporal": "2012-01-01/2012-12-31", 
+    "version": "1.0", 
+    "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "Contiene informaci\u00f3n sobre la ubicaci\u00f3n geogr\u00e1fica de los establecimientos escolares tales como el departamento, distrito,barrio/localidad donde se encuentran asentados, adem\u00e1s de la zona (urbana o rural) a la cual pertenecen, y los datos georreferenciadas como las coordenadas planas (en metros) y geograficas. El Sistema de informacion de Estad\u00edstica Continua (SIEC) considera \u201cEstablecimiento Escolar\u201d a la construcci\u00f3n que existe dentro de un predio (terreno) que se emplea para la ense\u00f1anza, donde puede funcionar una o m\u00e1s instituciones educativas con sus respectivos niveles/modalidades de educaci\u00f3n.", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      "educaci\u00f3n,establecimientos,escolar,geografico"
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "", 
+    "temporal": "2012-01-01/2012-12-31", 
+    "version": "1.0", 
     "distribution": [
       {
-        "accessURL": "http://datos.mec.gov.py/data/matriculaciones_educacion_media_2012.xlsx", 
+        "accessURL": "https://mega.co.nz/#!dk5F0Cxb!oJgF9cQ_3gC8N4bHPqKER1eiOzsV81N7gdf-PMbBOzY", 
+        "format": "pdf"
+      }, 
+      {
+        "accessURL": "https://mega.co.nz/#!FoByxCpC!kqiue2krvjtukETMOx4QHj7iXkprIly96LjGpA9AqkQ", 
+        "format": "pdf"
+      }
+    ], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "Se refiere a la cantidad total de matriculados por departamento/distrito seg\u00fan sector y zona.", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      "educaci\u00f3n,matriculaciones,departamentos, distritos"
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "Matriculaciones por Departamento y Distrito", 
+    "temporal": "2012-01-01/2012-12-31", 
+    "version": "1.0", 
+    "distribution": [
+      {
+        "accessURL": "http://datos.mec.gov.py/data/matriculaciones_departamentos_distritos_lista.xlsx?form_buscar_matriculaciones_departamentos_distritos%5Banio%5D=2012", 
         "format": "xls"
       }, 
       {
-        "accessURL": "http://datos.mec.gov.py/data/matriculaciones_educacion_media_2012.csv", 
+        "accessURL": "http://datos.mec.gov.py/data/matriculaciones_departamentos_distritos_lista.csv?form_buscar_matriculaciones_departamentos_distritos%5Banio%5D=2012", 
         "format": "csv"
       }, 
       {
-        "accessURL": "http://datos.mec.gov.py/data/matriculaciones_educacion_media_2012.json", 
+        "accessURL": "http://datos.mec.gov.py/data/matriculaciones_departamentos_distritos_lista.json?form_buscar_matriculaciones_departamentos_distritos%5Banio%5D=2012", 
         "format": "json"
       }
     ], 
@@ -375,28 +352,57 @@
   }, 
   {
     "description": "Se refiere a la cantidad de matriculados en las etapas maternal, prejard\u00edn, jard\u00edn y preescolar con sus correspondientes c\u00f3digos identificatorios.", 
-    "uniqueid": "", 
+    "contactName": "Juan Barrios", 
     "keywords": [
       "educaci\u00f3n,matriculaciones,educaci\u00f3n inicial"
     ], 
     "accessLevel": "public", 
     "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "", 
     "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
     "title": "Matriculaciones Educaci\u00f3n Inicial", 
     "temporal": "2012-01-01/2012-12-31", 
     "version": "1.0", 
-    "contactName": "Juan Barrios", 
     "distribution": [
       {
-        "accessURL": "http://datos.mec.gov.py/data/data/matriculaciones_inicial_lista", 
+        "accessURL": "/data/data/matriculaciones_inicial_lista", 
         "format": "xls"
       }, 
       {
-        "accessURL": "http://datos.mec.gov.py/data/data/matriculaciones_inicial_lista", 
+        "accessURL": "/data/data/matriculaciones_inicial_lista", 
         "format": "csv"
       }, 
       {
-        "accessURL": "http://datos.mec.gov.py/data/data/matriculaciones_inicial_lista", 
+        "accessURL": "/data/data/matriculaciones_inicial_lista", 
+        "format": "json"
+      }
+    ], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n    Se refiere a la cantidad de matriculados del 1.\u00ba al 3er. curso en las diferentes modalidades de educaci\u00f3n media con sus correspondientes c\u00f3digos identificatorios.", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      "educaci\u00f3n,matriculaciones,educaci\u00f3n media"
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "Matriculaciones Educaci\u00f3n Media", 
+    "temporal": "2012-01-01/2012-12-31", 
+    "version": "1.0", 
+    "distribution": [
+      {
+        "accessURL": "/data/matriculaciones_educacion_media_2012.xlsx", 
+        "format": "xls"
+      }, 
+      {
+        "accessURL": "/data/matriculaciones_educacion_media_2012.csv", 
+        "format": "csv"
+      }, 
+      {
+        "accessURL": "/data/matriculaciones_educacion_media_2012.json", 
         "format": "json"
       }
     ], 
@@ -404,328 +410,49 @@
   }, 
   {
     "description": "Se refiere a la cantidad de matriculados en las diferentes modalidades de educaci\u00f3n superior con sus correspondientes c\u00f3digos identificatorios.", 
-    "uniqueid": "", 
+    "contactName": "Juan Barrios", 
     "keywords": [
       "educaci\u00f3n,matriculaciones,educaci\u00f3n superior"
     ], 
     "accessLevel": "public", 
     "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "", 
     "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
     "title": "Matriculaciones Educaci\u00f3n Superior", 
     "temporal": "2012-01-01/2012-12-31", 
     "version": "1.0", 
-    "contactName": "Juan Barrios", 
     "distribution": [
       {
-        "accessURL": "http://datos.mec.gov.py/data/matriculaciones_educacion_superior_2012.xlsx", 
+        "accessURL": "/data/matriculaciones_educacion_superior_2012.xlsx", 
         "format": "xls"
       }, 
       {
-        "accessURL": "http://datos.mec.gov.py/data/matriculaciones_educacion_superior_2012.csv", 
+        "accessURL": "/data/matriculaciones_educacion_superior_2012.csv", 
         "format": "csv"
-      }, 
-      {
-        "accessURL": "http://datos.mec.gov.py/data/matriculaciones_educacion_superior_2012.json", 
-        "format": "json"
       }
     ], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "Se refiere a la cantidad de matriculados en las diferentes modalidades de educaci\u00f3n permanente con sus correspondientes c\u00f3digos identificatorios.", 
-    "uniqueid": "", 
-    "keywords": [
-      "educaci\u00f3n,matriculaciones,educaci\u00f3n permanente"
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "Matriculaciones Educaci\u00f3n Permanente", 
-    "temporal": "2012-01-01/2012-12-31", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [
-      {
-        "accessURL": "http://datos.mec.gov.py/data/matriculaciones_educacion_permanente_2012.xlsx", 
-        "format": "xls"
-      }, 
-      {
-        "accessURL": "http://datos.mec.gov.py/data/matriculaciones_educacion_permanente_2012.csv", 
-        "format": "csv"
-      }, 
-      {
-        "accessURL": "http://datos.mec.gov.py/data/matriculaciones_educacion_permanente_2012.json", 
-        "format": "json"
-      }
-    ], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "url": "\n          ", 
-    "description": "\n          ", 
-    "name": "\n          ", 
-    "title": "Data Catalog"
-  }, 
-  {
-    "description": "\n\t\t\t\t\t\t\tContiene informaci\u00f3n sobre la ubicaci\u00f3n geogr\u00e1fica de los establecimientos escolares tales como el departamento, distrito,barrio/localidad donde se encuentran asentados, adem\u00e1s de la zona (urbana o rural) a la cual pertenecen, y los datos georreferenciadas como las coordenadas planas (en metros) y geograficas. El Sistema de informacion de Estad\u00edstica Continua (SIEC) considera \u201cEstablecimiento Escolar\u201d a la construcci\u00f3n que existe dentro de un predio (terreno) que se emplea para la ense\u00f1anza, donde puede funcionar una o m\u00e1s instituciones educativas con sus respectivos niveles/modalidades de educaci\u00f3n.\n\t\t\t\t\t\t", 
-    "uniqueid": "http://datos.mec.gov.py/data/establecimientos", 
-    "keywords": [
-      "educaci\u00f3n,establecimientos,escolar,geografico"
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "ESTABLECIMIENTOS ESCOLARES", 
-    "temporal": "2012-01-01/2012-12-31", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n\t\t\t\t\t\t\t\tContiene datos de los niveles/modalidades de educaci\u00f3n ofertados por las instituciones educativas; regi\u00f3n administrativa a la que pertenece la instituci\u00f3n educativa; tipo de organizaci\u00f3n, participaci\u00f3n comunitaria, direcci\u00f3n del establecimiento escolar, servicio disponible (internet, telefono, correo electronico, etc.). Una instituci\u00f3n educativa puede poseer diferentes locales escolares ubicados en un mismo o en diferentes departamentos geogr\u00e1ficos. El SIEC considera una misma instituci\u00f3n cuando varios niveles o modalidades tienen una organizaci\u00f3n, gesti\u00f3n y administraci\u00f3n \u00fanica. Por ejemplo: Centro Regional de Educaci\u00f3n Gral. Patricio Escobar de Encarnaci\u00f3n, Colegio Santa Clara de Asunci\u00f3n.\n\t\t\t\t\t\t", 
-    "uniqueid": "http://datos.mec.gov.py/data/instituciones", 
-    "keywords": [
-      "educaci\u00f3n,instituciones"
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "INSTITUCIONES EDUCATIVAS", 
-    "temporal": "2012-01-01/2012-12-31", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n\t\t\t\t\t\t  Se refiere a la cantidad de alumnos matriculados del 1.\u00ba al 9.\u00ba grado con sus correspondientes c\u00f3digos identificatorios.\n\t\t\t\t\t\t", 
-    "uniqueid": "http://datos.mec.gov.py/data/matriculaciones_educacion_escolar_basica", 
-    "keywords": [
-      "educaci\u00f3n,matriculaciones,escolar b\u00e1sica"
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "MATRICULA EDUCACION ESCOLAR BASICA - CICLOS", 
-    "temporal": "2012-01-01/2012-12-31", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n\t\t\t\t\t\t\tCorresponde a la cantidad de matriculados por ciclo/niveles/programas especiales de educaci\u00f3n inclusiva con sus correspondientes c\u00f3digos identificatorios.\n\t\t\t\t\t\t", 
-    "uniqueid": "http://datos.mec.gov.py/data/matriculaciones_educacion_inclusiva", 
-    "keywords": [
-      "educaci\u00f3n,matriculaciones,educaci\u00f3n inclusiva"
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "MATRICULA EDUCACION INCLUSIVA", 
-    "temporal": "2012-01-01/2012-12-31", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n\t\t\t\t\t\t  Se refiere a la cantidad de matriculados en las diferentes modalidades de educaci\u00f3n permanente con sus correspondientes c\u00f3digos identificatorios.\n\t\t\t\t\t\t", 
-    "uniqueid": "http://datos.mec.gov.py/data/matriculaciones_educacion_permanente", 
-    "keywords": [
-      "educaci\u00f3n,matriculaciones,educaci\u00f3n permanente"
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "MATRICULA EDUCACION PERMANENTE", 
-    "temporal": "2012-01-01/2012-12-31", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n\t\t\t\t\t\t\t\tSe refiere a la cantidad de matriculados en las diferentes modalidades de educaci\u00f3n superior con sus correspondientes c\u00f3digos identificatorios.\n\t\t\t\t\t\t", 
-    "uniqueid": "http://datos.mec.gov.py/data/matriculaciones_educacion_superior", 
-    "keywords": [
-      "educaci\u00f3n,matriculaciones,educaci\u00f3n superior"
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "MATRICULA EDUCACION SUPERIOR", 
-    "temporal": "2012-01-01/2012-12-31", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n\t\t\t\t\t\t\tSe refiere a la cantidad de matriculados en las etapas maternal, prejard\u00edn, jard\u00edn y preescolar con sus correspondientes c\u00f3digos identificatorios.\n\t\t\t\t\t\t", 
-    "uniqueid": "http://datos.mec.gov.py/data/matriculaciones_inicial", 
-    "keywords": [
-      "educaci\u00f3n,matriculaciones,educaci\u00f3n inicial"
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "MATRICULA EDUCACION INICIAL", 
-    "temporal": "2012-01-01/2012-12-31", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n\t\t\t\t\t\t\tSe refiere a la cantidad de matriculados del 1.\u00ba al 3er. curso en las diferentes modalidades de educaci\u00f3n media con sus correspondientes c\u00f3digos identificatorios.\n\t\t\t\t\t\t", 
-    "uniqueid": "http://datos.mec.gov.py/data/matriculaciones_educacion_media", 
-    "keywords": [
-      "educaci\u00f3n,matriculaciones,educaci\u00f3n media"
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "MATRICULA EDUCACION MEDIA", 
-    "temporal": "2012-01-01/2012-12-31", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n\t\t\t\t\t\t  Se refiere a la cantidad total de matriculados por departamento/distrito seg\u00fan sector y zona.\n\t\t\t\t\t\t", 
-    "uniqueid": "http://datos.mec.gov.py/data/matriculaciones_departamentos_distritos", 
-    "keywords": [
-      "educaci\u00f3n,matriculaciones,departamentos, distritos"
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "MATRICULA POR DEPARTAMENTO Y DISTRITO", 
-    "temporal": "2012-01-01/2012-12-31", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n              Contiene todos los datos de la n\u00f3mina de funcionarios docentes, conforme a lo establecido en la ley 5189/14. El formato de los datos sigue la recomendaci\u00f3n propuesta por la Secretar\u00eda de la Funci\u00f3n P\u00fablica\n            ", 
-    "uniqueid": "http://datos.mec.gov.py/data/nomina_docentes", 
-    "keywords": [
-      ""
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "NOMINA DE FUNCIONARIOS DOCENTES", 
-    "temporal": "", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n              Contiene todos los datos de la n\u00f3mina de funcionarios administrativos, conforme a lo establecido en la ley 5189/14. El formato de los datos sigue la recomendaci\u00f3n propuesta por la Secretar\u00eda de la Funci\u00f3n P\u00fablica\n\t\t\t\t\t\t", 
-    "uniqueid": "http://datos.mec.gov.py/data/nomina_administrativos", 
-    "keywords": [
-      ""
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "NOMINA DE FUNCIONARIOS ADMINISTRATIVOS", 
-    "temporal": "", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n              Contiene todos los datos de la n\u00f3mina de los funcionarios que fueron comisionados del MEC a otros organismos del Estado.\n\t\t\t\t\t\t", 
-    "uniqueid": "", 
-    "keywords": [
-      ""
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "NOMINA DE FUNCIONARIOS COMISIONADOS DEL MEC A OTROS ORGANISMOS DEL ESTADO", 
-    "temporal": "", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n              Contiene todos los datos de la n\u00f3mina de los funcionarios que fueron comisionados desde otros organismos del Estado al MEC.\n\t\t\t\t\t\t", 
-    "uniqueid": "", 
-    "keywords": [
-      ""
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "NOMINA DE FUNCIONARIOS COMISIONADOS AL MEC DESDE OTROS ORGANISMOS DEL ESTADO", 
-    "temporal": "", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n              Contiene todos los datos del inventario de bienes, muebles, inmuebles y veh\u00edculos con que cuenta el MEC.\n\t\t\t\t\t\t", 
-    "uniqueid": "", 
-    "keywords": [
-      ""
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "INVENTARIO DE BIENES", 
-    "temporal": "", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n\t\t\t\t\t\t  Se refiere a los llamados para contrataciones de bienes y/o servicios del Ministerio de Educaci\u00f3n y Cultura.\n\t\t\t\t\t\t", 
-    "uniqueid": "http://datos.mec.gov.py/data/contrataciones", 
-    "keywords": [
-      "educaci\u00f3n,matriculaciones,departamentos, distritos,contrataciones"
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "CONTRATACIONES", 
-    "temporal": "2012-01-01/2012-12-31", 
-    "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
     "mbox": "datosabiertos@mec.gov.py"
   }, 
   {
     "description": "\n    Corresponde a la cantidad de matriculados por ciclo/niveles/programas especiales de educaci\u00f3n inclusiva con sus correspondientes c\u00f3digos identificatorios.", 
-    "uniqueid": "", 
+    "contactName": "Juan Barrios", 
     "keywords": [
       "educaci\u00f3n,matriculaciones,educaci\u00f3n inclusiva"
     ], 
     "accessLevel": "public", 
     "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "", 
     "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
     "title": "Matriculaciones por Educaci\u00f3n Inclusiva", 
     "temporal": "2012-01-01/2012-12-31", 
     "version": "1.0", 
-    "contactName": "Juan Barrios", 
     "distribution": [
       {
-        "accessURL": "http://datos.mec.gov.py/data/matriculaciones_educacion_inclusiva_2012.xlsx", 
+        "accessURL": "/data/matriculaciones_educacion_inclusiva_2012.xlsx", 
         "format": "xls"
       }, 
       {
-        "accessURL": "http://datos.mec.gov.py/data/matriculaciones_educacion_inclusiva_2012.csv", 
+        "accessURL": "/data/matriculaciones_educacion_inclusiva_2012.csv", 
         "format": "csv"
       }
     ], 
@@ -733,67 +460,332 @@
   }, 
   {
     "description": "\n    Se refiere a la cantidad de alumnos matriculados del 1.\u00ba al 9.\u00ba grado con sus correspondientes c\u00f3digos identificatorios.", 
-    "uniqueid": "", 
+    "contactName": "Juan Barrios", 
     "keywords": [
       "educaci\u00f3n,matriculaciones,escolar b\u00e1sica"
     ], 
     "accessLevel": "public", 
     "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "", 
     "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
     "title": "Matriculaciones Educaci\u00f3n Escolar B\u00e1sica", 
     "temporal": "2012-01-01/2012-12-31", 
     "version": "1.0", 
-    "contactName": "Juan Barrios", 
-    "distribution": [], 
+    "distribution": [
+      {
+        "accessURL": "/data/matriculaciones_educacion_escolar_basica_2012.xlsx", 
+        "format": "xls"
+      }, 
+      {
+        "accessURL": "/data/matriculaciones_educacion_escolar_basica_2012.csv", 
+        "format": "csv"
+      }, 
+      {
+        "accessURL": "/data/matriculaciones_educacion_escolar_basica_2012.json", 
+        "format": "json"
+      }
+    ], 
     "mbox": "datosabiertos@mec.gov.py"
   }, 
   {
     "description": "Contiene datos de los niveles/modalidades de educaci\u00f3n ofertados por las instituciones educativas; regi\u00f3n administrativa a la que pertenece la instituci\u00f3n educativa; tipo de organizaci\u00f3n, participaci\u00f3n comunitaria, direcci\u00f3n del establecimiento escolar, servicio disponible (internet, telefono, correo electronico, etc.). Una instituci\u00f3n educativa puede poseer diferentes locales escolares ubicados en un mismo o en diferentes departamentos geogr\u00e1ficos. El SIEC considera una misma instituci\u00f3n cuando varios niveles o modalidades tienen una organizaci\u00f3n, gesti\u00f3n y administraci\u00f3n \u00fanica. Por ejemplo: Centro Regional de Educaci\u00f3n Gral. Patricio Escobar de Encarnaci\u00f3n, Colegio Santa Clara de Asunci\u00f3n.", 
-    "uniqueid": "", 
+    "contactName": "Juan Barrios", 
     "keywords": [
       "educaci\u00f3n,instituciones"
     ], 
     "accessLevel": "public", 
     "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "", 
     "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
     "title": "Instituciones Educativas", 
     "temporal": "2012-01-01/2012-12-31", 
     "version": "1.0", 
-    "contactName": "Juan Barrios", 
     "distribution": [], 
     "mbox": "datosabiertos@mec.gov.py"
   }, 
   {
     "description": "Contiene informaci\u00f3n sobre la ubicaci\u00f3n geogr\u00e1fica de los establecimientos escolares tales como el departamento, distrito,barrio/localidad donde se encuentran asentados, adem\u00e1s de la zona (urbana o rural) a la cual pertenecen, y los datos georreferenciadas como las coordenadas planas (en metros) y geograficas. El Sistema de informacion de Estad\u00edstica Continua (SIEC) considera \u201cEstablecimiento Escolar\u201d a la construcci\u00f3n que existe dentro de un predio (terreno) que se emplea para la ense\u00f1anza, donde puede funcionar una o m\u00e1s instituciones educativas con sus respectivos niveles/modalidades de educaci\u00f3n.", 
-    "uniqueid": "", 
+    "contactName": "Juan Barrios", 
     "keywords": [
       "educaci\u00f3n,establecimientos,escolar,geografico"
     ], 
     "accessLevel": "public", 
     "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "", 
     "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
     "title": "Establecimientos Escolares", 
     "temporal": "2012-01-01/2012-12-31", 
     "version": "1.0", 
-    "contactName": "Juan Barrios", 
     "distribution": [
       {
-        "accessURL": "http://datos.mec.gov.pyhttps://mega.co.nz/#!x0InHDpZ!5VZp63YKAvfP3qm2absgZO-kpqK-qEYXxnjqePcRf-Q", 
+        "accessURL": "https://mega.co.nz/#!x0InHDpZ!5VZp63YKAvfP3qm2absgZO-kpqK-qEYXxnjqePcRf-Q", 
         "format": "pdf"
       }, 
       {
-        "accessURL": "http://datos.mec.gov.py/data/establecimientos_2012.xlsx", 
+        "accessURL": "/data/establecimientos_2012.xlsx", 
         "format": "xls"
       }, 
       {
-        "accessURL": "http://datos.mec.gov.py/data/establecimientos_2012.csv", 
+        "accessURL": "/data/establecimientos_2012.csv", 
         "format": "csv"
       }, 
       {
-        "accessURL": "http://datos.mec.gov.py/data/establecimientos_2012.json", 
+        "accessURL": "/data/establecimientos_2012.json", 
         "format": "json"
       }
     ], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "publisher": "", 
+    "accessLevel": "public", 
+    "description": "\n          ", 
+    "contactName": "", 
+    "title": "Data Catalog", 
+    "keywords": [
+      "catalog"
+    ], 
+    "landingPage": "\n          ", 
+    "mbox": ""
+  }, 
+  {
+    "description": "\n\t\t\t\t\t\t\tContiene informaci\u00f3n sobre la ubicaci\u00f3n geogr\u00e1fica de los establecimientos escolares tales como el departamento, distrito,barrio/localidad donde se encuentran asentados, adem\u00e1s de la zona (urbana o rural) a la cual pertenecen, y los datos georreferenciadas como las coordenadas planas (en metros) y geograficas. El Sistema de informacion de Estad\u00edstica Continua (SIEC) considera \u201cEstablecimiento Escolar\u201d a la construcci\u00f3n que existe dentro de un predio (terreno) que se emplea para la ense\u00f1anza, donde puede funcionar una o m\u00e1s instituciones educativas con sus respectivos niveles/modalidades de educaci\u00f3n.\n\t\t\t\t\t\t", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      "educaci\u00f3n,establecimientos,escolar,geografico"
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "http://datos.mec.gov.py/data/establecimientos", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "ESTABLECIMIENTOS ESCOLARES", 
+    "temporal": "2012-01-01/2012-12-31", 
+    "version": "1.0", 
+    "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n\t\t\t\t\t\t\t\tContiene datos de los niveles/modalidades de educaci\u00f3n ofertados por las instituciones educativas; regi\u00f3n administrativa a la que pertenece la instituci\u00f3n educativa; tipo de organizaci\u00f3n, participaci\u00f3n comunitaria, direcci\u00f3n del establecimiento escolar, servicio disponible (internet, telefono, correo electronico, etc.). Una instituci\u00f3n educativa puede poseer diferentes locales escolares ubicados en un mismo o en diferentes departamentos geogr\u00e1ficos. El SIEC considera una misma instituci\u00f3n cuando varios niveles o modalidades tienen una organizaci\u00f3n, gesti\u00f3n y administraci\u00f3n \u00fanica. Por ejemplo: Centro Regional de Educaci\u00f3n Gral. Patricio Escobar de Encarnaci\u00f3n, Colegio Santa Clara de Asunci\u00f3n.\n\t\t\t\t\t\t", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      "educaci\u00f3n,instituciones"
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "http://datos.mec.gov.py/data/instituciones", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "INSTITUCIONES EDUCATIVAS", 
+    "temporal": "2012-01-01/2012-12-31", 
+    "version": "1.0", 
+    "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n\t\t\t\t\t\t  Se refiere a la cantidad de alumnos matriculados del 1.\u00ba al 9.\u00ba grado con sus correspondientes c\u00f3digos identificatorios.\n\t\t\t\t\t\t", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      "educaci\u00f3n,matriculaciones,escolar b\u00e1sica"
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "http://datos.mec.gov.py/data/matriculaciones_educacion_escolar_basica", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "MATRICULA EDUCACION ESCOLAR BASICA - CICLOS", 
+    "temporal": "2012-01-01/2012-12-31", 
+    "version": "1.0", 
+    "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n\t\t\t\t\t\t\tCorresponde a la cantidad de matriculados por ciclo/niveles/programas especiales de educaci\u00f3n inclusiva con sus correspondientes c\u00f3digos identificatorios.\n\t\t\t\t\t\t", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      "educaci\u00f3n,matriculaciones,educaci\u00f3n inclusiva"
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "http://datos.mec.gov.py/data/matriculaciones_educacion_inclusiva", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "MATRICULA EDUCACION INCLUSIVA", 
+    "temporal": "2012-01-01/2012-12-31", 
+    "version": "1.0", 
+    "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n\t\t\t\t\t\t  Se refiere a la cantidad de matriculados en las diferentes modalidades de educaci\u00f3n permanente con sus correspondientes c\u00f3digos identificatorios.\n\t\t\t\t\t\t", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      "educaci\u00f3n,matriculaciones,educaci\u00f3n permanente"
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "http://datos.mec.gov.py/data/matriculaciones_educacion_permanente", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "MATRICULA EDUCACION PERMANENTE", 
+    "temporal": "2012-01-01/2012-12-31", 
+    "version": "1.0", 
+    "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n\t\t\t\t\t\t\t\tSe refiere a la cantidad de matriculados en las diferentes modalidades de educaci\u00f3n superior con sus correspondientes c\u00f3digos identificatorios.\n\t\t\t\t\t\t", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      "educaci\u00f3n,matriculaciones,educaci\u00f3n superior"
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "http://datos.mec.gov.py/data/matriculaciones_educacion_superior", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "MATRICULA EDUCACION SUPERIOR", 
+    "temporal": "2012-01-01/2012-12-31", 
+    "version": "1.0", 
+    "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n\t\t\t\t\t\t\tSe refiere a la cantidad de matriculados en las etapas maternal, prejard\u00edn, jard\u00edn y preescolar con sus correspondientes c\u00f3digos identificatorios.\n\t\t\t\t\t\t", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      "educaci\u00f3n,matriculaciones,educaci\u00f3n inicial"
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "http://datos.mec.gov.py/data/matriculaciones_inicial", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "MATRICULA EDUCACION INICIAL", 
+    "temporal": "2012-01-01/2012-12-31", 
+    "version": "1.0", 
+    "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n\t\t\t\t\t\t\tSe refiere a la cantidad de matriculados del 1.\u00ba al 3er. curso en las diferentes modalidades de educaci\u00f3n media con sus correspondientes c\u00f3digos identificatorios.\n\t\t\t\t\t\t", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      "educaci\u00f3n,matriculaciones,educaci\u00f3n media"
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "http://datos.mec.gov.py/data/matriculaciones_educacion_media", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "MATRICULA EDUCACION MEDIA", 
+    "temporal": "2012-01-01/2012-12-31", 
+    "version": "1.0", 
+    "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n\t\t\t\t\t\t  Se refiere a la cantidad total de matriculados por departamento/distrito seg\u00fan sector y zona.\n\t\t\t\t\t\t", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      "educaci\u00f3n,matriculaciones,departamentos, distritos"
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "http://datos.mec.gov.py/data/matriculaciones_departamentos_distritos", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "MATRICULA POR DEPARTAMENTO Y DISTRITO", 
+    "temporal": "2012-01-01/2012-12-31", 
+    "version": "1.0", 
+    "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n              Contiene todos los datos de la n\u00f3mina de funcionarios docentes, conforme a lo establecido en la ley 5189/14. El formato de los datos sigue la recomendaci\u00f3n propuesta por la Secretar\u00eda de la Funci\u00f3n P\u00fablica\n            ", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      ""
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "http://datos.mec.gov.py/data/nomina_docentes", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "NOMINA DE FUNCIONARIOS DOCENTES", 
+    "temporal": "", 
+    "version": "1.0", 
+    "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n              Contiene todos los datos de la n\u00f3mina de funcionarios administrativos, conforme a lo establecido en la ley 5189/14. El formato de los datos sigue la recomendaci\u00f3n propuesta por la Secretar\u00eda de la Funci\u00f3n P\u00fablica\n\t\t\t\t\t\t", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      ""
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "http://datos.mec.gov.py/data/nomina_administrativos", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "NOMINA DE FUNCIONARIOS ADMINISTRATIVOS", 
+    "temporal": "", 
+    "version": "1.0", 
+    "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n              Contiene todos los datos de la n\u00f3mina de los funcionarios que fueron comisionados del MEC a otros organismos del Estado.\n\t\t\t\t\t\t", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      ""
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "NOMINA DE FUNCIONARIOS COMISIONADOS DEL MEC A OTROS ORGANISMOS DEL ESTADO", 
+    "temporal": "", 
+    "version": "1.0", 
+    "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n              Contiene todos los datos de la n\u00f3mina de los funcionarios que fueron comisionados desde otros organismos del Estado al MEC.\n\t\t\t\t\t\t", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      ""
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "NOMINA DE FUNCIONARIOS COMISIONADOS AL MEC DESDE OTROS ORGANISMOS DEL ESTADO", 
+    "temporal": "", 
+    "version": "1.0", 
+    "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n              Contiene todos los datos del inventario de bienes, muebles, inmuebles y veh\u00edculos con que cuenta el MEC.\n\t\t\t\t\t\t", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      ""
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "INVENTARIO DE BIENES", 
+    "temporal": "", 
+    "version": "1.0", 
+    "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n\t\t\t\t\t\t  Se refiere a los llamados para contrataciones de bienes y/o servicios del Ministerio de Educaci\u00f3n y Cultura.\n\t\t\t\t\t\t", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      "educaci\u00f3n,matriculaciones,departamentos, distritos,contrataciones"
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "http://datos.mec.gov.py/data/contrataciones", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "CONTRATACIONES", 
+    "temporal": "2012-01-01/2012-12-31", 
+    "version": "1.0", 
+    "distribution": [], 
     "mbox": "datosabiertos@mec.gov.py"
   }
 ]
