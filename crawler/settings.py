@@ -21,7 +21,11 @@ COOKIES_ENABLED = False
 #RETRY_ENABLED = False
 #DOWNLOAD_TIMEOUT = 25
 #REDIRECT_ENABLED = False
-#AJAXCRAWL_ENABLED = True
+#MYEXT_ENABLED = True
+#MYEXT_ITEMCOUNT = 1
+LOG_FILE = 'datacrowler.log'
+#DEPTH_LIMIT = 10
+#EXTENSIONS = ['crawler.SpiderLogging']
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'tutorial (+http://www.yourdomain.com)'

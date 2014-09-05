@@ -11,7 +11,7 @@ class DataJson:
         response = []
         urlAux = "url"
         distributionAux = "distribution"
-        encodingAux= "encodingFormat"
+        encodingAux = "encodingFormat"
         with open(file) as data_file:
             data = json.load(data_file)
             """ Iterar sonbre la lista de cada dominio """
@@ -28,7 +28,6 @@ class DataJson:
                             url = ""
                             if urlAux in property.keys():
                                 url = dataproperty["url"][0]
-                                #print("Url", dataproperty["url"][0].encode('utf-8'))
 
                             """ Iterar sobre creator (publicador) """
                             for creator in property["creator"]:
@@ -45,7 +44,7 @@ class DataJson:
                                     # Si no tiene el encoding ni la url no guarda el recurso
                                     if encodingAux in distributionproperty.keys() and urlAux in distributionproperty.keys():
                                         format = distributionproperty["encodingFormat"][0]
-                                        accessURL = "http://" + domain + distributionproperty["url"][0]
+                                        accessURL = distributionproperty["url"][0]
                                         distributionobject = {'format': format, 'accessURL': accessURL}
                                         distributionlist.append(distributionobject)
 
@@ -64,7 +63,7 @@ class DataJson:
                             Provider name cambia por publisher
                             """
                             response.append({'title': property["name"][0],
-                                             'uniqueid': url,
+                                             'landingPage': url,
                                              'description': property["description"][0],
                                              'contactName': creatorproperty["name"][0],
                                              'mbox': creatorproperty["email"][0],
@@ -87,10 +86,16 @@ class DataJson:
                         Description
                         Debe tener los otros datos ??
                         """
+                        keywords = [ "catalog" ]
+
                         response.append({'title': "Data Catalog",
-                                         'url': property["url"][0],
-                                         'name': property["name"][0],
-                                         'description': property["description"][0]})
+                                         'landingPage': property["url"][0],
+                                         'description': property["description"][0],
+                                         'contactName': "",
+                                         'mbox': "",
+                                         'keywords': keywords,
+                                         'accessLevel': "public",
+                                         'publisher': ""})
 
                         """ Iterar sobre los datasets """
                         for dataset in property["dataset"]:
@@ -98,7 +103,6 @@ class DataJson:
                             url = ""
                             if urlAux in dataproperty.keys():
                                 url = dataproperty["url"][0]
-                                #print("Url", dataproperty["url"][0].encode('utf-8'))
 
                             """ Iterar sobre creator (publicador) """
                             for creator in dataproperty["creator"]:
@@ -115,7 +119,7 @@ class DataJson:
                                     # Si no tiene el encoding ni la url no guarda el recurso
                                     if encodingAux in distributionproperty.keys() and urlAux in distributionproperty.keys():
                                         format = distributionproperty["encodingFormat"][0]
-                                        accessURL = "http://" + domain + distributionproperty["url"][0]
+                                        accessURL = distributionproperty["url"][0]
                                         distributionobject = {'format': format, 'accessURL': accessURL}
                                         distributionlist.append(distributionobject)
 
@@ -135,7 +139,7 @@ class DataJson:
                             Provider name cambia por publisher
                             """
                             response.append({'title': dataproperty["name"][0],
-                                             'uniqueid': url,
+                                             'landingPage': url,
                                              'description': dataproperty["description"][0],
                                              'contactName': creatorproperty["name"][0],
                                              'mbox': creatorproperty["email"][0],
@@ -151,4 +155,4 @@ class DataJson:
         fileResponse.write(json.dumps(response, indent=2))
 
 
-DataJson().convert("/home/desa2/PycharmProjects/DataCrawler/bin/items.json", "datos.mec.gov.py")
+#DataJson().convert("/home/desa2/PycharmProjects/DataCrawler/bin/datos.mec.gov.py.json", "datos.mec.gov.py")
