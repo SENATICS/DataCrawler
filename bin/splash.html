@@ -1,0 +1,478 @@
+<!DOCTYPE html><html><head>
+  <title>Datos Abiertos del Ministerio de Educación y Cultura</title>
+  <script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script><script src="http://maps.gstatic.com/maps-api-v3/api/js/18/0/intl/es_419/main.js" type="text/javascript"></script>
+  <link href="/datos/assets/application-b05cae2ed22cfae5df18a19b5627f607.css" media="all" rel="stylesheet" type="text/css">
+  <script src="/datos/assets/application-d35feba68da326816eacd57b61f15814.js" type="text/javascript"></script>
+  <meta content="authenticity_token" name="csrf-param">
+<meta content="GbryJolu7bDVGJgEbvrzFe4ey9URS2esJadYmh2cDJs=" name="csrf-token">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-52762572-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
+</head>
+<body>
+
+  <table id="tablaContenedor" width="1000px" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tbody><tr>
+      <td width="40px" height="40" class="spriteBordesTabla" id="topleft">&nbsp;</td>
+      <td width="920px" height="40" class="bordertop">&nbsp;</td>
+      <td width="40px" height="40" class="spriteBordesTabla" id="topright">&nbsp;</td>
+    </tr>
+    <!--inicio-contenido-->
+    <tr>
+      <td width="40" class="borderleft">&nbsp;</td>
+      <td width="920" bgcolor="white" itemscope="" itemtype="http://schema.org/Dataset">
+        <div style="clear:both;"></div>
+<div>
+  
+  <div style="height:100px">
+    <div style="float:left;"><a href="http://www.mec.gov.py"><img alt="Logo_left" src="/datos/assets/logo_left-955f863fad8a682985ed463a5b788c01.png"></a></div>
+    <div style="float:right;"><a href="http://www.mec.gov.py"><img alt="Logo_right" src="/datos/assets/logo_right-cb6aa2081a20f6e0bd7ec1820c412788.png"></a></div>
+  </div>
+  <div style="clear:both;"></div>
+  
+  <div id="toolbar" style="clear:both;background-color:#CCC">
+    Asunción - 05 de Septiembre de 2014 
+    <div style="float:right">
+      <a href="http://www.mec.gov.py/webmail/" target="_blank">Webmail</a> | <a href="http://www.mec.gov.py/intramec" target="_blank">Intramec</a> | <a href="http://www.mec.gov.py/atenea-web/login.jsp" target="_blank">SIGMEC</a>
+    </div>
+  </div>
+</div>
+<div style="clear:both;"></div>
+
+
+        <div class="container">
+			<div class="row">
+				<h2>
+          Establecimientos Escolares
+          
+          <span style="float:right;">
+            <a href="http://datos.mec.gov.py/data/establecimientos" style="font-size:12px;" title="Ir al dataset">Ver datos</a>
+            <a href="http://datos.mec.gov.py/data/establecimientos" title="Ir al dataset"><img alt="Datos_ico" src="/datos/assets/datos_ico-235aa8d4746b52bb7b824cd58914b22c.jpg" style="width:24px;"></a>
+            <a href="http://datos.mec.gov.py/index" style="font-size:12px;" title="Ir al inicio">Inicio</a>
+            <a href="http://datos.mec.gov.py/index" title="Ir al inicio"><img alt="Home" src="/datos/assets/home-a6d8bcca2e6d171f00337831ffb95828.png" style="width:24px;"></a>
+          </span>
+
+        </h2>
+        <div style="clear:both;">
+				<table class="table table-striped table-bordered table-hover">
+					<thead>
+						<tr>
+							<th title="Field #1">
+								Nombre del Atributo
+							</th>
+							<th title="Field #2">
+								Descripción
+							</th>
+							<th title="Field #3">
+								Tipo de datos
+							</th>
+							<th title="Field #4">
+								Restricciones
+							</th>
+							<th title="Field #5">
+								Referencia
+							</th>
+							<th title="Field #6">
+								Ejemplo
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								AÑO
+							</td>
+							<td>
+								Se refiere al año de captura de los datos
+							</td>
+							<td>
+								xsd:gYear
+							</td>
+							<td>
+								Sólo permite la carga de datos del año de su captura.
+							</td>
+							<td></td>
+							<td>
+								2012
+							</td>
+						</tr>
+						<tr>
+							<td>
+								CODIGO_ESTABLECIMIENTO
+							</td>
+							<td>
+								Código de establecimiento permite identificar en forma única los diferentes establecimientos educativos que se encuentran en el país.<br>
+								El Sistema de informacion de Estadística Continua (SIEC) considera “Establecimiento Escolar” a la construcción que existe dentro de un predio (terreno) que se emplea para la enseñanza, donde puede funcionar una o más instituciones educativas con sus respectivos niveles/modalidades de educación.<br>
+							</td>
+							<td>
+								xsd:string
+							</td>
+							<td>
+								No más de 7 caracteres
+							</td>
+							<td>
+								<a href="http://www.mec.gov.py/planificacion_educativa/Revistas/Reglamento_SIEC.pdf">Reglamento del Sistema de Información de Estadística Continua (SIEC)</a>
+							</td>
+							<td>
+								0010001
+							</td>
+						</tr>
+						<tr>
+							<td>
+								CODIGO_DEPARTAMENTO
+							</td>
+							<td>
+								Corresponde al código asignado según la cartografía nacional al departamento geográfico donde esta localizado el establecimiento escolar.
+							</td>
+							<td>
+								xsd:string
+							</td>
+							<td>
+								No más de 2 caracteres
+							</td>
+							<td></td>
+							<td>
+								00
+							</td>
+						</tr>
+						<tr>
+							<td>
+								NOMBRE_DEPARTAMENTO
+							</td>
+							<td>
+								Corresponde a la descripción del nombre del departamento geográfico correspondiente al código.
+							</td>
+							<td>
+								xsd:string
+							</td>
+							<td>
+								No más de 40 caracteres
+							</td>
+							<td></td>
+							<td>
+								ASUNCION
+							</td>
+						</tr>
+						<tr>
+							<td>
+								CODIGO_DISTRITO
+							</td>
+							<td>
+								Corresponde al código asignado al distrito del departamento geográfico donde esta localizado el establecimiento escolar..
+							</td>
+							<td>
+								xsd:string
+							</td>
+							<td>
+								No más de 2 caracteres
+							</td>
+							<td></td>
+							<td>
+								00
+							</td>
+						</tr>
+						<tr>
+							<td>
+								NOMBRE_DISTRITO
+							</td>
+							<td>
+								Corresponde a la descripción del nombre del distrito correspondiente al código.
+							</td>
+							<td>
+								xsd:string
+							</td>
+							<td>
+								No más de 40 caracteres
+							</td>
+							<td></td>
+							<td>
+								ASUNCION
+							</td>
+						</tr>
+						<tr>
+							<td>
+								CODIGO_BARRIO_LOCALIDAD
+							</td>
+							<td>
+								Corresponde al código asignado a la localidad o barrio del distrito donde esta localizado el establecimiento escolar..
+							</td>
+							<td>
+								xsd:positiveInteger
+							</td>
+							<td></td>
+							<td></td>
+							<td>
+								033
+							</td>
+						</tr>
+						<tr>
+							<td>
+								NOMBRE_BARRIO_LOCALIDAD
+							</td>
+							<td>
+								Corresponde a la descripción del nombre del barrio o localidad correspondiente al código.
+							</td>
+							<td>
+								xsd:string
+							</td>
+							<td>
+								No más de 40 caracteres
+							</td>
+							<td></td>
+							<td>
+								PRESIDENTE CARLOS ANTONIO LOPEZ
+							</td>
+						</tr>
+						<tr>
+							<td>
+								CODIGO_ZONA
+							</td>
+							<td>
+								Corresponde a la ubicación del establecimiento escolar, sea en la zona urbana o rural. Se considera: Código 1 .Zona Urbana: Área geográfica que abarca todas las cabeceras distritales de la República y sus viviendas generalmente estan organizadas en manzanas.<br>
+								Código 2. Zona Rural: Área geográfica que se encuentran fuera de las cabeceras distritales y las viviendas se localizan en forma dispersa pudiendo existir zonas amanzanadas pero que no tienen la categoría de Cabeceras Distritales por la cual se consideraran como rurales.<br>
+							</td>
+							<td>
+								xsd:positiveInteger
+							</td>
+							<td>
+								Valores que pueden ser: Código 1: cuando el código de localidad es menor 100 Código 6: cuando el código de localidade es mayor o igual a 100
+							</td>
+							<td></td>
+							<td>
+								1
+							</td>
+						</tr>
+						<tr>
+							<td>
+								NOMBRE_ZONA
+							</td>
+							<td>
+								Corresponde a la descripción del nombre de la zona correspondiente al código
+							</td>
+							<td>
+								xsd:string
+							</td>
+							<td>
+								No más de 7 caracteres
+							</td>
+							<td></td>
+							<td>
+								URBANA
+							</td>
+						</tr>
+						<tr>
+							<td>
+								DIRECCION
+							</td>
+							<td>
+								Corresponde al nombre de la calle, avenida, carretera, etc., del establecimiento escolar.
+							</td>
+							<td>
+								xsd:string
+							</td>
+							<td>
+								No más de 50 caracteres
+							</td>
+							<td></td>
+							<td>
+								MELO DE PORTUGAL E/ MAYOR MARTINEZ Y CPTAN. ARANDA
+							</td>
+						</tr>
+						<tr>
+							<td>
+								COORDENADAS_Y
+							</td>
+							<td>
+								Corresponde a las coordenadas planas (en metros). Las coordenadas "Y" , cuyo valor es mayor a 7.000.000 m, salvo al sur en el límite con la República Argentina donde podrían aparecer valores cercanos a 6.950.000 m
+							</td>
+							<td>
+								xsd:positiveInteger
+							</td>
+							<td>
+								No más de 7 digitos
+							</td>
+							<td></td>
+							<td>
+								7202502
+							</td>
+						</tr>
+						<tr>
+							<td>
+								COORDENADAS_X
+							</td>
+							<td>
+								Corresponde a las coordenadas planas ( en metros).Valores de las coordenadas X , cuyo valor será siempre menor a 1.000.000 m.
+							</td>
+							<td>
+								xsd:positiveInteger
+							</td>
+							<td>
+								No más de 6 digitos
+							</td>
+							<td></td>
+							<td>
+								433358
+							</td>
+            </tr>
+						<tr>
+							<td>
+								LATITUD
+							</td>
+							<td>
+								Corresponde a los valores de coordenadas geográficas, es decir la Latitud , las cuales se expresan en Grados (Gra), minutos (min) y segundos (seg).
+							</td>
+							<td>
+								xsd:positiveInteger
+							</td>
+							<td></td>
+							<td>
+								<a href="https://support.google.com/maps/answer/18539?hl=es">Referencia de Google Maps</a>
+							</td>
+							<td>
+								25° 17' 32.903" S
+							</td>
+						</tr>
+						<tr>
+							<td>
+								LONGITUD
+							</td>
+							<td>
+								Se refiere al año de captura de los datos
+							</td>
+							<td>
+								xsd:positiveInteger
+							</td>
+							<td></td>
+							<td>
+								<a href="https://support.google.com/maps/answer/18539?hl=es">Referencia de Google Maps</a>
+							</td>
+							<td>
+								57° 39' 43.122" W
+							</td>
+            </tr>
+						<tr>
+							<td>
+								ANHO_COD_GEO 
+							</td>
+							<td>
+								Se refiere al año de captura de los datos georreferenciados censales, teniendo en cuenta que por cada año censal pueden diferir los codigos de distritos o codigos de localidades, como a si también las descripciones. La cartografía nacional fue proveída por al Dirección General de Estadística, Encuestas y Censos (DGEEC - http://www.dgeec.gov.py/). 
+							</td>
+							<td>
+								xsd:gYear
+							</td>
+							<td>
+								Sólo permite datos del año de su captura censal.
+							</td>
+							<td></td>
+              <td>
+                <a href="/def/ejemplo_anio_cod_geo" target="_blank">Ver ejemplo</a>
+              </td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="row">
+				<h2>
+					Referencia
+				</h2>La siguiente tabla presenta una breve descripción de los atributos incluídos en el diccionario de datos del dataset.<br>
+				Básicamente, un diccionario de datos describe los atributos que contiene un dataset, incluyendo el tipo de dato y las restricciones se apliquen a cada uno.<br>
+				<br>
+				<br>
+				<table class="table table-striped table-bordered table-hover">
+					<thead>
+						<tr>
+							<th title="Field #1">
+								Nombre de la columna
+							</th>
+							<th title="Field #2">
+								Descripción
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								Nombre del Atributo
+							</td>
+							<td>
+								Esteblace el nombre del atributo exactamente como se encuentra definido en el archivo de datos a ser publicado
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Descripción
+							</td>
+							<td>
+								Describe con más detalles los datos que se encuentran en el atributo
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Tipo de datos
+							</td>
+							<td>
+								El tipo de dato esperado de los valores del attributo. Por ejemplo: String, Integer, Float, …. Idealmente se deben utilizar los tipos de datos definidos en el Estándar XML Schema Datatypes de la W3C. <a href="http://www.w3.org/TR/xmlschema-2/#built-in-primitive-datatypes">http://www.w3.org/TR/xmlschema-2/#built-in-primitive-datatypes</a>, por ejemplo: xsd:string, xsd:boolean, xsd:dateTime
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Restricciones
+							</td>
+							<td>
+								En caso que existan, se especifican las restricciones de los datos
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Referencia
+							</td>
+							<td>
+								En caso que exista, se agrega un link a un documento de referencia para los datos. Por ejemplo, si los datos están definidos utilizando un estándar o formato diferente a XSD, referenciarlo, como ser la Latitud y Longitud en formato de Google maps
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Ejemplo
+							</td>
+							<td>
+								Los valores de ejemplo
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+      </div></td>
+      <td width="40" class="borderright">&nbsp;</td>
+    </tr>
+    <!--fin-contenido-->
+    <tr>
+      <td width="40" height="40" class="borderleft">&nbsp;</td>
+      <td width="920" height="40" bgcolor="white"><div style="padding-top:10px">
+  <p align="center" style="font-size:11px;color:#999;border-top:1px">
+    <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank"><img alt="80x15" src="http://i.creativecommons.org/l/by/4.0/80x15.png"></a>
+    <a href="http://datos.mec.gov.py/legal" style="padding-left:5px;" target="_blank">Aviso Legal</a>
+    <a href="http://datos.mec.gov.py/about" style="padding-left:5px;">Acerca de</a>
+    <br>
+    2014 - Portal construido y mantenido por el <a href="http://www.mec.gov.py" target="_blank">MEC</a><br>
+    con el apoyo del <a href="http://ceamso.org.py/es/proyectos/20-programa-de-democracia-y-gobernabilidad " target="_blank">Programa de Democracia y Gobernabilidad (USAID-CEAMSO)</a>
+    
+  </p>
+</div>
+</td>
+      <td width="40" height="40" class="borderright">&nbsp;</td>
+    </tr>
+  </tbody></table>
+
+
+</body></html>

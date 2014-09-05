@@ -1,0 +1,10 @@
+TEMPLATE = app
+QT -= gui
+QT += xml
+CONFIG += warn_on release
+target.path = /usr/bin
+INSTALLS += target
+INCLUDEPATH += /home/desa2/PyQt-x11-gpl-4.10.4/pylupdate
+VPATH = /home/desa2/PyQt-x11-gpl-4.10.4/pylupdate
+HEADERS = simtexth.h translator.h metatranslator.h proparser.h
+SOURCES = metatranslator.cpp simtexth.cpp fetchtr.cpp translator.cpp merge.cpp proparser.cpp main.cpp sametexth.cpp numberh.cpp

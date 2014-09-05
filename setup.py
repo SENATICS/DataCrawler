@@ -9,6 +9,7 @@ setup(
     entry_points = {'scrapy': ['settings = crawler.settings']},
     scripts = ['bin/Test.py'],
     install_requires=[
-          'lxml', 'scrapy', 'ipython', 'click', 'service_identity==1.0.0', 'requests', 'microdata==0.5'
+          'lxml', 'scrapy', 'ipython', 'click', 'service_identity==1.0.0', 'requests', 'microdata==0.5',
+          'qt4reactor', 'psutil', 'adbockparser', 'Pillow'
     ],
 )

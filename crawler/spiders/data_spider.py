@@ -92,7 +92,8 @@ items_list = []
 
 
 class DataSpider(CrawlSpider):
-    name = "dspider"
+    #name = "dspider"
+    name = "a"
     # allowed_domains = ["mec.gov.py"]
     # start_urls = [
     # "http://datos.mec.gov.py/",
@@ -107,11 +108,11 @@ class DataSpider(CrawlSpider):
 
 
     def __init__(self, domain, start_url, *args, **kwargs):
+        #self.name = domain
+        self.start_urls = start_url
+        #self.domain = domain[0]
+        self.allowed_domains = domain
         super(DataSpider, self).__init__(*args, **kwargs)
-        self.start_urls = [start_url]
-        self.domain = domain
-        self.allowed_domains = [domain]
-
         """ La primera vez que abre el archivo poner { "root": [ """
         file = open('items.json', 'ab')
         file.write('{ "root": [')
@@ -127,8 +128,8 @@ class DataSpider(CrawlSpider):
     def parse_item(self, response):
         self.log('A response from %s just arrived!' % response.url)
         time.sleep(3)
-        item = DataItem()
-        item['title'] = response.xpath('//title/text()').extract()
+        #item = DataItem()
+        #item['title'] = response.xpath('//title/text()').extract()
         #links = response.xpath('//a[contains(@href, "/")]')
         #item['links'] = links.extract()
         transformar(response.url)
@@ -142,20 +143,20 @@ def transformar(url):
     microdata = {}
     microdata['items'] = items = []
 
-    url_splash = "http://localhost:8050/render.html?url=" + url + "&timeout=20&wait=1.5"
-    #fileSplash = open('splash.html', 'w')
-    #html = urllib.urlopen(urlSplash)
-    #fileSplash.write(str(html.read()))
-    #urlFinal = "splash.html"
+    url_splash = "http://192.168.200.101:8050/render.html?url=" + url + "&timeout=20&wait=2.5"
+    file_splash = open('splash.html', 'w')
+    html = urllib.urlopen(url_splash)
+    file_splash.write(str(html.read()))
+    url_final = "splash.html"
 
     # serialization = requests.get("http://rdf-translator.appspot.com/convert/rdfa/microdata/html/" + url)
-    serialization = rdfa_to_microdata(url_splash)
-    if serialization:
-        file = open('aux.html', 'wb')
-        file.write(serialization.encode('utf-8'))
-        url_splash = "aux.html"
+    #serialization = rdfa_to_microdata(url_splash)
+    #if serialization:
+    #    file = open('aux.html', 'wb')
+    #    file.write(serialization.encode('utf-8'))
+    #    url_final = "aux.html"
 
-    items = get_items(urllib.urlopen(url_splash))
+    items = get_items(urllib.urlopen(url_final))
     # Para solucionar el problema de que viene mas de un item nomas, esto deberia arreglarse
     if len(items) > 1:
         indice = 1
@@ -165,16 +166,17 @@ def transformar(url):
     if items:
         if items[indice].props:
             refresh_items_list(items[indice])
-        items.append(items[indice].json_dict())
+            #items_list.append(items[indice])
+        #items.append(items[indice].json_dict())
 
 
 def refresh_items_list(item_nuevo):
     # OJO: se tiene que pasar siempre -1, estas anotaciones hay que arreglar
-    addItem = True
+    add_item = True
 
     # Itera sobre la lista de items existentes
     for item in items_list:
-
+        add_item = True
         # Si el item a comparar es DataCatalog
         if item.itemtype == "[http://schema.org/Datacatalog]":
 
@@ -183,7 +185,7 @@ def refresh_items_list(item_nuevo):
 
                 # Si ya existe modifica
                 if item.props['url'] == item_nuevo.props['url']:
-                    addItem = False
+                    add_item = False
 
                     # Agrega los nuevos atributos del item
                     for name, values in item_nuevo.props.items():
@@ -198,7 +200,7 @@ def refresh_items_list(item_nuevo):
 
                         # Si el item ya existe modifica
                         if dataset.props['url'] == item_nuevo.props['url']:
-                            addItem = False
+                            add_item = False
 
                             # Agrega los nuevos atributos del item
                             for name, values in item_nuevo.props.items():
@@ -208,7 +210,7 @@ def refresh_items_list(item_nuevo):
 
         # Si el item a comparar es DataSet (todavia no se puede porque no esta anotada la url)
         else:
-            addItem = True
+            add_item = True
             # Si el item ya existe modifica
             #if item.props['url'] == item_nuevo.props['url']:
             #    addItem = False
@@ -220,7 +222,7 @@ def refresh_items_list(item_nuevo):
                 #            item.props[name].append(v)
 
     # Si es un nuevo item agrega a la lista
-    if addItem:
+    if add_item:
         items_list.append(item_nuevo)
 
 

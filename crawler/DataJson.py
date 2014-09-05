@@ -7,14 +7,15 @@ except ImportError:
 
 
 class DataJson:
-    def convert(self, file):
+    def convert(self, file, domain):
         response = []
+        urlAux = "url"
+        distributionAux = "distribution"
+        encodingAux= "encodingFormat"
         with open(file) as data_file:
             data = json.load(data_file)
-            #print data.keys()
             """ Iterar sonbre la lista de cada dominio """
             for item in data["root"]:
-                #print item.keys()
                 """ Iterar sobre las propiedades de cada item """
                 for properties in item["items"]:
                     tipo = properties["type"][0].encode("utf-8")
@@ -22,18 +23,12 @@ class DataJson:
                     """ Si es del tipo Dataset """
                     if (tipo == 'http://schema.org/Dataset'):
                         property = properties["properties"]
-                        #print property.keys()
                         """ Si tiene datos """
                         if property:
-                            # print("Name", property["name"][0].encode("utf-8"))
-                            # print("Url", property["url"][0].encode("utf-8"))
-                            # print("Description", property["description"][0].encode("utf-8"))
-
                             url = ""
-                            urlAux = "url"
                             if urlAux in property.keys():
                                 url = dataproperty["url"][0]
-                                print("Url", dataproperty["url"][0].encode('utf-8'))
+                                #print("Url", dataproperty["url"][0].encode('utf-8'))
 
                             """ Iterar sobre creator (publicador) """
                             for creator in property["creator"]:
@@ -42,6 +37,17 @@ class DataJson:
                             """ Iterar sobre provider (organizacion) """
                             for provider in property["provider"]:
                                 providerproperty = provider["properties"]
+
+                            distributionlist = []
+                            if distributionAux in property.keys():
+                                for distribution in property["distribution"]:
+                                    distributionproperty = distribution["properties"]
+                                    # Si no tiene el encoding ni la url no guarda el recurso
+                                    if encodingAux in distributionproperty.keys() and urlAux in distributionproperty.keys():
+                                        format = distributionproperty["encodingFormat"][0]
+                                        accessURL = "http://" + domain + distributionproperty["url"][0]
+                                        distributionobject = {'format': format, 'accessURL': accessURL}
+                                        distributionlist.append(distributionobject)
 
                             """
                             Name cambia por title
@@ -67,7 +73,8 @@ class DataJson:
                                              'version': property["version"][0],
                                              'license': property["license"][0],
                                              'temporal': property["temporal"][0],
-                                             'publisher': providerproperty["name"][0]})
+                                             'publisher': providerproperty["name"][0],
+                                             'distribution': distributionlist})
 
                     """ Si es del tipo DataCatalog """
                     if (tipo == 'http://schema.org/DataCatalog'):
@@ -88,12 +95,10 @@ class DataJson:
                         """ Iterar sobre los datasets """
                         for dataset in property["dataset"]:
                             dataproperty = dataset["properties"]
-                            #print dataproperty.keys()
                             url = ""
-                            urlAux = "url"
                             if urlAux in dataproperty.keys():
                                 url = dataproperty["url"][0]
-                                print("Url", dataproperty["url"][0].encode('utf-8'))
+                                #print("Url", dataproperty["url"][0].encode('utf-8'))
 
                             """ Iterar sobre creator (publicador) """
                             for creator in dataproperty["creator"]:
@@ -103,37 +108,47 @@ class DataJson:
                             for provider in dataproperty["provider"]:
                                 providerproperty = provider["properties"]
 
-                            for distributions in dataproperty["distributions"]:
-                                distributionproperty = distributions["properties"]
+                            distributionlist = []
+                            if distributionAux in property.keys():
+                                for distribution in property["distribution"]:
+                                    distributionproperty = distribution["properties"]
+                                    # Si no tiene el encoding ni la url no guarda el recurso
+                                    if encodingAux in distributionproperty.keys() and urlAux in distributionproperty.keys():
+                                        format = distributionproperty["encodingFormat"][0]
+                                        accessURL = "http://" + domain + distributionproperty["url"][0]
+                                        distributionobject = {'format': format, 'accessURL': accessURL}
+                                        distributionlist.append(distributionobject)
 
-                                """
-                                Name cambia por title
-                                Url cambia por uniqueid
-                                Description se mantiene
-                                Keywords se mantiene
-                                Creator name cambia por contactProvider
-                                Creator email cambia por mbox
-                                Access level se pone public por defecto
-                                Version se mantiene
-                                License se mantiene
-                                Temporal se mantiene
-                                Falta spatial
-                                Provider name cambia por publisher
-                                """
-                                response.append({'title': dataproperty["name"][0],
-                                                 'uniqueid': url,
-                                                 'description': dataproperty["description"][0],
-                                                 'contactName': creatorproperty["name"][0],
-                                                 'mbox': creatorproperty["email"][0],
-                                                 'keywords': dataproperty["keywords"],
-                                                 'accessLevel': "public",
-                                                 'version': dataproperty["version"][0],
-                                                 'license': dataproperty["license"][0],
-                                                 'temporal': dataproperty["temporal"][0],
-                                                 'publisher': providerproperty["name"][0]})
+                            # Puede que necesite un tab
+                            """
+                            Name cambia por title
+                            Url cambia por uniqueid
+                            Description se mantiene
+                            Keywords se mantiene
+                            Creator name cambia por contactProvider
+                            Creator email cambia por mbox
+                            Access level se pone public por defecto
+                            Version se mantiene
+                            License se mantiene
+                            Temporal se mantiene
+                            Falta spatial
+                            Provider name cambia por publisher
+                            """
+                            response.append({'title': dataproperty["name"][0],
+                                             'uniqueid': url,
+                                             'description': dataproperty["description"][0],
+                                             'contactName': creatorproperty["name"][0],
+                                             'mbox': creatorproperty["email"][0],
+                                             'keywords': dataproperty["keywords"],
+                                             'accessLevel': "public",
+                                             'version': dataproperty["version"][0],
+                                             'license': dataproperty["license"][0],
+                                             'temporal': dataproperty["temporal"][0],
+                                             'publisher': providerproperty["name"][0],
+                                             'distribution': distributionlist})
         print response
         fileResponse = open('data.json', 'wb')
         fileResponse.write(json.dumps(response, indent=2))
 
 
-DataJson().convert("/home/desa2/PycharmProjects/DataCrawler/bin/items.json")
+DataJson().convert("/home/desa2/PycharmProjects/DataCrawler/bin/items.json", "datos.mec.gov.py")
