@@ -22,45 +22,49 @@ def main(file):
 def call_spider(file):
     with open(file, "r") as f:
         list_url = f.readlines()
-
+        domains = []
+        urls = []
         for url in list_url:
             domain = url
             urlFinal = "http://" + url.strip('\n') + "/"
             print "============= Domain " + domain
             print "============= Url semilla " + urlFinal
-            spider = DataSpider(domain=domain, start_url=urlFinal)
-            settings = get_project_settings()
-            settings.overrides['FEED_FORMAT'] = 'json'
-            settings.overrides['FEED_URI'] = 'result.json'
-            crawler = Crawler(settings)
-            crawler.signals.connect(reactor.stop, signal=signals.spider_closed)
-            crawler.configure()
-            crawler.crawl(spider)
-            crawler.start()
-            log.start(loglevel=log.DEBUG)
-            reactor.run()  # the script will block here
+            domains.append(domain)
+            urls.append(urlFinal)
 
-            """ Copiar los datos al archivo final """
-            data_spider.copy_items_to_file()
-            file_items = open('items.json', 'ab+')
-            file_items.seek(0,2)
-            file_items.seek(file_items.tell()-1,0)
-            val = file_items.read()
-            print val
-            if (val == ','):
-                file_items.truncate(file_items.tell()-1)
-            file_items.write(']}')
-            file_items.close()
+        spider = DataSpider(domain=domains, start_url=urls)
+        settings = get_project_settings()
+        #settings.overrides['FEED_FORMAT'] = 'json'
+        #settings.overrides['FEED_URI'] = 'result.json'
+        crawler = Crawler(settings)
+        crawler.signals.connect(reactor.stop, signal=signals.spider_closed)
+        crawler.configure()
+        crawler.crawl(spider)
+        crawler.start()
+        log.start(loglevel=log.DEBUG)
+        reactor.run()  # the script will block here
 
-            """ Convertir el json extraido al json con formato POD """
-            #DataJson.DataJson().convert("items.json")
+        """ Copiar los datos al archivo final """
+        data_spider.copy_items_to_file()
+        file_items = open('items.json', 'ab+')
+        file_items.seek(0,2)
+        file_items.seek(file_items.tell()-1,0)
+        val = file_items.read()
+        print val
+        if (val == ','):
+            file_items.truncate(file_items.tell()-1)
+        file_items.write(']}')
+        file_items.close()
 
-            #""" Completar el archivo html """
-            #fileHTML = open('resources.html', 'ab')
-            #htmlFinal = """</ul></body>
-        #</html>"""
-            #fileHTML.write(htmlFinal)
-            #fileHTML.close()
+        """ Convertir el json extraido al json con formato POD """
+        DataJson.DataJson().convert("items.json", domain)
+
+        #""" Completar el archivo html """
+        #fileHTML = open('resources.html', 'ab')
+        #htmlFinal = """</ul></body>
+    #</html>"""
+        #fileHTML.write(htmlFinal)
+        #fileHTML.close()
 
 
 results = []

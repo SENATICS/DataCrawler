@@ -1,0 +1,136 @@
+{
+  "type": [
+    "http://schema.org/Dataset"
+  ], 
+  "properties": {
+    "name": [
+      "Establecimientos Escolares"
+    ], 
+    "license": [
+      "https://creativecommons.org/licenses/by/4.0/legalcode"
+    ], 
+    "creator": [
+      {
+        "type": [
+          "https://schema.org/Person"
+        ], 
+        "properties": {
+          "name": [
+            "Juan Barrios"
+          ], 
+          "email": [
+            "datosabiertos@mec.gov.py"
+          ]
+        }
+      }
+    ], 
+    "temporal": [
+      "2012-01-01/2012-12-31"
+    ], 
+    "version": [
+      "1.0"
+    ], 
+    "provider": [
+      {
+        "type": [
+          "https://schema.org/Organization"
+        ], 
+        "properties": {
+          "url": [
+            "http://www.mec.gov.py/"
+          ], 
+          "name": [
+            "Ministerio de Educaci\u00f3n y Cultura"
+          ], 
+          "email": [
+            "datosabiertos@mec.gov.py"
+          ]
+        }
+      }
+    ], 
+    "keywords": [
+      "educaci\u00f3n,establecimientos,escolar,geografico"
+    ], 
+    "distribution": [
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "url": [
+            "https://mega.co.nz/#!x0InHDpZ!5VZp63YKAvfP3qm2absgZO-kpqK-qEYXxnjqePcRf-Q"
+          ], 
+          "encodingFormat": [
+            "pdf"
+          ], 
+          "name": [
+            "Establecimientos Escolares 2012"
+          ], 
+          "description": [
+            "Listado de establecimientos escolares correspondiente al a\u00f1o 2012"
+          ]
+        }
+      }, 
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "url": [
+            "/data/establecimientos_2012.xlsx"
+          ], 
+          "encodingFormat": [
+            "xls"
+          ], 
+          "name": [
+            "Establecimientos Escolares 2012"
+          ], 
+          "description": [
+            "Listado de establecimientos escolares correspondiente al a\u00f1o 2012"
+          ]
+        }
+      }, 
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "url": [
+            "/data/establecimientos_2012.csv"
+          ], 
+          "encodingFormat": [
+            "csv"
+          ], 
+          "name": [
+            "Establecimientos Escolares 2012"
+          ], 
+          "description": [
+            "Listado de establecimientos escolares correspondiente al a\u00f1o 2012"
+          ]
+        }
+      }, 
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "url": [
+            "/data/establecimientos_2012.json"
+          ], 
+          "encodingFormat": [
+            "json"
+          ], 
+          "name": [
+            "Establecimientos Escolares 2012"
+          ], 
+          "description": [
+            "Listado de establecimientos escolares correspondiente al a\u00f1o 2012"
+          ]
+        }
+      }
+    ], 
+    "description": [
+      "Contiene informaci\u00f3n sobre la ubicaci\u00f3n geogr\u00e1fica de los establecimientos escolares tales como el departamento, distrito,barrio/localidad donde se encuentran asentados, adem\u00e1s de la zona (urbana o rural) a la cual pertenecen, y los datos georreferenciadas como las coordenadas planas (en metros) y geograficas. El Sistema de informacion de Estad\u00edstica Continua (SIEC) considera \u201cEstablecimiento Escolar\u201d a la construcci\u00f3n que existe dentro de un predio (terreno) que se emplea para la ense\u00f1anza, donde puede funcionar una o m\u00e1s instituciones educativas con sus respectivos niveles/modalidades de educaci\u00f3n."
+    ]
+  }
+}

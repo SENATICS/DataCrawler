@@ -15,6 +15,13 @@ NEWSPIDER_MODULE = 'crawler.spiders'
 DUPEFILTER_CLASS = 'scrapy.dupefilter.RFPDupeFilter'
 ALLOW_FILTER = ('\.htm', '\.html', '/')
 DENY_FILTER = ('\.pdf', '\.zip')
+#ONCURRENT_REQUESTS = 100
+LOG_LEVEL = 'INFO'
+COOKIES_ENABLED = False
+#RETRY_ENABLED = False
+#DOWNLOAD_TIMEOUT = 25
+#REDIRECT_ENABLED = False
+#AJAXCRAWL_ENABLED = True
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'tutorial (+http://www.yourdomain.com)'
