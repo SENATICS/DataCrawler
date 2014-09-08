@@ -34,7 +34,7 @@ def call_spider(file):
 
         spider = DataSpider(domains=domains, start_urls=urls)
         settings = get_project_settings()
-        #settings.overrides['FEED_FORMAT'] = 'json'
+        # settings.overrides['FEED_FORMAT'] = 'json'
         #settings.overrides['FEED_URI'] = 'result.json'
         crawler = Crawler(settings)
         crawler.signals.connect(reactor.stop, signal=signals.spider_closed)
@@ -44,12 +44,12 @@ def call_spider(file):
         log.start(loglevel=log.DEBUG)
         reactor.run()  # the script will block here
 
-        """ Copiar los datos al archivo final """
-        file_name = domain + ".json"
-        data_spider.copy_items_to_file(file_name)
+        """ Copiar los datos a los archivos finales """
+        data_spider.copy_items_to_files()
 
-        """ Convertir el json extraido al json con formato POD """
-        DataJson.DataJson().convert("items.json", domain)
+        """ Convertir los archivos json extraidos a json con formato POD """
+        for domain in domains:
+            DataJson.DataJson().convert(domain)
 
 
 results = []

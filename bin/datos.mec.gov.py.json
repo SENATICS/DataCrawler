@@ -57,6 +57,151 @@
           "https://schema.org/DataDownload"
         ], 
         "properties": {
+          "url": [
+            "https://mega.co.nz/#!dk5F0Cxb!oJgF9cQ_3gC8N4bHPqKER1eiOzsV81N7gdf-PMbBOzY"
+          ], 
+          "encodingFormat": [
+            "pdf"
+          ], 
+          "name": [
+            "Nomina de funcionarios docentes junio 2014"
+          ], 
+          "description": [
+            "Listado de funcionarios docentes de junio del a\u00f1o 2014"
+          ]
+        }
+      }, 
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "url": [
+            "https://mega.co.nz/#!FoByxCpC!kqiue2krvjtukETMOx4QHj7iXkprIly96LjGpA9AqkQ"
+          ], 
+          "encodingFormat": [
+            "pdf"
+          ], 
+          "name": [
+            "Nomina de funcionarios docentes julio 2014"
+          ], 
+          "description": [
+            "Listado de funcionarios docentes de julio del a\u00f1o 2014"
+          ]
+        }
+      }, 
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "encodingFormat": [
+            "xls"
+          ], 
+          "name": [
+            "Establecimientos Escolares 2012"
+          ], 
+          "description": [
+            "Listado de establecimientos escolares correspondiente al a\u00f1o 2012"
+          ]
+        }
+      }, 
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "encodingFormat": [
+            "csv"
+          ], 
+          "name": [
+            "Establecimientos Escolares 2012"
+          ], 
+          "description": [
+            "Listado de establecimientos escolares correspondiente al a\u00f1o 2012"
+          ]
+        }
+      }, 
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "encodingFormat": [
+            "json"
+          ], 
+          "name": [
+            "Establecimientos Escolares 2012"
+          ], 
+          "description": [
+            "Listado de establecimientos escolares correspondiente al a\u00f1o 2012"
+          ]
+        }
+      }
+    ], 
+    "description": [
+      "Contiene informaci\u00f3n sobre la ubicaci\u00f3n geogr\u00e1fica de los establecimientos escolares tales como el departamento, distrito,barrio/localidad donde se encuentran asentados, adem\u00e1s de la zona (urbana o rural) a la cual pertenecen, y los datos georreferenciadas como las coordenadas planas (en metros) y geograficas. El Sistema de informacion de Estad\u00edstica Continua (SIEC) considera \u201cEstablecimiento Escolar\u201d a la construcci\u00f3n que existe dentro de un predio (terreno) que se emplea para la ense\u00f1anza, donde puede funcionar una o m\u00e1s instituciones educativas con sus respectivos niveles/modalidades de educaci\u00f3n."
+    ]
+  }
+}]},{"items": [{
+  "type": [
+    "http://schema.org/Dataset"
+  ], 
+  "properties": {
+    "name": [
+      ""
+    ], 
+    "license": [
+      "https://creativecommons.org/licenses/by/4.0/legalcode"
+    ], 
+    "creator": [
+      {
+        "type": [
+          "https://schema.org/Person"
+        ], 
+        "properties": {
+          "name": [
+            "Juan Barrios"
+          ], 
+          "email": [
+            "datosabiertos@mec.gov.py"
+          ]
+        }
+      }
+    ], 
+    "temporal": [
+      "2012-01-01/2012-12-31"
+    ], 
+    "version": [
+      "1.0"
+    ], 
+    "provider": [
+      {
+        "type": [
+          "https://schema.org/Organization"
+        ], 
+        "properties": {
+          "url": [
+            "http://www.mec.gov.py/"
+          ], 
+          "name": [
+            "Ministerio de Educaci\u00f3n y Cultura"
+          ], 
+          "email": [
+            "datosabiertos@mec.gov.py"
+          ]
+        }
+      }
+    ], 
+    "keywords": [
+      "educaci\u00f3n,establecimientos,escolar,geografico"
+    ], 
+    "distribution": [
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
           "encodingFormat": [
             "pdf"
           ], 
@@ -135,138 +280,6 @@
     ], 
     "description": [
       "Contiene informaci\u00f3n sobre la ubicaci\u00f3n geogr\u00e1fica de los establecimientos escolares tales como el departamento, distrito,barrio/localidad donde se encuentran asentados, adem\u00e1s de la zona (urbana o rural) a la cual pertenecen, y los datos georreferenciadas como las coordenadas planas (en metros) y geograficas. El Sistema de informacion de Estad\u00edstica Continua (SIEC) considera \u201cEstablecimiento Escolar\u201d a la construcci\u00f3n que existe dentro de un predio (terreno) que se emplea para la ense\u00f1anza, donde puede funcionar una o m\u00e1s instituciones educativas con sus respectivos niveles/modalidades de educaci\u00f3n."
-    ]
-  }
-}]},{"items": [{
-  "type": [
-    "http://schema.org/Dataset"
-  ], 
-  "properties": {
-    "name": [
-      "Contrataciones"
-    ], 
-    "license": [
-      "https://creativecommons.org/licenses/by/4.0/legalcode"
-    ], 
-    "creator": [
-      {
-        "type": [
-          "https://schema.org/Person"
-        ], 
-        "properties": {
-          "name": [
-            "Juan Barrios"
-          ], 
-          "email": [
-            "datosabiertos@mec.gov.py"
-          ]
-        }
-      }
-    ], 
-    "temporal": [
-      "2014-01-01/2014-12-31"
-    ], 
-    "version": [
-      "1.0"
-    ], 
-    "provider": [
-      {
-        "type": [
-          "https://schema.org/Organization"
-        ], 
-        "properties": {
-          "url": [
-            "http://www.mec.gov.py/"
-          ], 
-          "name": [
-            "Ministerio de Educaci\u00f3n y Cultura"
-          ], 
-          "email": [
-            "datosabiertos@mec.gov.py"
-          ]
-        }
-      }
-    ], 
-    "keywords": [
-      "educaci\u00f3n,instituciones"
-    ], 
-    "distribution": [
-      {
-        "type": [
-          "https://schema.org/DataDownload"
-        ], 
-        "properties": {
-          "encodingFormat": [
-            "pdf"
-          ], 
-          "name": [
-            "Contrataciones 2014"
-          ], 
-          "description": [
-            "Listado de instituciones educativas correspondiente al a\u00f1o 2012"
-          ]
-        }
-      }, 
-      {
-        "type": [
-          "https://schema.org/DataDownload"
-        ], 
-        "properties": {
-          "url": [
-            "http://datos.mec.gov.py/data/contrataciones_lista.xlsx?form_buscar_contrataciones%5Bejercicio_fiscal%5D=2014"
-          ], 
-          "encodingFormat": [
-            "xls"
-          ], 
-          "name": [
-            "Instituciones Educativas 2012"
-          ], 
-          "description": [
-            "Listado de instituciones educativas correspondiente al a\u00f1o 2012"
-          ]
-        }
-      }, 
-      {
-        "type": [
-          "https://schema.org/DataDownload"
-        ], 
-        "properties": {
-          "url": [
-            "http://datos.mec.gov.py/data/contrataciones_lista.csv?form_buscar_contrataciones%5Bejercicio_fiscal%5D=2014"
-          ], 
-          "encodingFormat": [
-            "csv"
-          ], 
-          "name": [
-            "Instituciones Educativas 2012"
-          ], 
-          "description": [
-            "Listado de instituciones educativas correspondiente al a\u00f1o 2012"
-          ]
-        }
-      }, 
-      {
-        "type": [
-          "https://schema.org/DataDownload"
-        ], 
-        "properties": {
-          "url": [
-            "http://datos.mec.gov.py/data/contrataciones_lista.json?form_buscar_contrataciones%5Bejercicio_fiscal%5D=2014"
-          ], 
-          "encodingFormat": [
-            "json"
-          ], 
-          "name": [
-            "Instituciones Educativas 2012"
-          ], 
-          "description": [
-            "Listado de instituciones educativas correspondiente al a\u00f1o 2012"
-          ]
-        }
-      }
-    ], 
-    "description": [
-      ""
     ]
   }
 }]},{"items": [{
@@ -1204,7 +1217,7 @@
   ], 
   "properties": {
     "name": [
-      ""
+      "Contrataciones"
     ], 
     "license": [
       "https://creativecommons.org/licenses/by/4.0/legalcode"
@@ -1225,7 +1238,7 @@
       }
     ], 
     "temporal": [
-      "2012-01-01/2012-12-31"
+      "2014-01-01/2014-12-31"
     ], 
     "version": [
       "1.0"
@@ -1249,7 +1262,7 @@
       }
     ], 
     "keywords": [
-      "educaci\u00f3n,establecimientos,escolar,geografico"
+      "educaci\u00f3n,instituciones"
     ], 
     "distribution": [
       {
@@ -1257,17 +1270,14 @@
           "https://schema.org/DataDownload"
         ], 
         "properties": {
-          "url": [
-            "https://mega.co.nz/#!dk5F0Cxb!oJgF9cQ_3gC8N4bHPqKER1eiOzsV81N7gdf-PMbBOzY"
-          ], 
           "encodingFormat": [
             "pdf"
           ], 
           "name": [
-            "Nomina de funcionarios docentes junio 2014"
+            "Contrataciones 2014"
           ], 
           "description": [
-            "Listado de funcionarios docentes de junio del a\u00f1o 2014"
+            "Listado de instituciones educativas correspondiente al a\u00f1o 2012"
           ]
         }
       }, 
@@ -1277,32 +1287,16 @@
         ], 
         "properties": {
           "url": [
-            "https://mega.co.nz/#!FoByxCpC!kqiue2krvjtukETMOx4QHj7iXkprIly96LjGpA9AqkQ"
+            "http://datos.mec.gov.py/data/contrataciones_lista.xlsx?form_buscar_contrataciones%5Bejercicio_fiscal%5D=2014"
           ], 
-          "encodingFormat": [
-            "pdf"
-          ], 
-          "name": [
-            "Nomina de funcionarios docentes julio 2014"
-          ], 
-          "description": [
-            "Listado de funcionarios docentes de julio del a\u00f1o 2014"
-          ]
-        }
-      }, 
-      {
-        "type": [
-          "https://schema.org/DataDownload"
-        ], 
-        "properties": {
           "encodingFormat": [
             "xls"
           ], 
           "name": [
-            "Establecimientos Escolares 2012"
+            "Instituciones Educativas 2012"
           ], 
           "description": [
-            "Listado de establecimientos escolares correspondiente al a\u00f1o 2012"
+            "Listado de instituciones educativas correspondiente al a\u00f1o 2012"
           ]
         }
       }, 
@@ -1311,14 +1305,17 @@
           "https://schema.org/DataDownload"
         ], 
         "properties": {
+          "url": [
+            "http://datos.mec.gov.py/data/contrataciones_lista.csv?form_buscar_contrataciones%5Bejercicio_fiscal%5D=2014"
+          ], 
           "encodingFormat": [
             "csv"
           ], 
           "name": [
-            "Establecimientos Escolares 2012"
+            "Instituciones Educativas 2012"
           ], 
           "description": [
-            "Listado de establecimientos escolares correspondiente al a\u00f1o 2012"
+            "Listado de instituciones educativas correspondiente al a\u00f1o 2012"
           ]
         }
       }, 
@@ -1327,20 +1324,23 @@
           "https://schema.org/DataDownload"
         ], 
         "properties": {
+          "url": [
+            "http://datos.mec.gov.py/data/contrataciones_lista.json?form_buscar_contrataciones%5Bejercicio_fiscal%5D=2014"
+          ], 
           "encodingFormat": [
             "json"
           ], 
           "name": [
-            "Establecimientos Escolares 2012"
+            "Instituciones Educativas 2012"
           ], 
           "description": [
-            "Listado de establecimientos escolares correspondiente al a\u00f1o 2012"
+            "Listado de instituciones educativas correspondiente al a\u00f1o 2012"
           ]
         }
       }
     ], 
     "description": [
-      "Contiene informaci\u00f3n sobre la ubicaci\u00f3n geogr\u00e1fica de los establecimientos escolares tales como el departamento, distrito,barrio/localidad donde se encuentran asentados, adem\u00e1s de la zona (urbana o rural) a la cual pertenecen, y los datos georreferenciadas como las coordenadas planas (en metros) y geograficas. El Sistema de informacion de Estad\u00edstica Continua (SIEC) considera \u201cEstablecimiento Escolar\u201d a la construcci\u00f3n que existe dentro de un predio (terreno) que se emplea para la ense\u00f1anza, donde puede funcionar una o m\u00e1s instituciones educativas con sus respectivos niveles/modalidades de educaci\u00f3n."
+      ""
     ]
   }
 }]},{"items": [{
@@ -1855,6 +1855,9 @@
           "url": [
             "/data/matriculaciones_educacion_superior_2012.json"
           ], 
+          "encodingFormat": [
+            "json"
+          ], 
           "name": [
             "Matriculaciones Educaci\u00f3n Superior 2012"
           ], 
@@ -1866,453 +1869,6 @@
     ], 
     "description": [
       "Se refiere a la cantidad de matriculados en las diferentes modalidades de educaci\u00f3n superior con sus correspondientes c\u00f3digos identificatorios."
-    ]
-  }
-}]},{"items": [{
-  "type": [
-    "http://schema.org/Dataset"
-  ], 
-  "properties": {
-    "name": [
-      "Matriculaciones por Educaci\u00f3n Inclusiva"
-    ], 
-    "license": [
-      "https://creativecommons.org/licenses/by/4.0/legalcode"
-    ], 
-    "creator": [
-      {
-        "type": [
-          "https://schema.org/Person"
-        ], 
-        "properties": {
-          "name": [
-            "Juan Barrios"
-          ], 
-          "email": [
-            "datosabiertos@mec.gov.py"
-          ]
-        }
-      }
-    ], 
-    "temporal": [
-      "2012-01-01/2012-12-31"
-    ], 
-    "version": [
-      "1.0"
-    ], 
-    "provider": [
-      {
-        "type": [
-          "https://schema.org/Organization"
-        ], 
-        "properties": {
-          "url": [
-            "http://www.mec.gov.py/"
-          ], 
-          "name": [
-            "Ministerio de Educaci\u00f3n y Cultura"
-          ], 
-          "email": [
-            "datosabiertos@mec.gov.py"
-          ]
-        }
-      }
-    ], 
-    "keywords": [
-      "educaci\u00f3n,matriculaciones,educaci\u00f3n inclusiva"
-    ], 
-    "distribution": [
-      {
-        "type": [
-          "https://schema.org/DataDownload"
-        ], 
-        "properties": {
-          "encodingFormat": [
-            "pdf"
-          ], 
-          "name": [
-            "Matriculaciones Educaci\u00f3n Superior 2012"
-          ], 
-          "description": [
-            "Listado de matriculaciones en educaci\u00f3n inclusiva correspondiente al a\u00f1o 2012"
-          ]
-        }
-      }, 
-      {
-        "type": [
-          "https://schema.org/DataDownload"
-        ], 
-        "properties": {
-          "url": [
-            "/data/matriculaciones_educacion_inclusiva_2012.xlsx"
-          ], 
-          "encodingFormat": [
-            "xls"
-          ], 
-          "name": [
-            "Matriculaciones Educaci\u00f3n Superior 2012"
-          ], 
-          "description": [
-            "Listado de matriculaciones en educaci\u00f3n inclusiva correspondiente al a\u00f1o 2012"
-          ]
-        }
-      }, 
-      {
-        "type": [
-          "https://schema.org/DataDownload"
-        ], 
-        "properties": {
-          "url": [
-            "/data/matriculaciones_educacion_inclusiva_2012.csv"
-          ], 
-          "encodingFormat": [
-            "csv"
-          ], 
-          "name": [
-            "Matriculaciones Educaci\u00f3n Superior 2012"
-          ], 
-          "description": [
-            "Listado de matriculaciones en educaci\u00f3n inclusiva correspondiente al a\u00f1o 2012"
-          ]
-        }
-      }, 
-      {
-        "type": [
-          "https://schema.org/DataDownload"
-        ], 
-        "properties": {
-          "url": [
-            "/data/matriculaciones_educacion_inclusiva_2012.json"
-          ]
-        }
-      }
-    ], 
-    "description": [
-      "\n    Corresponde a la cantidad de matriculados por ciclo/niveles/programas especiales de educaci\u00f3n inclusiva con sus correspondientes c\u00f3digos identificatorios."
-    ]
-  }
-}]},{"items": [{
-  "type": [
-    "http://schema.org/Dataset"
-  ], 
-  "properties": {
-    "name": [
-      "Matriculaciones Educaci\u00f3n Escolar B\u00e1sica"
-    ], 
-    "license": [
-      "https://creativecommons.org/licenses/by/4.0/legalcode"
-    ], 
-    "creator": [
-      {
-        "type": [
-          "https://schema.org/Person"
-        ], 
-        "properties": {
-          "name": [
-            "Juan Barrios"
-          ], 
-          "email": [
-            "datosabiertos@mec.gov.py"
-          ]
-        }
-      }
-    ], 
-    "temporal": [
-      "2012-01-01/2012-12-31"
-    ], 
-    "version": [
-      "1.0"
-    ], 
-    "provider": [
-      {
-        "type": [
-          "https://schema.org/Organization"
-        ], 
-        "properties": {
-          "url": [
-            "http://www.mec.gov.py/"
-          ], 
-          "name": [
-            "Ministerio de Educaci\u00f3n y Cultura"
-          ], 
-          "email": [
-            "datosabiertos@mec.gov.py"
-          ]
-        }
-      }
-    ], 
-    "keywords": [
-      "educaci\u00f3n,matriculaciones,escolar b\u00e1sica"
-    ], 
-    "distribution": [
-      {
-        "type": [
-          "https://schema.org/DataDownload"
-        ], 
-        "properties": {
-          "encodingFormat": [
-            "pdf"
-          ], 
-          "name": [
-            "Matriculaciones Educaci\u00f3n Escolar B\u00e1sica 2012"
-          ], 
-          "description": [
-            "Listado de matriculaciones en educaci\u00f3n escolar b\u00e1sica correspondiente al a\u00f1o 2012"
-          ]
-        }
-      }, 
-      {
-        "type": [
-          "https://schema.org/DataDownload"
-        ], 
-        "properties": {
-          "url": [
-            "/data/matriculaciones_educacion_escolar_basica_2012.xlsx"
-          ], 
-          "encodingFormat": [
-            "xls"
-          ], 
-          "name": [
-            "Matriculaciones Educaci\u00f3n Escolar B\u00e1sica 2012"
-          ], 
-          "description": [
-            "Listado de matriculaciones en educaci\u00f3n escolar b\u00e1sica correspondiente al a\u00f1o 2012"
-          ]
-        }
-      }, 
-      {
-        "type": [
-          "https://schema.org/DataDownload"
-        ], 
-        "properties": {
-          "url": [
-            "/data/matriculaciones_educacion_escolar_basica_2012.csv"
-          ], 
-          "encodingFormat": [
-            "csv"
-          ], 
-          "name": [
-            "Matriculaciones Educaci\u00f3n Escolar B\u00e1sica 2012"
-          ], 
-          "description": [
-            "Listado de matriculaciones en educaci\u00f3n escolar b\u00e1sica correspondiente al a\u00f1o 2012"
-          ]
-        }
-      }, 
-      {
-        "type": [
-          "https://schema.org/DataDownload"
-        ], 
-        "properties": {
-          "url": [
-            "/data/matriculaciones_educacion_escolar_basica_2012.json"
-          ], 
-          "encodingFormat": [
-            "json"
-          ], 
-          "name": [
-            "Matriculaciones Educaci\u00f3n Escolar B\u00e1sica 2012"
-          ], 
-          "description": [
-            "Listado de matriculaciones en educaci\u00f3n escolar b\u00e1sica correspondiente al a\u00f1o 2012"
-          ]
-        }
-      }
-    ], 
-    "description": [
-      "\n    Se refiere a la cantidad de alumnos matriculados del 1.\u00ba al 9.\u00ba grado con sus correspondientes c\u00f3digos identificatorios."
-    ]
-  }
-}]},{"items": [{
-  "type": [
-    "http://schema.org/Dataset"
-  ], 
-  "properties": {
-    "name": [
-      "Instituciones Educativas"
-    ], 
-    "license": [
-      "https://creativecommons.org/licenses/by/4.0/legalcode"
-    ], 
-    "creator": [
-      {
-        "type": [
-          "https://schema.org/Person"
-        ], 
-        "properties": {
-          "name": [
-            "Juan Barrios"
-          ], 
-          "email": [
-            "datosabiertos@mec.gov.py"
-          ]
-        }
-      }
-    ], 
-    "temporal": [
-      "2012-01-01/2012-12-31"
-    ], 
-    "version": [
-      "1.0"
-    ], 
-    "provider": [
-      {
-        "type": [
-          "https://schema.org/Organization"
-        ], 
-        "properties": {
-          "url": [
-            "http://www.mec.gov.py/"
-          ], 
-          "name": [
-            "Ministerio de Educaci\u00f3n y Cultura"
-          ], 
-          "email": [
-            "datosabiertos@mec.gov.py"
-          ]
-        }
-      }
-    ], 
-    "keywords": [
-      "educaci\u00f3n,instituciones"
-    ], 
-    "description": [
-      "Contiene datos de los niveles/modalidades de educaci\u00f3n ofertados por las instituciones educativas; regi\u00f3n administrativa a la que pertenece la instituci\u00f3n educativa; tipo de organizaci\u00f3n, participaci\u00f3n comunitaria, direcci\u00f3n del establecimiento escolar, servicio disponible (internet, telefono, correo electronico, etc.). Una instituci\u00f3n educativa puede poseer diferentes locales escolares ubicados en un mismo o en diferentes departamentos geogr\u00e1ficos. El SIEC considera una misma instituci\u00f3n cuando varios niveles o modalidades tienen una organizaci\u00f3n, gesti\u00f3n y administraci\u00f3n \u00fanica. Por ejemplo: Centro Regional de Educaci\u00f3n Gral. Patricio Escobar de Encarnaci\u00f3n, Colegio Santa Clara de Asunci\u00f3n."
-    ]
-  }
-}]},{"items": [{
-  "type": [
-    "http://schema.org/Dataset"
-  ], 
-  "properties": {
-    "name": [
-      "Establecimientos Escolares"
-    ], 
-    "license": [
-      "https://creativecommons.org/licenses/by/4.0/legalcode"
-    ], 
-    "creator": [
-      {
-        "type": [
-          "https://schema.org/Person"
-        ], 
-        "properties": {
-          "name": [
-            "Juan Barrios"
-          ], 
-          "email": [
-            "datosabiertos@mec.gov.py"
-          ]
-        }
-      }
-    ], 
-    "temporal": [
-      "2012-01-01/2012-12-31"
-    ], 
-    "version": [
-      "1.0"
-    ], 
-    "provider": [
-      {
-        "type": [
-          "https://schema.org/Organization"
-        ], 
-        "properties": {
-          "url": [
-            "http://www.mec.gov.py/"
-          ], 
-          "name": [
-            "Ministerio de Educaci\u00f3n y Cultura"
-          ], 
-          "email": [
-            "datosabiertos@mec.gov.py"
-          ]
-        }
-      }
-    ], 
-    "keywords": [
-      "educaci\u00f3n,establecimientos,escolar,geografico"
-    ], 
-    "distribution": [
-      {
-        "type": [
-          "https://schema.org/DataDownload"
-        ], 
-        "properties": {
-          "url": [
-            "https://mega.co.nz/#!x0InHDpZ!5VZp63YKAvfP3qm2absgZO-kpqK-qEYXxnjqePcRf-Q"
-          ], 
-          "encodingFormat": [
-            "pdf"
-          ], 
-          "name": [
-            "Establecimientos Escolares 2012"
-          ], 
-          "description": [
-            "Listado de establecimientos escolares correspondiente al a\u00f1o 2012"
-          ]
-        }
-      }, 
-      {
-        "type": [
-          "https://schema.org/DataDownload"
-        ], 
-        "properties": {
-          "url": [
-            "/data/establecimientos_2012.xlsx"
-          ], 
-          "encodingFormat": [
-            "xls"
-          ], 
-          "name": [
-            "Establecimientos Escolares 2012"
-          ], 
-          "description": [
-            "Listado de establecimientos escolares correspondiente al a\u00f1o 2012"
-          ]
-        }
-      }, 
-      {
-        "type": [
-          "https://schema.org/DataDownload"
-        ], 
-        "properties": {
-          "url": [
-            "/data/establecimientos_2012.csv"
-          ], 
-          "encodingFormat": [
-            "csv"
-          ], 
-          "name": [
-            "Establecimientos Escolares 2012"
-          ], 
-          "description": [
-            "Listado de establecimientos escolares correspondiente al a\u00f1o 2012"
-          ]
-        }
-      }, 
-      {
-        "type": [
-          "https://schema.org/DataDownload"
-        ], 
-        "properties": {
-          "url": [
-            "/data/establecimientos_2012.json"
-          ], 
-          "encodingFormat": [
-            "json"
-          ], 
-          "name": [
-            "Establecimientos Escolares 2012"
-          ], 
-          "description": [
-            "Listado de establecimientos escolares correspondiente al a\u00f1o 2012"
-          ]
-        }
-      }
-    ], 
-    "description": [
-      "Contiene informaci\u00f3n sobre la ubicaci\u00f3n geogr\u00e1fica de los establecimientos escolares tales como el departamento, distrito,barrio/localidad donde se encuentran asentados, adem\u00e1s de la zona (urbana o rural) a la cual pertenecen, y los datos georreferenciadas como las coordenadas planas (en metros) y geograficas. El Sistema de informacion de Estad\u00edstica Continua (SIEC) considera \u201cEstablecimiento Escolar\u201d a la construcci\u00f3n que existe dentro de un predio (terreno) que se emplea para la ense\u00f1anza, donde puede funcionar una o m\u00e1s instituciones educativas con sus respectivos niveles/modalidades de educaci\u00f3n."
     ]
   }
 }]},{"items": [{
@@ -3242,6 +2798,663 @@
           ]
         }
       }
+    ]
+  }
+}]},{"items": [{
+  "type": [
+    "http://schema.org/Dataset"
+  ], 
+  "properties": {
+    "name": [
+      "Matriculaciones Educaci\u00f3n Permanente"
+    ], 
+    "license": [
+      "https://creativecommons.org/licenses/by/4.0/legalcode"
+    ], 
+    "creator": [
+      {
+        "type": [
+          "https://schema.org/Person"
+        ], 
+        "properties": {
+          "name": [
+            "Juan Barrios"
+          ], 
+          "email": [
+            "datosabiertos@mec.gov.py"
+          ]
+        }
+      }
+    ], 
+    "temporal": [
+      "2012-01-01/2012-12-31"
+    ], 
+    "version": [
+      "1.0"
+    ], 
+    "provider": [
+      {
+        "type": [
+          "https://schema.org/Organization"
+        ], 
+        "properties": {
+          "url": [
+            "http://www.mec.gov.py/"
+          ], 
+          "name": [
+            "Ministerio de Educaci\u00f3n y Cultura"
+          ], 
+          "email": [
+            "datosabiertos@mec.gov.py"
+          ]
+        }
+      }
+    ], 
+    "keywords": [
+      "educaci\u00f3n,matriculaciones,educaci\u00f3n permanente"
+    ], 
+    "distribution": [
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "encodingFormat": [
+            "pdf"
+          ], 
+          "name": [
+            "Matriculaciones Educaci\u00f3n Permanente 2012"
+          ], 
+          "description": [
+            "Listado de matriculaciones en educaci\u00f3n permanente correspondiente al a\u00f1o 2012"
+          ]
+        }
+      }, 
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "url": [
+            "/data/matriculaciones_educacion_permanente_2012.xlsx"
+          ], 
+          "encodingFormat": [
+            "xls"
+          ], 
+          "name": [
+            "Matriculaciones Educaci\u00f3n Permanente 2012"
+          ], 
+          "description": [
+            "Listado de matriculaciones en educaci\u00f3n permanente correspondiente al a\u00f1o 2012"
+          ]
+        }
+      }, 
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "url": [
+            "/data/matriculaciones_educacion_permanente_2012.csv"
+          ], 
+          "encodingFormat": [
+            "csv"
+          ], 
+          "name": [
+            "Matriculaciones Educaci\u00f3n Permanente 2012"
+          ], 
+          "description": [
+            "Listado de matriculaciones en educaci\u00f3n permanente correspondiente al a\u00f1o 2012"
+          ]
+        }
+      }, 
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "url": [
+            "/data/matriculaciones_educacion_permanente_2012.json"
+          ], 
+          "encodingFormat": [
+            "json"
+          ], 
+          "name": [
+            "Matriculaciones Educaci\u00f3n Permanente 2012"
+          ], 
+          "description": [
+            "Listado de matriculaciones en educaci\u00f3n permanente correspondiente al a\u00f1o 2012"
+          ]
+        }
+      }
+    ], 
+    "description": [
+      "Se refiere a la cantidad de matriculados en las diferentes modalidades de educaci\u00f3n permanente con sus correspondientes c\u00f3digos identificatorios."
+    ]
+  }
+}]},{"items": [{
+  "type": [
+    "http://schema.org/Dataset"
+  ], 
+  "properties": {
+    "name": [
+      "Establecimientos Escolares"
+    ], 
+    "license": [
+      "https://creativecommons.org/licenses/by/4.0/legalcode"
+    ], 
+    "creator": [
+      {
+        "type": [
+          "https://schema.org/Person"
+        ], 
+        "properties": {
+          "name": [
+            "Juan Barrios"
+          ], 
+          "email": [
+            "datosabiertos@mec.gov.py"
+          ]
+        }
+      }
+    ], 
+    "temporal": [
+      "2012-01-01/2012-12-31"
+    ], 
+    "version": [
+      "1.0"
+    ], 
+    "provider": [
+      {
+        "type": [
+          "https://schema.org/Organization"
+        ], 
+        "properties": {
+          "url": [
+            "http://www.mec.gov.py/"
+          ], 
+          "name": [
+            "Ministerio de Educaci\u00f3n y Cultura"
+          ], 
+          "email": [
+            "datosabiertos@mec.gov.py"
+          ]
+        }
+      }
+    ], 
+    "keywords": [
+      "educaci\u00f3n,establecimientos,escolar,geografico"
+    ], 
+    "distribution": [
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "url": [
+            "https://mega.co.nz/#!x0InHDpZ!5VZp63YKAvfP3qm2absgZO-kpqK-qEYXxnjqePcRf-Q"
+          ], 
+          "encodingFormat": [
+            "pdf"
+          ], 
+          "name": [
+            "Establecimientos Escolares 2012"
+          ], 
+          "description": [
+            "Listado de establecimientos escolares correspondiente al a\u00f1o 2012"
+          ]
+        }
+      }, 
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "url": [
+            "/data/establecimientos_2012.xlsx"
+          ], 
+          "encodingFormat": [
+            "xls"
+          ], 
+          "name": [
+            "Establecimientos Escolares 2012"
+          ], 
+          "description": [
+            "Listado de establecimientos escolares correspondiente al a\u00f1o 2012"
+          ]
+        }
+      }, 
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "url": [
+            "/data/establecimientos_2012.csv"
+          ], 
+          "encodingFormat": [
+            "csv"
+          ], 
+          "name": [
+            "Establecimientos Escolares 2012"
+          ], 
+          "description": [
+            "Listado de establecimientos escolares correspondiente al a\u00f1o 2012"
+          ]
+        }
+      }, 
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "url": [
+            "/data/establecimientos_2012.json"
+          ], 
+          "encodingFormat": [
+            "json"
+          ], 
+          "name": [
+            "Establecimientos Escolares 2012"
+          ], 
+          "description": [
+            "Listado de establecimientos escolares correspondiente al a\u00f1o 2012"
+          ]
+        }
+      }
+    ], 
+    "description": [
+      "Contiene informaci\u00f3n sobre la ubicaci\u00f3n geogr\u00e1fica de los establecimientos escolares tales como el departamento, distrito,barrio/localidad donde se encuentran asentados, adem\u00e1s de la zona (urbana o rural) a la cual pertenecen, y los datos georreferenciadas como las coordenadas planas (en metros) y geograficas. El Sistema de informacion de Estad\u00edstica Continua (SIEC) considera \u201cEstablecimiento Escolar\u201d a la construcci\u00f3n que existe dentro de un predio (terreno) que se emplea para la ense\u00f1anza, donde puede funcionar una o m\u00e1s instituciones educativas con sus respectivos niveles/modalidades de educaci\u00f3n."
+    ]
+  }
+}]},{"items": [{
+  "type": [
+    "http://schema.org/Dataset"
+  ], 
+  "properties": {
+    "name": [
+      "Matriculaciones por Educaci\u00f3n Inclusiva"
+    ], 
+    "license": [
+      "https://creativecommons.org/licenses/by/4.0/legalcode"
+    ], 
+    "creator": [
+      {
+        "type": [
+          "https://schema.org/Person"
+        ], 
+        "properties": {
+          "name": [
+            "Juan Barrios"
+          ], 
+          "email": [
+            "datosabiertos@mec.gov.py"
+          ]
+        }
+      }
+    ], 
+    "temporal": [
+      "2012-01-01/2012-12-31"
+    ], 
+    "version": [
+      "1.0"
+    ], 
+    "provider": [
+      {
+        "type": [
+          "https://schema.org/Organization"
+        ], 
+        "properties": {
+          "url": [
+            "http://www.mec.gov.py/"
+          ], 
+          "name": [
+            "Ministerio de Educaci\u00f3n y Cultura"
+          ], 
+          "email": [
+            "datosabiertos@mec.gov.py"
+          ]
+        }
+      }
+    ], 
+    "keywords": [
+      "educaci\u00f3n,matriculaciones,educaci\u00f3n inclusiva"
+    ], 
+    "distribution": [
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "encodingFormat": [
+            "pdf"
+          ], 
+          "name": [
+            "Matriculaciones Educaci\u00f3n Superior 2012"
+          ], 
+          "description": [
+            "Listado de matriculaciones en educaci\u00f3n inclusiva correspondiente al a\u00f1o 2012"
+          ]
+        }
+      }, 
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "url": [
+            "/data/matriculaciones_educacion_inclusiva_2012.xlsx"
+          ], 
+          "encodingFormat": [
+            "xls"
+          ], 
+          "name": [
+            "Matriculaciones Educaci\u00f3n Superior 2012"
+          ], 
+          "description": [
+            "Listado de matriculaciones en educaci\u00f3n inclusiva correspondiente al a\u00f1o 2012"
+          ]
+        }
+      }, 
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "url": [
+            "/data/matriculaciones_educacion_inclusiva_2012.csv"
+          ], 
+          "encodingFormat": [
+            "csv"
+          ], 
+          "name": [
+            "Matriculaciones Educaci\u00f3n Superior 2012"
+          ], 
+          "description": [
+            "Listado de matriculaciones en educaci\u00f3n inclusiva correspondiente al a\u00f1o 2012"
+          ]
+        }
+      }, 
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "url": [
+            "/data/matriculaciones_educacion_inclusiva_2012.json"
+          ], 
+          "name": [
+            "Matriculaciones Educaci\u00f3n Superior 2012"
+          ]
+        }
+      }
+    ], 
+    "description": [
+      "\n    Corresponde a la cantidad de matriculados por ciclo/niveles/programas especiales de educaci\u00f3n inclusiva con sus correspondientes c\u00f3digos identificatorios."
+    ]
+  }
+}]},{"items": [{
+  "type": [
+    "http://schema.org/Dataset"
+  ], 
+  "properties": {
+    "name": [
+      "Matriculaciones Educaci\u00f3n Escolar B\u00e1sica"
+    ], 
+    "license": [
+      "https://creativecommons.org/licenses/by/4.0/legalcode"
+    ], 
+    "creator": [
+      {
+        "type": [
+          "https://schema.org/Person"
+        ], 
+        "properties": {
+          "name": [
+            "Juan Barrios"
+          ], 
+          "email": [
+            "datosabiertos@mec.gov.py"
+          ]
+        }
+      }
+    ], 
+    "temporal": [
+      "2012-01-01/2012-12-31"
+    ], 
+    "version": [
+      "1.0"
+    ], 
+    "provider": [
+      {
+        "type": [
+          "https://schema.org/Organization"
+        ], 
+        "properties": {
+          "url": [
+            "http://www.mec.gov.py/"
+          ], 
+          "name": [
+            "Ministerio de Educaci\u00f3n y Cultura"
+          ], 
+          "email": [
+            "datosabiertos@mec.gov.py"
+          ]
+        }
+      }
+    ], 
+    "keywords": [
+      "educaci\u00f3n,matriculaciones,escolar b\u00e1sica"
+    ], 
+    "distribution": [
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "encodingFormat": [
+            "pdf"
+          ], 
+          "name": [
+            "Matriculaciones Educaci\u00f3n Escolar B\u00e1sica 2012"
+          ], 
+          "description": [
+            "Listado de matriculaciones en educaci\u00f3n escolar b\u00e1sica correspondiente al a\u00f1o 2012"
+          ]
+        }
+      }, 
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "url": [
+            "/data/matriculaciones_educacion_escolar_basica_2012.xlsx"
+          ], 
+          "encodingFormat": [
+            "xls"
+          ], 
+          "name": [
+            "Matriculaciones Educaci\u00f3n Escolar B\u00e1sica 2012"
+          ], 
+          "description": [
+            "Listado de matriculaciones en educaci\u00f3n escolar b\u00e1sica correspondiente al a\u00f1o 2012"
+          ]
+        }
+      }, 
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "url": [
+            "/data/matriculaciones_educacion_escolar_basica_2012.csv"
+          ], 
+          "encodingFormat": [
+            "csv"
+          ], 
+          "name": [
+            "Matriculaciones Educaci\u00f3n Escolar B\u00e1sica 2012"
+          ], 
+          "description": [
+            "Listado de matriculaciones en educaci\u00f3n escolar b\u00e1sica correspondiente al a\u00f1o 2012"
+          ]
+        }
+      }, 
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "url": [
+            "/data/matriculaciones_educacion_escolar_basica_2012.json"
+          ], 
+          "encodingFormat": [
+            "json"
+          ], 
+          "name": [
+            "Matriculaciones Educaci\u00f3n Escolar B\u00e1sica 2012"
+          ], 
+          "description": [
+            "Listado de matriculaciones en educaci\u00f3n escolar b\u00e1sica correspondiente al a\u00f1o 2012"
+          ]
+        }
+      }
+    ], 
+    "description": [
+      "\n    Se refiere a la cantidad de alumnos matriculados del 1.\u00ba al 9.\u00ba grado con sus correspondientes c\u00f3digos identificatorios."
+    ]
+  }
+}]},{"items": [{
+  "type": [
+    "http://schema.org/Dataset"
+  ], 
+  "properties": {
+    "name": [
+      "Instituciones Educativas"
+    ], 
+    "license": [
+      "https://creativecommons.org/licenses/by/4.0/legalcode"
+    ], 
+    "creator": [
+      {
+        "type": [
+          "https://schema.org/Person"
+        ], 
+        "properties": {
+          "name": [
+            "Juan Barrios"
+          ], 
+          "email": [
+            "datosabiertos@mec.gov.py"
+          ]
+        }
+      }
+    ], 
+    "temporal": [
+      "2012-01-01/2012-12-31"
+    ], 
+    "version": [
+      "1.0"
+    ], 
+    "provider": [
+      {
+        "type": [
+          "https://schema.org/Organization"
+        ], 
+        "properties": {
+          "url": [
+            "http://www.mec.gov.py/"
+          ], 
+          "name": [
+            "Ministerio de Educaci\u00f3n y Cultura"
+          ], 
+          "email": [
+            "datosabiertos@mec.gov.py"
+          ]
+        }
+      }
+    ], 
+    "keywords": [
+      "educaci\u00f3n,instituciones"
+    ], 
+    "distribution": [
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "encodingFormat": [
+            "pdf"
+          ], 
+          "name": [
+            "Instituciones Educativas 2012"
+          ], 
+          "description": [
+            "Listado de instituciones educativas correspondiente al a\u00f1o 2012"
+          ]
+        }
+      }, 
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "url": [
+            "/data/instituciones_2012.xlsx"
+          ], 
+          "encodingFormat": [
+            "xls"
+          ], 
+          "name": [
+            "Instituciones Educativas 2012"
+          ], 
+          "description": [
+            "Listado de instituciones educativas correspondiente al a\u00f1o 2012"
+          ]
+        }
+      }, 
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "url": [
+            "/data/instituciones_2012.csv"
+          ], 
+          "encodingFormat": [
+            "csv"
+          ], 
+          "name": [
+            "Instituciones Educativas 2012"
+          ], 
+          "description": [
+            "Listado de instituciones educativas correspondiente al a\u00f1o 2012"
+          ]
+        }
+      }, 
+      {
+        "type": [
+          "https://schema.org/DataDownload"
+        ], 
+        "properties": {
+          "url": [
+            "/data/instituciones_2012.json"
+          ], 
+          "encodingFormat": [
+            "json"
+          ], 
+          "name": [
+            "Instituciones Educativas 2012"
+          ], 
+          "description": [
+            "Listado de instituciones educativas correspondiente al a\u00f1o 2012"
+          ]
+        }
+      }
+    ], 
+    "description": [
+      "Contiene datos de los niveles/modalidades de educaci\u00f3n ofertados por las instituciones educativas; regi\u00f3n administrativa a la que pertenece la instituci\u00f3n educativa; tipo de organizaci\u00f3n, participaci\u00f3n comunitaria, direcci\u00f3n del establecimiento escolar, servicio disponible (internet, telefono, correo electronico, etc.). Una instituci\u00f3n educativa puede poseer diferentes locales escolares ubicados en un mismo o en diferentes departamentos geogr\u00e1ficos. El SIEC considera una misma instituci\u00f3n cuando varios niveles o modalidades tienen una organizaci\u00f3n, gesti\u00f3n y administraci\u00f3n \u00fanica. Por ejemplo: Centro Regional de Educaci\u00f3n Gral. Patricio Escobar de Encarnaci\u00f3n, Colegio Santa Clara de Asunci\u00f3n."
     ]
   }
 }]}]}
