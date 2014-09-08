@@ -12,36 +12,32 @@
     "title": "", 
     "temporal": "2012-01-01/2012-12-31", 
     "version": "1.0", 
-    "distribution": [], 
+    "distribution": [
+      {
+        "accessURL": "https://mega.co.nz/#!dk5F0Cxb!oJgF9cQ_3gC8N4bHPqKER1eiOzsV81N7gdf-PMbBOzY", 
+        "format": "pdf"
+      }, 
+      {
+        "accessURL": "https://mega.co.nz/#!FoByxCpC!kqiue2krvjtukETMOx4QHj7iXkprIly96LjGpA9AqkQ", 
+        "format": "pdf"
+      }
+    ], 
     "mbox": "datosabiertos@mec.gov.py"
   }, 
   {
-    "description": "", 
+    "description": "Contiene informaci\u00f3n sobre la ubicaci\u00f3n geogr\u00e1fica de los establecimientos escolares tales como el departamento, distrito,barrio/localidad donde se encuentran asentados, adem\u00e1s de la zona (urbana o rural) a la cual pertenecen, y los datos georreferenciadas como las coordenadas planas (en metros) y geograficas. El Sistema de informacion de Estad\u00edstica Continua (SIEC) considera \u201cEstablecimiento Escolar\u201d a la construcci\u00f3n que existe dentro de un predio (terreno) que se emplea para la ense\u00f1anza, donde puede funcionar una o m\u00e1s instituciones educativas con sus respectivos niveles/modalidades de educaci\u00f3n.", 
     "contactName": "Juan Barrios", 
     "keywords": [
-      "educaci\u00f3n,instituciones"
+      "educaci\u00f3n,establecimientos,escolar,geografico"
     ], 
     "accessLevel": "public", 
     "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
     "landingPage": "", 
     "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "Contrataciones", 
-    "temporal": "2014-01-01/2014-12-31", 
+    "title": "", 
+    "temporal": "2012-01-01/2012-12-31", 
     "version": "1.0", 
-    "distribution": [
-      {
-        "accessURL": "http://datos.mec.gov.py/data/contrataciones_lista.xlsx?form_buscar_contrataciones%5Bejercicio_fiscal%5D=2014", 
-        "format": "xls"
-      }, 
-      {
-        "accessURL": "http://datos.mec.gov.py/data/contrataciones_lista.csv?form_buscar_contrataciones%5Bejercicio_fiscal%5D=2014", 
-        "format": "csv"
-      }, 
-      {
-        "accessURL": "http://datos.mec.gov.py/data/contrataciones_lista.json?form_buscar_contrataciones%5Bejercicio_fiscal%5D=2014", 
-        "format": "json"
-      }
-    ], 
+    "distribution": [], 
     "mbox": "datosabiertos@mec.gov.py"
   }, 
   {
@@ -297,26 +293,30 @@
     "mbox": "datosabiertos@mec.gov.py"
   }, 
   {
-    "description": "Contiene informaci\u00f3n sobre la ubicaci\u00f3n geogr\u00e1fica de los establecimientos escolares tales como el departamento, distrito,barrio/localidad donde se encuentran asentados, adem\u00e1s de la zona (urbana o rural) a la cual pertenecen, y los datos georreferenciadas como las coordenadas planas (en metros) y geograficas. El Sistema de informacion de Estad\u00edstica Continua (SIEC) considera \u201cEstablecimiento Escolar\u201d a la construcci\u00f3n que existe dentro de un predio (terreno) que se emplea para la ense\u00f1anza, donde puede funcionar una o m\u00e1s instituciones educativas con sus respectivos niveles/modalidades de educaci\u00f3n.", 
+    "description": "", 
     "contactName": "Juan Barrios", 
     "keywords": [
-      "educaci\u00f3n,establecimientos,escolar,geografico"
+      "educaci\u00f3n,instituciones"
     ], 
     "accessLevel": "public", 
     "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
     "landingPage": "", 
     "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "", 
-    "temporal": "2012-01-01/2012-12-31", 
+    "title": "Contrataciones", 
+    "temporal": "2014-01-01/2014-12-31", 
     "version": "1.0", 
     "distribution": [
       {
-        "accessURL": "https://mega.co.nz/#!dk5F0Cxb!oJgF9cQ_3gC8N4bHPqKER1eiOzsV81N7gdf-PMbBOzY", 
-        "format": "pdf"
+        "accessURL": "http://datos.mec.gov.py/data/contrataciones_lista.xlsx?form_buscar_contrataciones%5Bejercicio_fiscal%5D=2014", 
+        "format": "xls"
       }, 
       {
-        "accessURL": "https://mega.co.nz/#!FoByxCpC!kqiue2krvjtukETMOx4QHj7iXkprIly96LjGpA9AqkQ", 
-        "format": "pdf"
+        "accessURL": "http://datos.mec.gov.py/data/contrataciones_lista.csv?form_buscar_contrataciones%5Bejercicio_fiscal%5D=2014", 
+        "format": "csv"
+      }, 
+      {
+        "accessURL": "http://datos.mec.gov.py/data/contrataciones_lista.json?form_buscar_contrataciones%5Bejercicio_fiscal%5D=2014", 
+        "format": "json"
       }
     ], 
     "mbox": "datosabiertos@mec.gov.py"
@@ -429,108 +429,9 @@
       {
         "accessURL": "/data/matriculaciones_educacion_superior_2012.csv", 
         "format": "csv"
-      }
-    ], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n    Corresponde a la cantidad de matriculados por ciclo/niveles/programas especiales de educaci\u00f3n inclusiva con sus correspondientes c\u00f3digos identificatorios.", 
-    "contactName": "Juan Barrios", 
-    "keywords": [
-      "educaci\u00f3n,matriculaciones,educaci\u00f3n inclusiva"
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "landingPage": "", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "Matriculaciones por Educaci\u00f3n Inclusiva", 
-    "temporal": "2012-01-01/2012-12-31", 
-    "version": "1.0", 
-    "distribution": [
-      {
-        "accessURL": "/data/matriculaciones_educacion_inclusiva_2012.xlsx", 
-        "format": "xls"
       }, 
       {
-        "accessURL": "/data/matriculaciones_educacion_inclusiva_2012.csv", 
-        "format": "csv"
-      }
-    ], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "\n    Se refiere a la cantidad de alumnos matriculados del 1.\u00ba al 9.\u00ba grado con sus correspondientes c\u00f3digos identificatorios.", 
-    "contactName": "Juan Barrios", 
-    "keywords": [
-      "educaci\u00f3n,matriculaciones,escolar b\u00e1sica"
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "landingPage": "", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "Matriculaciones Educaci\u00f3n Escolar B\u00e1sica", 
-    "temporal": "2012-01-01/2012-12-31", 
-    "version": "1.0", 
-    "distribution": [
-      {
-        "accessURL": "/data/matriculaciones_educacion_escolar_basica_2012.xlsx", 
-        "format": "xls"
-      }, 
-      {
-        "accessURL": "/data/matriculaciones_educacion_escolar_basica_2012.csv", 
-        "format": "csv"
-      }, 
-      {
-        "accessURL": "/data/matriculaciones_educacion_escolar_basica_2012.json", 
-        "format": "json"
-      }
-    ], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "Contiene datos de los niveles/modalidades de educaci\u00f3n ofertados por las instituciones educativas; regi\u00f3n administrativa a la que pertenece la instituci\u00f3n educativa; tipo de organizaci\u00f3n, participaci\u00f3n comunitaria, direcci\u00f3n del establecimiento escolar, servicio disponible (internet, telefono, correo electronico, etc.). Una instituci\u00f3n educativa puede poseer diferentes locales escolares ubicados en un mismo o en diferentes departamentos geogr\u00e1ficos. El SIEC considera una misma instituci\u00f3n cuando varios niveles o modalidades tienen una organizaci\u00f3n, gesti\u00f3n y administraci\u00f3n \u00fanica. Por ejemplo: Centro Regional de Educaci\u00f3n Gral. Patricio Escobar de Encarnaci\u00f3n, Colegio Santa Clara de Asunci\u00f3n.", 
-    "contactName": "Juan Barrios", 
-    "keywords": [
-      "educaci\u00f3n,instituciones"
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "landingPage": "", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "Instituciones Educativas", 
-    "temporal": "2012-01-01/2012-12-31", 
-    "version": "1.0", 
-    "distribution": [], 
-    "mbox": "datosabiertos@mec.gov.py"
-  }, 
-  {
-    "description": "Contiene informaci\u00f3n sobre la ubicaci\u00f3n geogr\u00e1fica de los establecimientos escolares tales como el departamento, distrito,barrio/localidad donde se encuentran asentados, adem\u00e1s de la zona (urbana o rural) a la cual pertenecen, y los datos georreferenciadas como las coordenadas planas (en metros) y geograficas. El Sistema de informacion de Estad\u00edstica Continua (SIEC) considera \u201cEstablecimiento Escolar\u201d a la construcci\u00f3n que existe dentro de un predio (terreno) que se emplea para la ense\u00f1anza, donde puede funcionar una o m\u00e1s instituciones educativas con sus respectivos niveles/modalidades de educaci\u00f3n.", 
-    "contactName": "Juan Barrios", 
-    "keywords": [
-      "educaci\u00f3n,establecimientos,escolar,geografico"
-    ], 
-    "accessLevel": "public", 
-    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
-    "landingPage": "", 
-    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
-    "title": "Establecimientos Escolares", 
-    "temporal": "2012-01-01/2012-12-31", 
-    "version": "1.0", 
-    "distribution": [
-      {
-        "accessURL": "https://mega.co.nz/#!x0InHDpZ!5VZp63YKAvfP3qm2absgZO-kpqK-qEYXxnjqePcRf-Q", 
-        "format": "pdf"
-      }, 
-      {
-        "accessURL": "/data/establecimientos_2012.xlsx", 
-        "format": "xls"
-      }, 
-      {
-        "accessURL": "/data/establecimientos_2012.csv", 
-        "format": "csv"
-      }, 
-      {
-        "accessURL": "/data/establecimientos_2012.json", 
+        "accessURL": "/data/matriculaciones_educacion_superior_2012.json", 
         "format": "json"
       }
     ], 
@@ -786,6 +687,151 @@
     "temporal": "2012-01-01/2012-12-31", 
     "version": "1.0", 
     "distribution": [], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "Se refiere a la cantidad de matriculados en las diferentes modalidades de educaci\u00f3n permanente con sus correspondientes c\u00f3digos identificatorios.", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      "educaci\u00f3n,matriculaciones,educaci\u00f3n permanente"
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "Matriculaciones Educaci\u00f3n Permanente", 
+    "temporal": "2012-01-01/2012-12-31", 
+    "version": "1.0", 
+    "distribution": [
+      {
+        "accessURL": "/data/matriculaciones_educacion_permanente_2012.xlsx", 
+        "format": "xls"
+      }, 
+      {
+        "accessURL": "/data/matriculaciones_educacion_permanente_2012.csv", 
+        "format": "csv"
+      }, 
+      {
+        "accessURL": "/data/matriculaciones_educacion_permanente_2012.json", 
+        "format": "json"
+      }
+    ], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "Contiene informaci\u00f3n sobre la ubicaci\u00f3n geogr\u00e1fica de los establecimientos escolares tales como el departamento, distrito,barrio/localidad donde se encuentran asentados, adem\u00e1s de la zona (urbana o rural) a la cual pertenecen, y los datos georreferenciadas como las coordenadas planas (en metros) y geograficas. El Sistema de informacion de Estad\u00edstica Continua (SIEC) considera \u201cEstablecimiento Escolar\u201d a la construcci\u00f3n que existe dentro de un predio (terreno) que se emplea para la ense\u00f1anza, donde puede funcionar una o m\u00e1s instituciones educativas con sus respectivos niveles/modalidades de educaci\u00f3n.", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      "educaci\u00f3n,establecimientos,escolar,geografico"
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "Establecimientos Escolares", 
+    "temporal": "2012-01-01/2012-12-31", 
+    "version": "1.0", 
+    "distribution": [
+      {
+        "accessURL": "https://mega.co.nz/#!x0InHDpZ!5VZp63YKAvfP3qm2absgZO-kpqK-qEYXxnjqePcRf-Q", 
+        "format": "pdf"
+      }, 
+      {
+        "accessURL": "/data/establecimientos_2012.xlsx", 
+        "format": "xls"
+      }, 
+      {
+        "accessURL": "/data/establecimientos_2012.csv", 
+        "format": "csv"
+      }, 
+      {
+        "accessURL": "/data/establecimientos_2012.json", 
+        "format": "json"
+      }
+    ], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n    Corresponde a la cantidad de matriculados por ciclo/niveles/programas especiales de educaci\u00f3n inclusiva con sus correspondientes c\u00f3digos identificatorios.", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      "educaci\u00f3n,matriculaciones,educaci\u00f3n inclusiva"
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "Matriculaciones por Educaci\u00f3n Inclusiva", 
+    "temporal": "2012-01-01/2012-12-31", 
+    "version": "1.0", 
+    "distribution": [
+      {
+        "accessURL": "/data/matriculaciones_educacion_inclusiva_2012.xlsx", 
+        "format": "xls"
+      }, 
+      {
+        "accessURL": "/data/matriculaciones_educacion_inclusiva_2012.csv", 
+        "format": "csv"
+      }
+    ], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "\n    Se refiere a la cantidad de alumnos matriculados del 1.\u00ba al 9.\u00ba grado con sus correspondientes c\u00f3digos identificatorios.", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      "educaci\u00f3n,matriculaciones,escolar b\u00e1sica"
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "Matriculaciones Educaci\u00f3n Escolar B\u00e1sica", 
+    "temporal": "2012-01-01/2012-12-31", 
+    "version": "1.0", 
+    "distribution": [
+      {
+        "accessURL": "/data/matriculaciones_educacion_escolar_basica_2012.xlsx", 
+        "format": "xls"
+      }, 
+      {
+        "accessURL": "/data/matriculaciones_educacion_escolar_basica_2012.csv", 
+        "format": "csv"
+      }, 
+      {
+        "accessURL": "/data/matriculaciones_educacion_escolar_basica_2012.json", 
+        "format": "json"
+      }
+    ], 
+    "mbox": "datosabiertos@mec.gov.py"
+  }, 
+  {
+    "description": "Contiene datos de los niveles/modalidades de educaci\u00f3n ofertados por las instituciones educativas; regi\u00f3n administrativa a la que pertenece la instituci\u00f3n educativa; tipo de organizaci\u00f3n, participaci\u00f3n comunitaria, direcci\u00f3n del establecimiento escolar, servicio disponible (internet, telefono, correo electronico, etc.). Una instituci\u00f3n educativa puede poseer diferentes locales escolares ubicados en un mismo o en diferentes departamentos geogr\u00e1ficos. El SIEC considera una misma instituci\u00f3n cuando varios niveles o modalidades tienen una organizaci\u00f3n, gesti\u00f3n y administraci\u00f3n \u00fanica. Por ejemplo: Centro Regional de Educaci\u00f3n Gral. Patricio Escobar de Encarnaci\u00f3n, Colegio Santa Clara de Asunci\u00f3n.", 
+    "contactName": "Juan Barrios", 
+    "keywords": [
+      "educaci\u00f3n,instituciones"
+    ], 
+    "accessLevel": "public", 
+    "publisher": "Ministerio de Educaci\u00f3n y Cultura", 
+    "landingPage": "", 
+    "license": "https://creativecommons.org/licenses/by/4.0/legalcode", 
+    "title": "Instituciones Educativas", 
+    "temporal": "2012-01-01/2012-12-31", 
+    "version": "1.0", 
+    "distribution": [
+      {
+        "accessURL": "/data/instituciones_2012.xlsx", 
+        "format": "xls"
+      }, 
+      {
+        "accessURL": "/data/instituciones_2012.csv", 
+        "format": "csv"
+      }, 
+      {
+        "accessURL": "/data/instituciones_2012.json", 
+        "format": "json"
+      }
+    ], 
     "mbox": "datosabiertos@mec.gov.py"
   }
 ]

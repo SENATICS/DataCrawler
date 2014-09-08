@@ -7,11 +7,12 @@ except ImportError:
 
 
 class DataJson:
-    def convert(self, file, domain):
+    def convert(self, domain):
         response = []
         urlAux = "url"
         distributionAux = "distribution"
         encodingAux = "encodingFormat"
+        file = domain + ".json"
         with open(file) as data_file:
             data = json.load(data_file)
             """ Iterar sonbre la lista de cada dominio """
@@ -86,7 +87,7 @@ class DataJson:
                         Description
                         Debe tener los otros datos ??
                         """
-                        keywords = [ "catalog" ]
+                        keywords = ["catalog"]
 
                         response.append({'title': "Data Catalog",
                                          'landingPage': property["url"][0],
@@ -151,8 +152,8 @@ class DataJson:
                                              'publisher': providerproperty["name"][0],
                                              'distribution': distributionlist})
         print response
-        fileResponse = open('data.json', 'wb')
+        fileResponse = open(domain + "_data.json", 'wb')
         fileResponse.write(json.dumps(response, indent=2))
 
 
-#DataJson().convert("/home/desa2/PycharmProjects/DataCrawler/bin/datos.mec.gov.py.json", "datos.mec.gov.py")
+        # DataJson().convert("/home/desa2/PycharmProjects/DataCrawler/bin/datos.mec.gov.py.json", "datos.mec.gov.py")

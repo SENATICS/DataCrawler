@@ -60,7 +60,8 @@ known_vocabs = {
     "dv": "http://data-vocabulary.org/"
 }
 
-items_list = []
+items_list = {}
+#domain_list = []
 
 
 class DataSpider(CrawlSpider):
@@ -92,15 +93,24 @@ class DataSpider(CrawlSpider):
     def parse_item(self, response):
         self.log('A response from %s just arrived!' % response.url)
         time.sleep(3)
-        # item = DataItem()
-        # item['title'] = response.xpath('//title/text()').extract()
-        # links = response.xpath('//a[contains(@href, "/")]')
-        # item['links'] = links.extract()
-        transformar(response.url)
+        """ Obtiene el domain actual """
+        https = response.url.find("https")
+        if https == -1:
+            pos_second_bar = 7
+        else:
+            pos_second_bar = 8
+        pos_third_bar = response.url.find("/", pos_second_bar + 1)
+        domain = response.url[pos_second_bar:pos_third_bar]
+        if domain not in items_list.keys():
+            #domain_list.append(id)
+            items_list[domain] = []
+        self.log('Domain: %s' % domain)
+
+        transformar(response.url, domain)
         # yield item
 
 
-def transformar(url):
+def transformar(url, domain):
     """ Si la pagina esta anotada con rdfa, primero se transforma a microdata y luego se guarda en un archivo .html
     para que luego pueda ser leido. Esta seccion todavia se encuentra en su version de prueba. """
 
@@ -121,23 +131,23 @@ def transformar(url):
         url_final = "aux.html"
 
     items = get_items(urllib.urlopen(url_final))
-    # Para solucionar el problema de que viene mas de un item nomas, esto deberia arreglarse
+    # Para solucionar el problema de que viene mas de un item, esto deberia arreglarse
     if len(items) > 1:
         indice = 1
     else:
         indice = 0
-    # Si tiene atributos se agrega o modifca en la lista
+    # Si tiene atributos el item se agrega o modifca en la lista
     if items:
         if items[indice].props:
-            refresh_items_list(items[indice])
+            refresh_items_list(items[indice], domain)
 
 
-def refresh_items_list(item_nuevo):
+def refresh_items_list(item_nuevo, domain):
     # OJO: se tiene que pasar siempre -1, estas anotaciones hay que arreglar
     add_item = True
 
     # Itera sobre la lista de items existentes
-    for item in items_list:
+    for item in items_list[domain]:
         add_item = True
         # Si el item a comparar es DataCatalog
         if item.itemtype == "[http://schema.org/Datacatalog]":
@@ -185,22 +195,24 @@ def refresh_items_list(item_nuevo):
 
     # Si es un nuevo item agrega a la lista
     if add_item:
-        items_list.append(item_nuevo)
+        items_list[domain].append(item_nuevo)
 
 
-def copy_items_to_file(file_name):
-    file = open(file_name, 'ab+')
-    file.write('{ "root": [')
-    for item in items_list:
-        file.write(str("{\"items\": [" + item.json() + "]},"))
-    file.seek(0, 2)
-    file.seek(file.tell() - 1, 0)
-    val = file.read()
-    print val
-    if (val == ','):
-        file.truncate(file.tell() - 1)
-    file.write(']}')
-    file.close()
+def copy_items_to_files():
+    for domain in items_list.keys():
+        file_name = domain + ".json"
+        file = open(file_name, 'ab+')
+        file.write('{ "root": [')
+        for item in items_list[domain]:
+            file.write(str("{\"items\": [" + item.json() + "]},"))
+        file.seek(0, 2)
+        file.seek(file.tell() - 1, 0)
+        val = file.read()
+        print val
+        if (val == ','):
+            file.truncate(file.tell() - 1)
+        file.write(']}')
+        file.close()
 
 
 """ Version de prueba para transformar paginas anotadas con rdfa a mircrodata """
