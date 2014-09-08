@@ -25,5 +25,5 @@ Setup and run
 
 * Run DataCrawler in a terminal window:
 
-    $ python DataCrawler/bin/Test.py --file=**path_to_your_file_with_domains_to_crawl**
+    $ python DataCrawler/bin/DataCrawler.py --file=**path_to_your_file_with_domains_to_crawl**
 
