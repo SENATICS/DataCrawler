@@ -1,4 +1,4 @@
-__author__ = 'desa2'
+__author__ = 'Verena Ojeda'
 
 try:
     import json
@@ -8,6 +8,10 @@ except ImportError:
 
 class DataJson:
     def convert(self, domain):
+        """
+        Parsea un archivo .json con los datos extraidos de una pagina anotada con microdata a un nuevo archivo data.json
+        con el formato POD (Project Open Data).
+        """
         response = []
         urlAux = "url"
         distributionAux = "distribution"
@@ -154,6 +158,3 @@ class DataJson:
         print response
         fileResponse = open(domain + "_data.json", 'wb')
         fileResponse.write(json.dumps(response, indent=2))
-
-
-        # DataJson().convert("/home/desa2/PycharmProjects/DataCrawler/bin/datos.mec.gov.py.json", "datos.mec.gov.py")
