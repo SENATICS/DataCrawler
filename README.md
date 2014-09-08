@@ -11,7 +11,7 @@ Setup and run
     
 * Activate the virtual enviroment
     
-    $ source {path_to_datacrawler}/bin/activate
+    $ source **path_to_datacrawler**/bin/activate
 
 * Clone this repository
 
@@ -20,9 +20,10 @@ Setup and run
 * Install the module:
 
     $ cd DataCrawler
-    $ run.sh
+    
+    $ install.sh **path_to_your_virtualenv_site_packages**
 
 * Run DataCrawler in a terminal window:
 
-    $ python DataCrawler/bin/Test.py --file="path_to_your_file_with_domains_to_crawl"
+    $ python DataCrawler/bin/Test.py --file=**path_to_your_file_with_domains_to_crawl**
 
