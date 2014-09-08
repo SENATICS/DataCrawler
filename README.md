@@ -5,25 +5,25 @@ Simple crawler for public information annotated with microdata.
 
 Setup and run
 ------------
-* Create a python virtual enviroment
+1. Create a python virtual enviroment
     
-    $ virtualenv datacrawler
+ `$ virtualenv datacrawler`
     
-* Activate the virtual enviroment
+2. Activate the virtual enviroment
     
-    $ source **path_to_datacrawler**/bin/activate
+ `$ source path_to_datacrawler/bin/activate`
 
-* Clone this repository
+3. Clone this repository
 
-    $ git clone https://github.com/DataCrawler.git
+ `$ git clone https://github.com/DataCrawler.git`
     
-* Install the module:
+4. Install the module:
 
-    $ cd DataCrawler
+ `$ cd DataCrawler`
     
-    $ install.sh **path_to_your_virtualenv_site_packages**
+ `$ install.sh path_to_your_virtualenv_site_packages`
 
 * Run DataCrawler in a terminal window:
 
-    $ python DataCrawler/bin/DataCrawler.py --file=**path_to_your_file_with_domains_to_crawl**
+ `$ python DataCrawler/bin/DataCrawler.py --file=path_to_your_file_with_domains_to_crawl`
 
