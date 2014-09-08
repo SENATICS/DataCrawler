@@ -1,6 +1,4 @@
-import requests
-
-__author__ = 'desa2'
+__author__ = 'Verena Ojeda'
 
 import time
 import urllib
@@ -10,7 +8,6 @@ from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.utils.project import get_project_settings
 from microdata import get_items
-from crawler.items import DataItem
 from rdflib.serializer import Serializer
 
 try:
@@ -61,15 +58,10 @@ known_vocabs = {
 }
 
 items_list = {}
-#domain_list = []
 
 
 class DataSpider(CrawlSpider):
     name = "dspider"
-    # allowed_domains = ["mec.gov.py"]
-    # start_urls = [
-    # "http://datos.mec.gov.py/",
-    # ]
     settings = get_project_settings()
     rules = [
         Rule(SgmlLinkExtractor(allow=settings['ALLOW_FILTER'], deny=settings['DENY_FILTER']), callback='parse_item',
@@ -83,7 +75,7 @@ class DataSpider(CrawlSpider):
         self.start_urls = start_urls
         self.allowed_domains = domains
         super(DataSpider, self).__init__(*args, **kwargs)
-        self._compile_rules()  # ?
+        self._compile_rules()
 
 
     def __del__(self):
@@ -91,8 +83,12 @@ class DataSpider(CrawlSpider):
 
 
     def parse_item(self, response):
-        self.log('A response from %s just arrived!' % response.url)
+        """
+        Obtiene el dominio de busqueda actual, y llama al metodo transformar.
+        """
+        self.log('A response from %s just arrived.' % response.url)
         time.sleep(3)
+
         """ Obtiene el domain actual """
         https = response.url.find("https")
         if https == -1:
@@ -102,17 +98,18 @@ class DataSpider(CrawlSpider):
         pos_third_bar = response.url.find("/", pos_second_bar + 1)
         domain = response.url[pos_second_bar:pos_third_bar]
         if domain not in items_list.keys():
-            #domain_list.append(id)
             items_list[domain] = []
         self.log('Domain: %s' % domain)
 
         transformar(response.url, domain)
-        # yield item
 
 
 def transformar(url, domain):
-    """ Si la pagina esta anotada con rdfa, primero se transforma a microdata y luego se guarda en un archivo .html
-    para que luego pueda ser leido. Esta seccion todavia se encuentra en su version de prueba. """
+    """
+    Extrae las anotaciones microdata del html. Si la pagina esta anotada con rdfa, se transforma a microdata y se guarda
+    en un archivo .html para que luego puedan ser extraidas las anotaciones.
+    La seccion de rdfa se encuentra en su version de prueba.
+    """
 
     microdata = {}
     microdata['items'] = items = []
@@ -123,7 +120,6 @@ def transformar(url, domain):
     file_splash.write(str(html.read()))
     url_final = "splash.html"
 
-    # serialization = requests.get("http://rdf-translator.appspot.com/convert/rdfa/microdata/html/" + url)
     serialization = rdfa_to_microdata(url_splash)
     if serialization:
         file = open('aux.html', 'wb')
@@ -131,11 +127,13 @@ def transformar(url, domain):
         url_final = "aux.html"
 
     items = get_items(urllib.urlopen(url_final))
-    # Para solucionar el problema de que viene mas de un item, esto deberia arreglarse
+
+    # TODO: Solucionar el problema de que viene mas de un item
     if len(items) > 1:
         indice = 1
     else:
         indice = 0
+
     # Si tiene atributos el item se agrega o modifca en la lista
     if items:
         if items[indice].props:
@@ -143,7 +141,10 @@ def transformar(url, domain):
 
 
 def refresh_items_list(item_nuevo, domain):
-    # OJO: se tiene que pasar siempre -1, estas anotaciones hay que arreglar
+    """
+    Actualiza la lista de items por dominio por cada item nuevo.
+    """
+    # TODO: se tiene que pasar siempre -1, depende de que se arreglen las anotaciones en la pagina
     add_item = True
 
     # Itera sobre la lista de items existentes
@@ -180,7 +181,8 @@ def refresh_items_list(item_nuevo, domain):
                                     for v in values:
                                         dataset.props[name].append(v)
 
-        # Si el item a comparar es DataSet (todavia no se puede porque no esta anotada la url)
+        # TODO: todavia no se puede hacer esta comparacion porque no esta bien anotada la url
+        # Si el item a comparar es DataSet
         else:
             add_item = True
             # Si el item ya existe modifica
@@ -199,6 +201,9 @@ def refresh_items_list(item_nuevo, domain):
 
 
 def copy_items_to_files():
+    """
+    Por cada dominio existente copia los items extraidos a un archivo .json.
+    """
     for domain in items_list.keys():
         file_name = domain + ".json"
         file = open(file_name, 'ab+')
@@ -215,10 +220,10 @@ def copy_items_to_files():
         file.close()
 
 
-""" Version de prueba para transformar paginas anotadas con rdfa a mircrodata """
-
-
 def rdfa_to_microdata(url):
+    """
+    Version de prueba para transformar paginas anotadas con rdfa a microdata.
+    """
     global known_vocabs
     target_format = "microdata"
     source_format = "rdfa"
