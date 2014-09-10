@@ -1,5 +1,7 @@
 __author__ = 'Verena Ojeda'
 
+from crawler import file_controller as FileController
+
 try:
     import json
 except ImportError:
@@ -13,9 +15,9 @@ class DataJson:
         con el formato POD (Project Open Data).
         """
         response = []
-        urlAux = "url"
-        distributionAux = "distribution"
-        encodingAux = "encodingFormat"
+        url_aux = "url"
+        distribution_aux = "distribution"
+        encoding_aux = "encodingFormat"
         file = domain + ".json"
         with open(file) as data_file:
             data = json.load(data_file)
@@ -31,8 +33,8 @@ class DataJson:
                         """ Si tiene datos """
                         if property:
                             url = ""
-                            if urlAux in property.keys():
-                                url = dataproperty["url"][0]
+                            if url_aux in property.keys():
+                                url = dataproperty["url"][0].encode('utf-8')
 
                             """ Iterar sobre creator (publicador) """
                             for creator in property["creator"]:
@@ -43,21 +45,24 @@ class DataJson:
                                 providerproperty = provider["properties"]
 
                             distributionlist = []
-                            if distributionAux in property.keys():
+                            if distribution_aux in property.keys():
                                 for distribution in property["distribution"]:
                                     distributionproperty = distribution["properties"]
                                     # Si no tiene el encoding ni la url no guarda el recurso
-                                    if encodingAux in distributionproperty.keys() and urlAux in distributionproperty.keys():
+                                    if encoding_aux in distributionproperty.keys() and url_aux in distributionproperty.keys():
                                         format = distributionproperty["encodingFormat"][0]
                                         accessURL = distributionproperty["url"][0]
                                         distributionobject = {'format': format, 'accessURL': accessURL}
                                         distributionlist.append(distributionobject)
 
+                            keys_aux = property["keywords"][0]
+                            keywords = keys_aux.split(",")
+
                             """
                             Name cambia por title
                             Url cambia por uniqueid
                             Description se mantiene
-                            Keywords se mantiene
+                            Keywords cambia por keyword
                             Creator name cambia por contactProvider
                             Creator email cambia por mbox
                             Access level se pone public por defecto
@@ -72,7 +77,7 @@ class DataJson:
                                              'description': property["description"][0],
                                              'contactName': creatorproperty["name"][0],
                                              'mbox': creatorproperty["email"][0],
-                                             'keywords': property["keywords"],
+                                             'keyword': keywords,
                                              'accessLevel': "public",
                                              'version': property["version"][0],
                                              'license': property["license"][0],
@@ -91,14 +96,14 @@ class DataJson:
                         Description
                         Debe tener los otros datos ??
                         """
-                        keywords = ["catalog"]
+                        keywords_catalog = ["catalog"]
 
                         response.append({'title': "Data Catalog",
                                          'landingPage': property["url"][0],
                                          'description': property["description"][0],
                                          'contactName': "",
                                          'mbox': "",
-                                         'keywords': keywords,
+                                         'keywords': keywords_catalog,
                                          'accessLevel': "public",
                                          'publisher': ""})
 
@@ -106,7 +111,7 @@ class DataJson:
                         for dataset in property["dataset"]:
                             dataproperty = dataset["properties"]
                             url = ""
-                            if urlAux in dataproperty.keys():
+                            if url_aux in dataproperty.keys():
                                 url = dataproperty["url"][0]
 
                             """ Iterar sobre creator (publicador) """
@@ -118,22 +123,24 @@ class DataJson:
                                 providerproperty = provider["properties"]
 
                             distributionlist = []
-                            if distributionAux in property.keys():
+                            if distribution_aux in property.keys():
                                 for distribution in property["distribution"]:
                                     distributionproperty = distribution["properties"]
                                     # Si no tiene el encoding ni la url no guarda el recurso
-                                    if encodingAux in distributionproperty.keys() and urlAux in distributionproperty.keys():
+                                    if encoding_aux in distributionproperty.keys() and url_aux in distributionproperty.keys():
                                         format = distributionproperty["encodingFormat"][0]
                                         accessURL = distributionproperty["url"][0]
                                         distributionobject = {'format': format, 'accessURL': accessURL}
                                         distributionlist.append(distributionobject)
 
-                            # Puede que necesite un tab
+                            keys_aux = dataproperty["keywords"][0]
+                            keywords = keys_aux.split(",")
+
                             """
                             Name cambia por title
                             Url cambia por uniqueid
                             Description se mantiene
-                            Keywords se mantiene
+                            Keywords cambia por keyword
                             Creator name cambia por contactProvider
                             Creator email cambia por mbox
                             Access level se pone public por defecto
@@ -148,13 +155,17 @@ class DataJson:
                                              'description': dataproperty["description"][0],
                                              'contactName': creatorproperty["name"][0],
                                              'mbox': creatorproperty["email"][0],
-                                             'keywords': dataproperty["keywords"],
+                                             'keyword': keywords,
                                              'accessLevel': "public",
                                              'version': dataproperty["version"][0],
                                              'license': dataproperty["license"][0],
                                              'temporal': dataproperty["temporal"][0],
                                              'publisher': providerproperty["name"][0],
                                              'distribution': distributionlist})
-        print response
-        fileResponse = open(domain + "_data.json", 'wb')
-        fileResponse.write(json.dumps(response, indent=2))
+        """ Escribe en el archivo final """
+        FileController.FileController().save_existing_data_json(response, domain, False)
+        """ Elimina el archivo temporal de items """
+        FileController.FileController().clean_item_tmp_file(domain)
+
+
+#DataJson().convert("192.168.200.102")

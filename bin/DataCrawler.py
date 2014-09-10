@@ -1,5 +1,6 @@
 __author__ = 'Verena Ojeda'
 
+import requests
 import click
 from twisted.internet import reactor
 from scrapy.crawler import Crawler
@@ -7,12 +8,13 @@ from scrapy import log, signals
 from scrapy.utils.project import get_project_settings
 from crawler.spiders import data_spider
 from crawler.spiders.data_spider import DataSpider
-from crawler import data_json
+from crawler import data_json as DataJson
+from crawler import file_controller as FileController
 
 
 @click.command()
-@click.option('--file', prompt='Path to your file with domains to crawl',
-              #default="/home/desa2/PycharmProjects/DataCrawler/crawler/domains.txt",
+@click.option('--file',  # prompt='Path to your file with domains to crawl',
+              default="/home/desa2/PycharmProjects/DataCrawler/crawler/domains.txt",
               help='The list of domains to crawl.')
 def main(file):
     click.echo('File path: %s' % file)
@@ -30,11 +32,15 @@ def call_spider(file):
         urls = []
         for u in list_url:
             domain = u.strip('\n')
-            url = "http://" + u.strip('\n') + "/"
+            url = "http://" + u.strip('\n') + "" + "/"
             print "============= Domain " + domain
             print "============= Start url " + url
-            domains.append(domain)
-            urls.append(url)
+            response = requests.get(url + "/data.json")
+            if response.status_code == 200:
+                FileController.FileController().save_existing_data_json(response, domain, True)
+            else:
+                domains.append(domain)
+                urls.append(url)
 
         spider = DataSpider(domains=domains, start_urls=urls)
         settings = get_project_settings()
@@ -51,9 +57,12 @@ def call_spider(file):
         """ Copiar los datos a los archivos .json """
         data_spider.copy_items_to_files()
 
+        """ Eliminar archivos temporales """
+        FileController.FileController().clean_tmp_files()
+
         """ Convertir los archivos .json a data.json (formato POD) """
         for domain in domains:
-            data_json.DataJson().convert(domain)
+            DataJson.DataJson().convert(domain)
 
 
 results = []

@@ -1,3 +1,5 @@
+import os
+
 __author__ = 'Verena Ojeda'
 
 import time
@@ -128,23 +130,19 @@ def transformar(url, domain):
 
     items = get_items(urllib.urlopen(url_final))
 
-    # TODO: Solucionar el problema de que viene mas de un item
-    if len(items) > 1:
-        indice = 1
-    else:
-        indice = 0
-
-    # Si tiene atributos el item se agrega o modifca en la lista
-    if items:
-        if items[indice].props:
-            refresh_items_list(items[indice], domain)
+    indice = 0
+    # Si se cumple que por cada pagina hay un solo item
+    if len(items) == 1:
+        # Si el item tiene atributos se agrega o modifca en la lista
+        if items:
+            if items[indice].props:
+                refresh_items_list(items[indice], domain)
 
 
 def refresh_items_list(item_nuevo, domain):
     """
     Actualiza la lista de items por dominio por cada item nuevo.
     """
-    # TODO: se tiene que pasar siempre -1, depende de que se arreglen las anotaciones en la pagina
     add_item = True
 
     # Itera sobre la lista de items existentes
@@ -186,14 +184,14 @@ def refresh_items_list(item_nuevo, domain):
         else:
             add_item = True
             # Si el item ya existe modifica
-            """if item.props['url'] == item_nuevo.props['url']:
+            if item.props['url'] == item_nuevo.props['url']:
                 addItem = False
 
                 # Agrega los nuevos atributos del item
                 for name, values in item_nuevo.props.items():
                     if not item.props[name]:
                         for v in values:
-                            item.props[name].append(v)"""
+                            item.props[name].append(v)
 
     # Si es un nuevo item agrega a la lista
     if add_item:
