@@ -163,9 +163,10 @@ class DataJson:
                                              'publisher': providerproperty["name"][0],
                                              'distribution': distributionlist})
         """ Escribe en el archivo final """
-        FileController.FileController().save_existing_data_json(response, domain, False)
+        filename = FileController.FileController().save_existing_data_json(response, domain, False)
         """ Elimina el archivo temporal de items """
         FileController.FileController().clean_item_tmp_file(domain)
 
+        return filename
 
 #DataJson().convert("192.168.200.102")

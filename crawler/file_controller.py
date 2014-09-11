@@ -39,9 +39,10 @@ class FileController:
         subprincipal = principal + "/" + domain
         if not os.path.exists(subprincipal):
             os.makedirs(subprincipal)
-        final = subprincipal + "/" + "data.json"
-        file_response = codecs.open(final, 'w+', 'utf-8-sig')
+        filename = subprincipal + "/" + "data.json"
+        file_response = codecs.open(filename, 'w+', 'utf-8-sig')
         if to_json == True:
             file_response.write(json.dumps(response.json(), indent=2, ensure_ascii=False))
         else:
             file_response.write(json.dumps(response, indent=2, ensure_ascii=False))
+        return filename

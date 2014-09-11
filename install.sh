@@ -3,7 +3,7 @@
 # Observaciones: No esta terminado ni probado.
 # IMPORTANT: This script must be run within the virtual environment
 
-PATH_PYTHON_VENV_SITE_PACKAGES=$1
+PATH_PYTHON_VENV=$1
 
 echo $1
 
@@ -18,7 +18,7 @@ echo "--------- Installing RDFlib"
 pip install rdflib
 cd lib/
 # Copiar el archivo microdata.py dentro de rdflib/plugins/serializers
-cp microdata.py $PATH_PYTHON_VENV_SITE_PACKAGES/rdflib/plugins/serializers
+cp microdata.py $PATH_PYTHON_VENV/lib/python2.7/site-packages/rdflib/plugins/serializers
 
 # DataCrawler Project dependencies
 cd ..
@@ -29,24 +29,24 @@ python setup.py develop
 cd lib
 cd sip
 echo "--------- Installing SIP 4.16.2"
-python configure.py
-make
-sudo make install
+#python configure.py
+#make
+#sudo make install
 
 # re2
 cd ../re2
 echo "--------- Installing re2"
 #make test
-sudo make install
+#sudo make install
 #sudo make testinstall
-pip install re2
+#pip install re2
 
 # PyQt4
 cd ../pyqt
 echo "--------- Installing PyQt 4.10.04"
-python configure-ng.py
-make
-sudo make install
+#python configure-ng.py
+#make
+#sudo make install
 
 cd ../..
 

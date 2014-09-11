@@ -10,6 +10,6 @@ setup(
     scripts = ['bin/DataCrawler.py'],
     install_requires=[
           'lxml', 'scrapy', 'ipython', 'click', 'service_identity==1.0.0', 'requests', 'microdata==0.5',
-          'qt4reactor', 'psutil', 'adbockparser', 'Pillow'
+          'qt4reactor', 'psutil', 'adblockparser', 'Pillow'
     ],
 )

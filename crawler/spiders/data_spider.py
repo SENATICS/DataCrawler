@@ -183,15 +183,17 @@ def refresh_items_list(item_nuevo, domain):
         # Si el item a comparar es DataSet
         else:
             add_item = True
-            # Si el item ya existe modifica
-            if item.props['url'] == item_nuevo.props['url']:
-                addItem = False
+            # Si el item nuevo es Dataset
+            if item_nuevo.itemtype == "[http://schema.org/Dataset]":
+                # Si el item ya existe modifica
+                if item.props['url'] == item_nuevo.props['url']:
+                    addItem = False
 
-                # Agrega los nuevos atributos del item
-                for name, values in item_nuevo.props.items():
-                    if not item.props[name]:
-                        for v in values:
-                            item.props[name].append(v)
+                    # Agrega los nuevos atributos del item
+                    for name, values in item_nuevo.props.items():
+                        if not item.props[name]:
+                            for v in values:
+                                item.props[name].append(v)
 
     # Si es un nuevo item agrega a la lista
     if add_item:

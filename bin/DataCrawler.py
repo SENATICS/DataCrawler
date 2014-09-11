@@ -2,6 +2,7 @@ __author__ = 'Verena Ojeda'
 
 import requests
 import click
+import sys
 from twisted.internet import reactor
 from scrapy.crawler import Crawler
 from scrapy import log, signals
@@ -11,14 +12,18 @@ from crawler.spiders.data_spider import DataSpider
 from crawler import data_json as DataJson
 from crawler import file_controller as FileController
 
+from importer.rest import CKANImporter
+
 
 @click.command()
 @click.option('--file',  # prompt='Path to your file with domains to crawl',
-              default="/home/desa2/PycharmProjects/DataCrawler/crawler/domains.txt",
+              default="./crawler/domains.txt",
               help='The list of domains to crawl.')
 def main(file):
     click.echo('File path: %s' % file)
-    call_spider(file)
+    created_files = call_spider(file)
+    log.msg("continua la ejecucion", level=log.DEBUG)
+    import_to_ckan(created_files)
 
 
 def call_spider(file):
@@ -30,6 +35,7 @@ def call_spider(file):
         list_url = f.readlines()
         domains = []
         urls = []
+        created_files = []
         for u in list_url:
             domain = u.strip('\n')
             url = "http://" + u.strip('\n') + "" + "/"
@@ -37,7 +43,8 @@ def call_spider(file):
             print "============= Start url " + url
             response = requests.get(url + "/data.json")
             if response.status_code == 200:
-                FileController.FileController().save_existing_data_json(response, domain, True)
+                filename = FileController.FileController().save_existing_data_json(response, domain, True)
+                created_files.append({'modalidad': 'recolecta', 'archivo': filename})
             else:
                 domains.append(domain)
                 urls.append(url)
@@ -52,6 +59,7 @@ def call_spider(file):
         crawler.crawl(spider)
         crawler.start()
         log.start(loglevel=log.DEBUG)
+        log.msg("after log", level=log.DEBUG)
         reactor.run()  # the script will block here
 
         """ Copiar los datos a los archivos .json """
@@ -62,8 +70,10 @@ def call_spider(file):
 
         """ Convertir los archivos .json a data.json (formato POD) """
         for domain in domains:
-            DataJson.DataJson().convert(domain)
+            filename = DataJson.DataJson().convert(domain)
+            created_files.append({'modalidad': 'data-hunting', 'archivo': filename})
 
+        return created_files
 
 results = []
 
@@ -71,6 +81,15 @@ results = []
 def spider_closed(spider):
     print results
 
+def import_to_ckan(created_files):
+    importer = CKANImporter()
+    for f in created_files:
+        m = 'Importing %s' % str(f)
+        log.msg(m, level=log.DEBUG)
+        importer.import_package(f['archivo'], f['modalidad'])
+
 
 if __name__ == '__main__':
+    reload(sys)
+    sys.setdefaultencoding("utf-8")
     main()
