@@ -58,7 +58,7 @@ def call_spider(file):
         data_spider.copy_items_to_files()
 
         """ Eliminar archivos temporales """
-        FileController.FileController().clean_tmp_files()
+        #FileController.FileController().clean_tmp_files()
 
         """ Convertir los archivos .json a data.json (formato POD) """
         for domain in domains:
