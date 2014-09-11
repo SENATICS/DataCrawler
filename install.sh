@@ -29,24 +29,24 @@ python setup.py develop
 cd lib
 cd sip
 echo "--------- Installing SIP 4.16.2"
-#python configure.py
-#make
-#sudo make install
+python configure.py
+make
+sudo make install
 
 # re2
 cd ../re2
 echo "--------- Installing re2"
 #make test
-#sudo make install
+sudo make install
 #sudo make testinstall
-#pip install re2
+pip install re2
 
 # PyQt4
 cd ../pyqt
 echo "--------- Installing PyQt 4.10.04"
-#python configure-ng.py
-#make
-#sudo make install
+python configure-ng.py
+make
+sudo make install
 
 cd ../..
 
