@@ -34,7 +34,7 @@ class DataJson:
                         if property:
                             url = ""
                             if url_aux in property.keys():
-                                url = dataproperty["url"][0].encode('utf-8')
+                                url = property["url"][0]
 
                             """ Iterar sobre creator (publicador) """
                             for creator in property["creator"]:
@@ -168,4 +168,4 @@ class DataJson:
         FileController.FileController().clean_item_tmp_file(domain)
 
 
-#DataJson().convert("192.168.200.102")
+#DataJson().convert("datos.mec.gov.py")

@@ -10,6 +10,7 @@ DENY_FILTER = ('\.pdf', '\.zip')
 LOG_LEVEL = 'INFO'
 COOKIES_ENABLED = False
 LOG_FILE = 'datacrowler.log'
+SPLASH_URL = 'http://192.168.0.21:8050/render.html?url='
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'tutorial (+http://www.yourdomain.com)'
