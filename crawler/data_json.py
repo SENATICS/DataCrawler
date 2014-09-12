@@ -150,18 +150,18 @@ class DataJson:
                             Falta spatial
                             Provider name cambia por publisher
                             """
-                            response.append({'title': dataproperty["name"][0],
-                                             'landingPage': url,
-                                             'description': dataproperty["description"][0],
-                                             'contactName': creatorproperty["name"][0],
-                                             'mbox': creatorproperty["email"][0],
-                                             'keyword': keywords,
-                                             'accessLevel': "public",
-                                             'version': dataproperty["version"][0],
-                                             'license': dataproperty["license"][0],
-                                             'temporal': dataproperty["temporal"][0],
-                                             'publisher': providerproperty["name"][0],
-                                             'distribution': distributionlist})
+                            #response.append({'title': dataproperty["name"][0],
+                            #                 'landingPage': url,
+                            #                 'description': dataproperty["description"][0],
+                            #                 'contactName': creatorproperty["name"][0],
+                            #                 'mbox': creatorproperty["email"][0],
+                            #                  'keyword': keywords,
+                            #                  'accessLevel': "public",
+                            #                  'version': dataproperty["version"][0],
+                            #                  'license': dataproperty["license"][0],
+                            #                  'temporal': dataproperty["temporal"][0],
+                            #                  'publisher': providerproperty["name"][0],
+                            #                  'distribution': distributionlist})
         """ Escribe en el archivo final """
         filename = FileController.FileController().save_existing_data_json(response, domain, False)
         """ Elimina el archivo temporal de items """
