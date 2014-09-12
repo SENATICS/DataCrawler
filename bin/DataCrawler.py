@@ -3,6 +3,9 @@ __author__ = 'Verena Ojeda'
 import requests
 import click
 import sys
+import os
+import time
+from multiprocessing import Process
 from twisted.internet import reactor
 from scrapy.crawler import Crawler
 from scrapy import log, signals
@@ -17,12 +20,17 @@ from importer.rest import CKANImporter
 
 @click.command()
 @click.option('--file',  # prompt='Path to your file with domains to crawl',
-              default="./crawler/domains.txt",
+              default="/home/desa2/PycharmProjects/DataCrawler/crawler/domains.txt",
               help='The list of domains to crawl.')
 def main(file):
+    # Iniciar splash
+    # p = Process(target=start_splash_server)
+    # p.start()
+    # time.sleep(10)
     click.echo('File path: %s' % file)
     created_files = call_spider(file)
-    log.msg("continua la ejecucion", level=log.DEBUG)
+    # Finalizar splash
+    # p.terminate()
     import_to_ckan(created_files)
 
 
@@ -59,14 +67,13 @@ def call_spider(file):
         crawler.crawl(spider)
         crawler.start()
         log.start(loglevel=log.DEBUG)
-        log.msg("after log", level=log.DEBUG)
         reactor.run()  # the script will block here
 
         """ Copiar los datos a los archivos .json """
         data_spider.copy_items_to_files()
 
         """ Eliminar archivos temporales """
-        #FileController.FileController().clean_tmp_files()
+        FileController.FileController().clean_tmp_files()
 
         """ Convertir los archivos .json a data.json (formato POD) """
         for domain in domains:
@@ -74,6 +81,12 @@ def call_spider(file):
             created_files.append({'modalidad': 'data-hunting', 'archivo': filename})
 
         return created_files
+
+def start_splash_server():
+    # Inciar splash
+    os.system("chmod +x run_splash.sh")
+    os.system("./run_splash.sh /home/desa2/datos")
+
 
 results = []
 

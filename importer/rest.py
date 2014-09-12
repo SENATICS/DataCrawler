@@ -13,7 +13,7 @@ class CKANImporter(object):
 
     def import_package(self, filename, modalidad):
         with open(filename) as file:	# Use file to refer to the file object
-            base_dir = '/'.join(a.split('/')[0:-1]) + '/'
+            base_dir = '/'.join(filename.split('/')[0:-1]) + '/'
             data = file.read()
             entries = [DataEntry(**j) for j in json.loads(data)]
             datasets = [CkanDataset(e, modalidad) for e in entries]

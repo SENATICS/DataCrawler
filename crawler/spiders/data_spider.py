@@ -88,22 +88,23 @@ class DataSpider(CrawlSpider):
         """
         Obtiene el dominio de busqueda actual, y llama al metodo transformar.
         """
-        self.log('A response from %s just arrived.' % response.url)
-        time.sleep(3)
+        if response.status != 404:
+            self.log('A response from %s just arrived.' % response.url)
+            time.sleep(3)
 
-        """ Obtiene el domain actual """
-        https = response.url.find("https")
-        if https == -1:
-            pos_second_bar = 7
-        else:
-            pos_second_bar = 8
-        pos_third_bar = response.url.find("/", pos_second_bar + 1)
-        domain = response.url[pos_second_bar:pos_third_bar]
-        if domain not in items_list.keys():
-            items_list[domain] = []
-        self.log('Domain: %s' % domain)
+            """ Obtiene el domain actual """
+            https = response.url.find("https")
+            if https == -1:
+                pos_second_bar = 7
+            else:
+                pos_second_bar = 8
+            pos_third_bar = response.url.find("/", pos_second_bar + 1)
+            domain = response.url[pos_second_bar:pos_third_bar]
+            if domain not in items_list.keys():
+                items_list[domain] = []
+            self.log('Domain: %s' % domain)
 
-        transformar(response.url, domain)
+            transformar(response.url, domain)
 
 
 def transformar(url, domain):
@@ -135,9 +136,10 @@ def transformar(url, domain):
     # Si se cumple que por cada pagina hay un solo item
     if len(items) == 1:
         # Si el item tiene atributos se agrega o modifca en la lista
-        if items:
-            if items[indice].props:
-                refresh_items_list(items[indice], domain)
+        if items[indice].props:
+            #add_item_to_file(items[indice], "items")
+            #add_item_to_file_2(items[indice].props['url'][0], "urls")
+            refresh_items_list(items[indice], domain)
 
 
 def refresh_items_list(item_nuevo, domain):
@@ -148,15 +150,15 @@ def refresh_items_list(item_nuevo, domain):
 
     # Itera sobre la lista de items existentes
     for item in items_list[domain]:
-        add_item = True
+        # add_item = True
         # Si el item a comparar es DataCatalog
         if item.itemtype == "[http://schema.org/Datacatalog]":
 
             # Si el nuevo item es DataCatalog compara directo
-            if item.itemtype == item_nuevo.itemtype:
+            if item_nuevo.itemtype == "[http://schema.org/Datacatalog]":
 
                 # Si ya existe modifica
-                if item.props['url'] == item_nuevo.props['url']:
+                if unicode(item.props['url'][0]) == unicode(item_nuevo.props['url'][0]):
                     add_item = False
 
                     # Agrega los nuevos atributos del item
@@ -166,12 +168,12 @@ def refresh_items_list(item_nuevo, domain):
                                 item.props[name].append(v)
 
             # Si el nuevo item es DataSet busca entre sus datasets
-            else:
-                for datasets in item.get_all('datasets'):
+            elif item_nuevo.itemtype == "[http://schema.org/Dataset]":
+                for datasets in item.get_all('dataset'):
                     for dataset in datasets:
 
                         # Si el item ya existe modifica
-                        if dataset.props['url'] == item_nuevo.props['url']:
+                        if unicode(dataset.props['url'][0]) == unicode(item_nuevo.props['url'][0]):
                             add_item = False
 
                             # Agrega los nuevos atributos del item
@@ -183,21 +185,62 @@ def refresh_items_list(item_nuevo, domain):
         # TODO: todavia no se puede hacer esta comparacion porque no esta bien anotada la url
         # Si el item a comparar es DataSet
         else:
-            add_item = True
-            # Si el item ya existe modifica
-            if item.props['url'] == item_nuevo.props['url']:
-                addItem = False
 
-                # Agrega los nuevos atributos del item
-                for name, values in item_nuevo.props.items():
-                    if not item.props[name]:
-                        for v in values:
-                            item.props[name].append(v)
+            # Si el item nuevo es Dataset
+            if item_nuevo.itemtype == "[http://schema.org/Dataset]":
+
+                # Si el item ya existe modifica
+                if unicode(item.props['url'][0]) == unicode(item_nuevo.props['url'][0]):
+                    add_item = False
+
+                    # Agrega los nuevos atributos del item
+                    for name, values in item_nuevo.props.items():
+                        if not item.props[name]:
+                            for v in values:
+                                item.props[name].append(v)
 
     # Si es un nuevo item agrega a la lista
     if add_item:
         items_list[domain].append(item_nuevo)
 
+# Nuevo metodo para agregar items a la lista
+# def refresh_items_list_2(item_nuevo, domain):
+#     """
+#     Actualiza la lista de items por dominio por cada item nuevo.
+#     """
+#     add_item = True
+#     if item_nuevo.itemtype == "[http://schema.org/Datacatalog]":
+#         existe = buscar_datacatalog()
+#         if not existe:
+#             agregar_datacatalog(item_nuevo)
+#
+#             datasets = extraer_datasets_from_datacatalog()
+#             for dataset in datasets:
+#                 existe = buscar_dataset()
+#                 if not existe:
+#                     agregar_dataset()
+#
+#     if item_nuevo.itemtype == "[http://schema.org/Dataset]":
+#         existe = buscar_dataset()
+#         if not existe:
+#             agregar_dataset()
+#         else:
+#             agregar_atributos_nuevo()
+#     # Si es un nuevo item agrega a la lista
+#     if add_item:
+#         items_list[domain].append(item_nuevo)
+
+def add_item_to_file(item, file):
+    file_name = file + ".json"
+    filee = open(file_name, 'ab+')
+    filee.write(item.json())
+    filee.close()
+
+def add_item_to_file_2(item, file):
+    file_name = file + ".json"
+    filee = open(file_name, 'ab+')
+    filee.write(item + " ")
+    filee.close()
 
 def copy_items_to_files():
     """
