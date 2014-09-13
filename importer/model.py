@@ -7,7 +7,7 @@ class DataEntry(object):
     def __init__(self, *a, **kw):
         self.description = kw.get('description')
         self.contact_name = kw.get('contactName')
-        self.keywords = kw.get('keywords')
+        self.keywords = kw.get('keyword')
         self.access_level = kw.get('accessLevel')
         self.publisher = kw.get('publisher')
         self.landing_page = kw.get('landingPage')
