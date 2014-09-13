@@ -5,6 +5,8 @@
 
 PATH_PYTHON_VENV=$1
 
+. $PATH_PYTHON_VENV/bin/activate
+
 echo $1
 
 # Scrapy dependencies

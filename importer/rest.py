@@ -8,8 +8,10 @@ from model import DataEntry, CkanDataset
 
 
 class CKANImporter(object):
-    headers = {'Authorization': 'b90c3e69-fae7-45d8-aade-1fffd94b92e4', 'Content-type':'application/json'}
-    base_url = 'http://localhost:8080/api/3/action/'
+
+    def __init__(self):
+        self.headers = {'Authorization': 'xxxxx', 'Content-type':'application/json'}
+        self.base_url = 'http://www.datos.gov.py/api/3/action/'
 
     def import_package(self, filename, modalidad):
         with open(filename) as file:	# Use file to refer to the file object
@@ -60,18 +62,18 @@ class CKANImporter(object):
                 print 'Se ha creado el dataset %s' % dataset.name
 
     def create_dataset(self, dataset):
-        url = base_url + 'package_create'
+        url = self.base_url + 'package_create'
         dataset_dict = dataset.as_dict()
-        r = requests.post(url, data=json.dumps(dataset_dict), headers=headers)
+        r = requests.post(url, data=json.dumps(dataset_dict), headers=self.headers)
         if r.status_code == 200:
             return r
         
 
     def update_dataset(self, dataset, current):
-        url = base_url + 'package_update'
+        url = self.base_url + 'package_update'
         dataset_dict = dataset.as_dict()
         merge_dict = self.merge_datasets(dataset_dict, current)
-        r = requests.post(url, data=json.dumps(merge_dict), headers=headers)
+        r = requests.post(url, data=json.dumps(merge_dict), headers=self.headers)
         if r.status_code == 200:
             return r
 
@@ -81,13 +83,13 @@ class CKANImporter(object):
         return b
 
     def dataset_exists(self, name):
-        url = base_url + 'package_show'
+        url = self.base_url + 'package_show'
         params = {'id': name}
-        r = requests.get(url, headers=headers, params=params)
-        return (r.status_code == 200, r.json()['result'])
+        r = requests.get(url, headers=self.headers, params=params)
+        return (r.status_code == 200, r.json().get('result'))
 
     def get_organization_id(self, org_name):
-        url = base_url + 'organization_show'
+        url = self.base_url + 'organization_show'
         params = {'id': org_name}
         r = requests.get(url, params=params)
         return r.json()['result']['id']
@@ -96,4 +98,6 @@ class CKANImporter(object):
 if __name__ == '__main__':
     reload(sys)
     sys.setdefaultencoding("utf-8")
-    main()
+    importer = CKANImporter()
+    #Para pruebas sin ejecutar el crawler
+    importer.import_package('/home/desa4/workspace/DataCrawler/results_12_09_14/datos.mec.gov.py/data.json', 'data-hunting')
