@@ -2,6 +2,7 @@ __author__ = 'Verena Ojeda'
 
 import requests
 import click
+import sys
 import os
 import time
 from multiprocessing import Process
@@ -14,6 +15,8 @@ from crawler.spiders.data_spider import DataSpider
 from crawler import data_json as DataJson
 from crawler import file_controller as FileController
 
+from importer.rest import CKANImporter
+
 
 @click.command()
 @click.option('--file',  # prompt='Path to your file with domains to crawl',
@@ -23,11 +26,12 @@ def main(file):
     # Iniciar splash
     # p = Process(target=start_splash_server)
     # p.start()
-    # time.sleep(10)
+    # time.sleep(15)
     click.echo('File path: %s' % file)
-    call_spider(file)
+    created_files = call_spider(file)
     # Finalizar splash
     # p.terminate()
+    import_to_ckan(created_files)
 
 
 def call_spider(file):
@@ -39,6 +43,7 @@ def call_spider(file):
         list_url = f.readlines()
         domains = []
         urls = []
+        created_files = []
         for u in list_url:
             domain = u.strip('\n')
             url = "http://" + u.strip('\n') + "" + "/"
@@ -46,7 +51,8 @@ def call_spider(file):
             print "============= Start url " + url
             response = requests.get(url + "/data.json")
             if response.status_code == 200:
-                FileController.FileController().save_existing_data_json(response, domain, True)
+                filename = FileController.FileController().save_existing_data_json(response, domain, True)
+                created_files.append({'modalidad': 'recolecta', 'archivo': filename})
             else:
                 domains.append(domain)
                 urls.append(url)
@@ -71,7 +77,10 @@ def call_spider(file):
 
         """ Convertir los archivos .json a data.json (formato POD) """
         for domain in domains:
-            DataJson.DataJson().convert(domain)
+            filename = DataJson.DataJson().convert(domain)
+            created_files.append({'modalidad': 'data-hunting', 'archivo': filename})
+
+        return created_files
 
 
 def start_splash_server():
@@ -87,5 +96,15 @@ def spider_closed(spider):
     print results
 
 
+def import_to_ckan(created_files):
+    importer = CKANImporter()
+    for f in created_files:
+        m = 'Importing %s' % str(f)
+        log.msg(m, level=log.DEBUG)
+        importer.import_package(f['archivo'], f['modalidad'])
+
+
 if __name__ == '__main__':
+    reload(sys)
+    sys.setdefaultencoding("utf-8")
     main()

@@ -12,6 +12,7 @@ COOKIES_ENABLED = False
 LOG_FILE = 'datacrowler.log'
 SPLASH_URL = 'http://192.168.200.3:8050/render.html?url='
 API_KEY = ""
+#DEPTH_LIMIT = 1
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'tutorial (+http://www.yourdomain.com)'

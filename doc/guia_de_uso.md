@@ -23,6 +23,11 @@ Instalación
  `$ install.sh path_to_your_virtualenv`
  
  `$ python setup.py develop`
+ 
+5. Modificar el archivo settings.py
+
+ Copiar el archivo settings-example.py a settings.py y modificar los valores especificados según las configuraciones locales: ruta del splash, API Key del catálogo, etc.
+
 
 Ejecución y uso
 ---------------
@@ -40,7 +45,7 @@ Ejecución y uso
  mec.gov.py
 
  datos.gov.py
-
+ 
 3. Ingresar al directorio DataCrawler/bin y ejecutar el siguiente comando en una terminal:
 
  `$ python DataCrawler/bin/DataCrawler.py --file=path_to_your_file_with_domains_to_crawl`
@@ -49,9 +54,9 @@ Para el ejemplo de más arriba el comando sería el siguiente:
 
  `$ python DataCrawler/bin/DataCrawler.py --file=domains.txt`
 
-**Observación**: el archivo con la lista de dominos no necesiar estar necesariamente dentro del directorio del DataCrawler, por lo cual siempre se debe especificar la ruta absoluta del archivo.
+**Observación**: el archivo con la lista de dominos no necesita estar dentro del directorio del DataCrawler, por lo cual siempre se debe especificar la ruta absoluta del archivo.
 
 Resultados
 ----------
 
-Para cada dominio de la lista se retornan dos archivos. Un archivo `domain.json` que contiene los datos extraídos a partir de las anotaciones microdata. Y un archivo `domain_data.json` que contiene la conversión del archivo `domain.json` correspondiente al formato POD (Project Open Data).
+Para cada dominio de la lista se retornan dos archivos. Un archivo `domain.json` que contiene los datos extraídos a partir de las anotaciones microdata/rdfa. Y un archivo `domain_data.json` que contiene la conversión del archivo `domain.json` correspondiente al formato POD (Project Open Data).
