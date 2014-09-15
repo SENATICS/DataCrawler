@@ -11,7 +11,7 @@ from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.utils.project import get_project_settings
 from microdata import get_items
 from rdflib.serializer import Serializer
-from scrapy import log
+from collections import defaultdict
 
 try:
     import json
@@ -91,7 +91,7 @@ class DataSpider(CrawlSpider):
         """
         if response.status != 404:
             self.log('A response from %s just arrived.' % response.url)
-            time.sleep(3)
+            time.sleep(2)
 
             """ Obtiene el domain actual """
             https = response.url.find("https")
@@ -119,7 +119,7 @@ def transformar(url, domain):
     microdata['items'] = items = []
 
     settings = get_project_settings()
-    url_splash = settings['SPLASH_URL'] + url + "&timeout=20&wait=2.5"
+    url_splash = settings['SPLASH_URL'] + url + "&timeout=20&wait=1.5"
     file_splash = open('splash.html', 'w')
     html = urllib.urlopen(url_splash)
     file_splash.write(str(html.read()))
@@ -138,9 +138,7 @@ def transformar(url, domain):
     if len(items) == 1:
         # Si el item tiene atributos se agrega o modifca en la lista
         if items[indice].props:
-            #add_item_to_file(items[indice], "items")
-            #add_item_to_file_2(items[indice].props['url'][0], "urls")
-            refresh_items_list(items[indice], domain)
+            refresh_items_list_2(items[indice], domain)
 
 
 def refresh_items_list(item_nuevo, domain):
@@ -203,32 +201,87 @@ def refresh_items_list(item_nuevo, domain):
     if add_item:
         items_list[domain].append(item_nuevo)
 
+
 # Nuevo metodo para agregar items a la lista
-# def refresh_items_list_2(item_nuevo, domain):
-#     """
-#     Actualiza la lista de items por dominio por cada item nuevo.
-#     """
-#     add_item = True
-#     if item_nuevo.itemtype == "[http://schema.org/Datacatalog]":
-#         existe = buscar_datacatalog()
-#         if not existe:
-#             agregar_datacatalog(item_nuevo)
-#
-#             datasets = extraer_datasets_from_datacatalog()
-#             for dataset in datasets:
-#                 existe = buscar_dataset()
-#                 if not existe:
-#                     agregar_dataset()
-#
-#     if item_nuevo.itemtype == "[http://schema.org/Dataset]":
-#         existe = buscar_dataset()
-#         if not existe:
-#             agregar_dataset()
-#         else:
-#             agregar_atributos_nuevo()
-#     # Si es un nuevo item agrega a la lista
-#     if add_item:
-#         items_list[domain].append(item_nuevo)
+def refresh_items_list_2(item_nuevo, domain):
+    """
+    Actualiza la lista de items por dominio por cada item nuevo.
+    """
+    log_to_file(str(item_nuevo.itemtype[0]))
+    if str(item_nuevo.itemtype[0]) == "http://schema.org/DataCatalog":
+        log_to_file(" Entro a datacatalog.-")
+        exist = find_datacatalog(item_nuevo, domain)
+        if not exist:
+            log_to_file(" Entro a extraer datasets y agregar el datacatalog.-")
+            datasets = extract_datasets_from_datacatalog(item_nuevo, domain)
+            for dataset in datasets:
+                exist_dataset = find_dataset(dataset, domain)
+                if not exist_dataset:
+                    log_to_file(" Entro a agregar el dataset dentro de datacatalog.-")
+                    add_dataset(dataset, domain)
+                else:
+                    add_new_att(dataset, domain)
+            add_datacatalog(item_nuevo, domain)
+        else:
+            add_new_att(item_nuevo, domain)
+
+    if str(item_nuevo.itemtype[0]) == "http://schema.org/Dataset":
+        log_to_file(" Entro a dataset.-")
+        exist = find_dataset(item_nuevo, domain)
+        if not exist:
+            log_to_file(" Entro a agregar el dataset.-")
+            add_dataset(item_nuevo, domain)
+        else:
+            add_new_att(item_nuevo, domain)
+
+
+def find_datacatalog(item_nuevo, domain):
+    exist = False
+    for item in items_list[domain]:
+        if str(item.itemtype[0]) == "http://schema.org/Datacatalog":
+            if unicode(item.props['url'][0]) == unicode(item_nuevo.props['url'][0]):
+                exist = True
+    return exist
+
+
+def add_datacatalog(item_nuevo, domain):
+    # Sacar solo datacatalog
+    # item_nuevo['dataset'] = defaultdict(list)
+    items_list[domain].append(item_nuevo)
+
+
+def find_dataset(item_nuevo, domain):
+    exist = False
+    for item in items_list[domain]:
+        if str(item.itemtype[0]) == "http://schema.org/Dataset":
+            if unicode(item.props['url'][0]) == unicode(item_nuevo.props['url'][0]):
+                exist = True
+    return exist
+
+
+def add_dataset(item_nuevo, domain):
+    items_list[domain].append(item_nuevo)
+
+
+def extract_datasets_from_datacatalog(item_nuevo, domain):
+    return item_nuevo.props["dataset"]
+
+
+def add_new_att(item_nuevo, domain):
+    for item in items_list[domain]:
+        if unicode(item.props['url'][0]) == unicode(item_nuevo.props['url'][0]):
+            # Agrega los nuevos atributos del item
+            for name, values in item_nuevo.props.items():
+                if name in item.props:
+                    for v in values:
+                        item.props[name].append(v)
+                else:
+                    for v in values:
+                        item.props[name] = [v]
+                        # if not item.props[name]:
+                        # for v in values:
+                        # item.props[name].append(v)
+
 
 def add_item_to_file(item, file):
     file_name = file + ".json"
@@ -236,11 +289,13 @@ def add_item_to_file(item, file):
     filee.write(item.json())
     filee.close()
 
-def add_item_to_file_2(item, file):
-    file_name = file + ".json"
+
+def log_to_file(data):
+    file_name = "log.txt"
     filee = open(file_name, 'ab+')
-    filee.write(item + " ")
+    filee.write(data)
     filee.close()
+
 
 def copy_items_to_files():
     """

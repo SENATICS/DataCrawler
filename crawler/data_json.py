@@ -107,65 +107,51 @@ class DataJson:
                                          'accessLevel': "public",
                                          'publisher': ""})
 
-                        """ Iterar sobre los datasets """
-                        for dataset in property["dataset"]:
-                            dataproperty = dataset["properties"]
-                            url = ""
-                            if url_aux in dataproperty.keys():
-                                url = dataproperty["url"][0]
+                        # """ Iterar sobre los datasets """
+                        # for dataset in property["dataset"]:
+                        #     dataproperty = dataset["properties"]
+                        #     url = ""
+                        #     if url_aux in dataproperty.keys():
+                        #         url = dataproperty["url"][0]
+                        #
+                        #     """ Iterar sobre creator (publicador) """
+                        #     for creator in dataproperty["creator"]:
+                        #         creatorproperty = creator["properties"]
+                        #
+                        #     """ Iterar sobre provider (organizacion) """
+                        #     for provider in dataproperty["provider"]:
+                        #         providerproperty = provider["properties"]
+                        #
+                        #     distributionlist = []
+                        #     if distribution_aux in property.keys():
+                        #         for distribution in property["distribution"]:
+                        #             distributionproperty = distribution["properties"]
+                        #             # Si no tiene el encoding ni la url no guarda el recurso
+                        #             if encoding_aux in distributionproperty.keys() and url_aux in distributionproperty.keys():
+                        #                 format = distributionproperty["encodingFormat"][0]
+                        #                 accessURL = distributionproperty["url"][0]
+                        #                 distributionobject = {'format': format, 'accessURL': accessURL}
+                        #                 distributionlist.append(distributionobject)
+                        #
+                        #     keys_aux = dataproperty["keywords"][0]
+                        #     keywords = keys_aux.split(",")
 
-                            """ Iterar sobre creator (publicador) """
-                            for creator in dataproperty["creator"]:
-                                creatorproperty = creator["properties"]
-
-                            """ Iterar sobre provider (organizacion) """
-                            for provider in dataproperty["provider"]:
-                                providerproperty = provider["properties"]
-
-                            distributionlist = []
-                            if distribution_aux in property.keys():
-                                for distribution in property["distribution"]:
-                                    distributionproperty = distribution["properties"]
-                                    # Si no tiene el encoding ni la url no guarda el recurso
-                                    if encoding_aux in distributionproperty.keys() and url_aux in distributionproperty.keys():
-                                        format = distributionproperty["encodingFormat"][0]
-                                        accessURL = distributionproperty["url"][0]
-                                        distributionobject = {'format': format, 'accessURL': accessURL}
-                                        distributionlist.append(distributionobject)
-
-                            keys_aux = dataproperty["keywords"][0]
-                            keywords = keys_aux.split(",")
-
-                            """
-                            Name cambia por title
-                            Url cambia por uniqueid
-                            Description se mantiene
-                            Keywords cambia por keyword
-                            Creator name cambia por contactProvider
-                            Creator email cambia por mbox
-                            Access level se pone public por defecto
-                            Version se mantiene
-                            License se mantiene
-                            Temporal se mantiene
-                            Falta spatial
-                            Provider name cambia por publisher
-                            """
-                            #response.append({'title': dataproperty["name"][0],
-                            #                 'landingPage': url,
-                            #                 'description': dataproperty["description"][0],
-                            #                 'contactName': creatorproperty["name"][0],
-                            #                 'mbox': creatorproperty["email"][0],
-                            #                  'keyword': keywords,
-                            #                  'accessLevel': "public",
-                            #                  'version': dataproperty["version"][0],
-                            #                  'license': dataproperty["license"][0],
-                            #                  'temporal': dataproperty["temporal"][0],
-                            #                  'publisher': providerproperty["name"][0],
-                            #                  'distribution': distributionlist})
+                            # response.append({'title': dataproperty["name"][0],
+                            #                  'landingPage': url,
+                            #                  'description': dataproperty["description"][0],
+                            #                  'contactName': creatorproperty["name"][0],
+                            #                  'mbox': creatorproperty["email"][0],
+                            #                   'keyword': keywords,
+                            #                   'accessLevel': "public",
+                            #                   'version': dataproperty["version"][0],
+                            #                   'license': dataproperty["license"][0],
+                            #                   'temporal': dataproperty["temporal"][0],
+                            #                   'publisher': providerproperty["name"][0],
+                            #                   'distribution': distributionlist})
         """ Escribe en el archivo final """
         FileController.FileController().save_existing_data_json(response, domain, False)
         """ Elimina el archivo temporal de items """
-        FileController.FileController().clean_item_tmp_file(domain)
+        #FileController.FileController().clean_item_tmp_file(domain)
 
 
 #DataJson().convert("datos.mec.gov.py")
