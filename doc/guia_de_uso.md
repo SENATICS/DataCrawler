@@ -20,7 +20,9 @@ Instalación
 
  `$ cd DataCrawler`
 
- `$ install.sh path_to_your_virtualenv_site_packages`
+ `$ install.sh path_to_your_virtualenv`
+ 
+ `$ python setup.py develop`
 
 Ejecución y uso
 ---------------
