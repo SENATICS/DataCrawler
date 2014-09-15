@@ -24,8 +24,12 @@ Setup and run
  `$ install.sh path_to_your_virtualenv`
  
  `$ python setup.py develop`
+ 
+5. Modificar el archivo settings.py
 
-* Run DataCrawler in a terminal window:
+ Copiar el archivo settings-example.py a settings.py y modificar los valores especificados según las configuraciones locales: ruta del splash, API Key del catálogo, etc.
+
+6. Run DataCrawler in a terminal window:
 
  `$ python DataCrawler/bin/DataCrawler.py --file=path_to_your_file_with_domains_to_crawl`
 
