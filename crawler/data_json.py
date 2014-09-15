@@ -103,7 +103,7 @@ class DataJson:
                                          'description': property["description"][0],
                                          'contactName': "",
                                          'mbox': "",
-                                         'keywords': keywords_catalog,
+                                         'keyword': keywords_catalog,
                                          'accessLevel': "public",
                                          'publisher': ""})
 

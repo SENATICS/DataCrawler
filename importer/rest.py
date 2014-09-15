@@ -4,13 +4,15 @@ import datetime
 import os
 import sys
 from zipfile import ZipFile
+from scrapy.utils.project import get_project_settings
 from model import DataEntry, CkanDataset
 
 
 class CKANImporter(object):
 
     def __init__(self):
-        self.headers = {'Authorization': 'xxxxx', 'Content-type':'application/json'}
+        settings = get_project_settings()
+        self.headers = {'Authorization': settings['API_KEY'], 'Content-type':'application/json'}
         self.base_url = 'http://www.datos.gov.py/api/3/action/'
 
     def import_package(self, filename, modalidad):
@@ -100,4 +102,4 @@ if __name__ == '__main__':
     sys.setdefaultencoding("utf-8")
     importer = CKANImporter()
     #Para pruebas sin ejecutar el crawler
-    importer.import_package('/home/desa4/workspace/DataCrawler/results_12_09_14/datos.mec.gov.py/data.json', 'data-hunting')
+    importer.import_package('data.json', 'data-hunting')

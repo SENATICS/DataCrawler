@@ -31,7 +31,7 @@ def main(file):
     created_files = call_spider(file)
     # Finalizar splash
     # p.terminate()
-    import_to_ckan(created_files)
+    # import_to_ckan(created_files)
 
 
 def call_spider(file):
