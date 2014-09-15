@@ -40,7 +40,7 @@ class FileController:
         if not os.path.exists(subprincipal):
             os.makedirs(subprincipal)
         filename = subprincipal + "/" + "data.json"
-        file_response = codecs.open(filename, 'w+', 'utf-8-sig')
+        file_response = codecs.open(filename, 'wb', 'utf-8-sig')
         if to_json == True:
             file_response.write(json.dumps(response.json(), indent=2, ensure_ascii=False))
         else:

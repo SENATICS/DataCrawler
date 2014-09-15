@@ -10,8 +10,10 @@ DENY_FILTER = ('\.pdf', '\.zip')
 LOG_LEVEL = 'INFO'
 COOKIES_ENABLED = False
 LOG_FILE = 'datacrowler.log'
-SPLASH_URL = 'http://192.168.200.3:8050/render.html?url='
-API_KEY = ""
+# Especificar aqui la ubicacion donde se levanta el servidor splash
+SPLASH_URL = 'http://localhost:8050/render.html?url='
+# Especificar aqui la API Key del catalago
+API_KEY = "xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 #DEPTH_LIMIT = 1
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
