@@ -97,9 +97,9 @@ class CKANImporter(object):
         return r.json()['result']['id']
 
 
-if __name__ == '__main__':
-    reload(sys)
-    sys.setdefaultencoding("utf-8")
-    importer = CKANImporter()
-    #Para pruebas sin ejecutar el crawler
-    importer.import_package('/home/desa2/PycharmProjects/DataCrawler/bin/results_16_09_14/datos.mec.gov.py/data.json', 'data-hunting')
+# if __name__ == '__main__':
+#     reload(sys)
+#     sys.setdefaultencoding("utf-8")
+#     importer = CKANImporter()
+#     #Para pruebas sin ejecutar el crawler
+#     importer.import_package('/home/desa2/PycharmProjects/DataCrawler/bin/results_16_09_14/datos.mec.gov.py/data.json', 'data-hunting')

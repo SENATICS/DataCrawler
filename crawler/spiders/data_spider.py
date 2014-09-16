@@ -119,7 +119,7 @@ def transformar(url, domain):
     microdata['items'] = items = []
 
     settings = get_project_settings()
-    url_splash = settings['SPLASH_URL'] + url + "&timeout=20&wait=2.5"
+    url_splash = settings['SPLASH_URL'] + "render.html?url=" + url + "&timeout=20&wait=2.5"
     file_splash = open('splash.html', 'w')
     html = urllib.urlopen(url_splash)
     file_splash.write(str(html.read()))
