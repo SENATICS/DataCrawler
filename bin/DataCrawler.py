@@ -22,7 +22,10 @@ from importer.rest import CKANImporter
 @click.option('--file',  # prompt='Path to your file with domains to crawl',
               default="/home/desa2/PycharmProjects/DataCrawler/crawler/domains.txt",
               help='The list of domains to crawl.')
-def main(file):
+@click.option('--virtualenv',  # prompt='Path to your virtual enviroment',
+              default="/home/desa2/datos",
+              help='The path of the virtual enviroment.')
+def main(file, virtualenv):
     # Iniciar splash
     # p = Process(target=start_splash_server)
     # p.start()
@@ -86,7 +89,7 @@ def call_spider(file):
 def start_splash_server():
     # Inciar splash
     os.system("chmod +x run_splash.sh")
-    os.system("./run_splash.sh /home/desa2/datos")
+    os.system("./run_splash.sh " + virtualenv)
 
 
 results = []

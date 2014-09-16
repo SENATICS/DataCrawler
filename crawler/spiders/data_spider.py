@@ -141,67 +141,6 @@ def transformar(url, domain):
             refresh_items_list(items[indice], domain)
 
 
-def refresh_items_list_old(item_nuevo, domain):
-    """
-    Actualiza la lista de items por dominio por cada item nuevo.
-    """
-    add_item = True
-
-    # Itera sobre la lista de items existentes
-    for item in items_list[domain]:
-        # add_item = True
-        # Si el item a comparar es DataCatalog
-        if item.itemtype == "[http://schema.org/Datacatalog]":
-
-            # Si el nuevo item es DataCatalog compara directo
-            if item_nuevo.itemtype == "[http://schema.org/Datacatalog]":
-
-                # Si ya existe modifica
-                if unicode(item.props['url'][0]) == unicode(item_nuevo.props['url'][0]):
-                    add_item = False
-
-                    # Agrega los nuevos atributos del item
-                    for name, values in item_nuevo.props.items():
-                        if not item.props[name]:
-                            for v in values:
-                                item.props[name].append(v)
-
-            # Si el nuevo item es DataSet busca entre sus datasets
-            elif item_nuevo.itemtype == "[http://schema.org/Dataset]":
-                for datasets in item.get_all('dataset'):
-                    for dataset in datasets:
-
-                        # Si el item ya existe modifica
-                        if unicode(dataset.props['url'][0]) == unicode(item_nuevo.props['url'][0]):
-                            add_item = False
-
-                            # Agrega los nuevos atributos del item
-                            for name, values in item_nuevo.props.items():
-                                if not dataset.props[name]:
-                                    for v in values:
-                                        dataset.props[name].append(v)
-
-        # Si el item a comparar es DataSet
-        else:
-
-            # Si el item nuevo es Dataset
-            if item_nuevo.itemtype == "[http://schema.org/Dataset]":
-
-                # Si el item ya existe modifica
-                if unicode(item.props['url'][0]) == unicode(item_nuevo.props['url'][0]):
-                    add_item = False
-
-                    # Agrega los nuevos atributos del item
-                    for name, values in item_nuevo.props.items():
-                        if not item.props[name]:
-                            for v in values:
-                                item.props[name].append(v)
-
-    # Si es un nuevo item agrega a la lista
-    if add_item:
-        items_list[domain].append(item_nuevo)
-
-
 # Nuevo metodo para agregar items a la lista
 def refresh_items_list(item_nuevo, domain):
     """
@@ -275,6 +214,7 @@ def add_new_att(item_nuevo, domain):
                             item.props[name].append(v)
                         first = False
 
+
 def log_to_file(data):
     file_name = "log.txt"
     filee = open(file_name, 'ab+')
@@ -323,3 +263,64 @@ def rdfa_to_microdata(url):
         return serialization
     else:
         return ""
+
+
+def refresh_items_list_old(item_nuevo, domain):
+    """
+    Actualiza la lista de items por dominio por cada item nuevo.
+    """
+    add_item = True
+
+    # Itera sobre la lista de items existentes
+    for item in items_list[domain]:
+        # add_item = True
+        # Si el item a comparar es DataCatalog
+        if item.itemtype == "[http://schema.org/Datacatalog]":
+
+            # Si el nuevo item es DataCatalog compara directo
+            if item_nuevo.itemtype == "[http://schema.org/Datacatalog]":
+
+                # Si ya existe modifica
+                if unicode(item.props['url'][0]) == unicode(item_nuevo.props['url'][0]):
+                    add_item = False
+
+                    # Agrega los nuevos atributos del item
+                    for name, values in item_nuevo.props.items():
+                        if not item.props[name]:
+                            for v in values:
+                                item.props[name].append(v)
+
+            # Si el nuevo item es DataSet busca entre sus datasets
+            elif item_nuevo.itemtype == "[http://schema.org/Dataset]":
+                for datasets in item.get_all('dataset'):
+                    for dataset in datasets:
+
+                        # Si el item ya existe modifica
+                        if unicode(dataset.props['url'][0]) == unicode(item_nuevo.props['url'][0]):
+                            add_item = False
+
+                            # Agrega los nuevos atributos del item
+                            for name, values in item_nuevo.props.items():
+                                if not dataset.props[name]:
+                                    for v in values:
+                                        dataset.props[name].append(v)
+
+        # Si el item a comparar es DataSet
+        else:
+
+            # Si el item nuevo es Dataset
+            if item_nuevo.itemtype == "[http://schema.org/Dataset]":
+
+                # Si el item ya existe modifica
+                if unicode(item.props['url'][0]) == unicode(item_nuevo.props['url'][0]):
+                    add_item = False
+
+                    # Agrega los nuevos atributos del item
+                    for name, values in item_nuevo.props.items():
+                        if not item.props[name]:
+                            for v in values:
+                                item.props[name].append(v)
+
+    # Si es un nuevo item agrega a la lista
+    if add_item:
+        items_list[domain].append(item_nuevo)
