@@ -13,7 +13,7 @@ class CKANImporter(object):
     def __init__(self):
         settings = get_project_settings()
         self.headers = {'Authorization': settings['API_KEY'], 'Content-type':'application/json'}
-        self.base_url = 'http://www.datos.gov.py/api/3/action/'
+        self.base_url = settings['CATALOG_URL']
 
     def import_package(self, filename, modalidad):
         with open(filename) as file:	# Use file to refer to the file object
@@ -102,4 +102,4 @@ if __name__ == '__main__':
     sys.setdefaultencoding("utf-8")
     importer = CKANImporter()
     #Para pruebas sin ejecutar el crawler
-    importer.import_package('data.json', 'data-hunting')
+    importer.import_package('/home/desa2/PycharmProjects/DataCrawler/bin/results_16_09_14/datos.mec.gov.py/data.json', 'data-hunting')

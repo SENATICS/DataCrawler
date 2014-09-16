@@ -9,6 +9,7 @@ try:
 except ImportError:
     import simplejson as json
 
+
 class FileController:
     def clean_tmp_files(self):
         """
@@ -24,9 +25,9 @@ class FileController:
         """
         Elimina los archivos temporales utilizados por el spider.
         """
-        file =  domain + ".json"
+        file = domain + ".json"
         if os.path.exists(file):
-             os.remove(file)
+            os.remove(file)
 
 
     def save_existing_data_json(self, response, domain, to_json):
@@ -40,9 +41,12 @@ class FileController:
         if not os.path.exists(subprincipal):
             os.makedirs(subprincipal)
         filename = subprincipal + "/" + "data.json"
-        file_response = codecs.open(filename, 'wb', 'utf-8-sig')
+        # file_response = codecs.open(filename, 'w+', 'utf-8-sig')
+        file_response = open(filename, 'w+')
         if to_json == True:
             file_response.write(json.dumps(response.json(), indent=2, ensure_ascii=False))
+            file_response.close()
         else:
             file_response.write(json.dumps(response, indent=2, ensure_ascii=False))
+            file_response.close()
         return filename
