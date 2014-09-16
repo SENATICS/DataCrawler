@@ -27,14 +27,14 @@ from importer.rest import CKANImporter
               help='The path of the virtual enviroment.')
 def main(file, virtualenv):
     # Iniciar splash
-    # p = Process(target=start_splash_server)
-    # p.start()
-    # time.sleep(15)
+    #p = Process(target=start_splash_server, args=(virtualenv,))
+    #p.start()
+    #time.sleep(10)
     click.echo('File path: %s' % file)
     created_files = call_spider(file)
+    #import_to_ckan(created_files)
     # Finalizar splash
-    # p.terminate()
-    # import_to_ckan(created_files)
+    #p.terminate()
 
 
 def call_spider(file):
@@ -86,7 +86,7 @@ def call_spider(file):
         return created_files
 
 
-def start_splash_server():
+def start_splash_server(virtualenv):
     # Inciar splash
     os.system("chmod +x run_splash.sh")
     os.system("./run_splash.sh " + virtualenv)
