@@ -1,6 +1,33 @@
-import os
-
-__author__ = 'Verena Ojeda'
+# -*- coding: utf-8 -*-
+#
+# @author	Rodrigo Parra
+# @copyright	2014 Governance and Democracy Program USAID-CEAMSO
+# @license 	http://www.gnu.org/licenses/gpl-2.0.html
+#
+# USAID-CEAMSO
+# Copyright (C) 2014 Governance and Democracy Program
+# http://ceamso.org.py/es/proyectos/20-programa-de-democracia-y-gobernabilidad
+#
+#----------------------------------------------------------------------------
+# This file is part of the Governance and Democracy Program USAID-CEAMSO,
+# is distributed as free software in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+# FOR A PARTICULAR PURPOSE. You can redistribute it and/or modify it under the
+# terms of the GNU Lesser General Public License version 2 as published by the
+# Free Software Foundation, accessible from <http://www.gnu.org/licenses/> or write
+# to Free Software Foundation (FSF) Inc., 51 Franklin St, Fifth Floor, Boston,
+# MA 02111-1301, USA.
+#---------------------------------------------------------------------------
+# Este archivo es parte del Programa de Democracia y Gobernabilidad USAID-CEAMSO,
+# es distribuido como software libre con la esperanza que sea de utilidad,
+# pero sin NINGUNA GARANTÍA; sin garantía alguna implícita de ADECUACION a cualquier
+# MERCADO o APLICACION EN PARTICULAR. Usted puede redistribuirlo y/o modificarlo
+# bajo los términos de la GNU Lesser General Public Licence versión 2 de la Free
+# Software Foundation, accesible en <http://www.gnu.org/licenses/> o escriba a la
+# Free Software Foundation (FSF) Inc., 51 Franklin St, Fifth Floor, Boston,
+# MA 02111-1301, USA.
+#
+__author__ = 'Rodrigo Parra'
 
 import time
 import urllib
@@ -11,7 +38,6 @@ from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.utils.project import get_project_settings
 from microdata import get_items
 from rdflib.serializer import Serializer
-from collections import defaultdict
 
 try:
     import json
@@ -119,7 +145,7 @@ def transformar(url, domain):
     microdata['items'] = items = []
 
     settings = get_project_settings()
-    url_splash = settings['SPLASH_URL'] + "render.html?url=" + url + "&timeout=20&wait=2.5"
+    url_splash = settings['SPLASH_URL'] + "render.html?url=" + url + "&timeout=20&wait=2"
     file_splash = open('splash.html', 'w')
     html = urllib.urlopen(url_splash)
     file_splash.write(str(html.read()))
@@ -141,7 +167,6 @@ def transformar(url, domain):
             refresh_items_list(items[indice], domain)
 
 
-# Nuevo metodo para agregar items a la lista
 def refresh_items_list(item_nuevo, domain):
     """
     Actualiza la lista de items por dominio por cada item nuevo.
@@ -169,6 +194,9 @@ def refresh_items_list(item_nuevo, domain):
 
 
 def find_datacatalog(item_nuevo, domain):
+    """
+    Verificar si un item de tipo datacatalog existe o no en la lista.
+    """
     exist = False
     for item in items_list[domain]:
         if str(item.itemtype[0]) == "http://schema.org/Datacatalog":
@@ -178,12 +206,17 @@ def find_datacatalog(item_nuevo, domain):
 
 
 def add_datacatalog(item_nuevo, domain):
-    # Sacar solo datacatalog
+    """
+    Agregar un nuevo item de tipo datacatalog a la lista.
+    """
     item_nuevo.props['dataset'] = []
     items_list[domain].append(item_nuevo)
 
 
 def find_dataset(item_nuevo, domain):
+    """
+    Verificar si un item de tipo dataset existe o no en la lista.
+    """
     exist = False
     for item in items_list[domain]:
         if str(item.itemtype[0]) == "http://schema.org/Dataset":
@@ -193,14 +226,23 @@ def find_dataset(item_nuevo, domain):
 
 
 def add_dataset(item_nuevo, domain):
+    """
+    Agregar un nuevo item de tipo dataset a la lista.
+    """
     items_list[domain].append(item_nuevo)
 
 
 def extract_datasets_from_datacatalog(item_nuevo, domain):
+    """
+    Extraer los items de tipo dataset de un datacatalog.
+    """
     return item_nuevo.props['dataset']
 
 
 def add_new_att(item_nuevo, domain):
+    """
+    Agregar un atributos nuevos a un item.
+    """
     for item in items_list[domain]:
         if unicode(item.props['url'][0]) == unicode(item_nuevo.props['url'][0]):
             # Agrega los nuevos atributos del item
@@ -216,6 +258,9 @@ def add_new_att(item_nuevo, domain):
 
 
 def log_to_file(data):
+    """
+    Escribir en un archivo log.
+    """
     file_name = "log.txt"
     filee = open(file_name, 'ab+')
     filee.write(data)
@@ -244,7 +289,7 @@ def copy_items_to_files():
 
 def rdfa_to_microdata(url):
     """
-    Version de prueba para transformar paginas anotadas con rdfa a microdata.
+    Transforma paginas anotadas con rdfa a microdata.
     """
     global known_vocabs
     target_format = "microdata"
@@ -263,64 +308,3 @@ def rdfa_to_microdata(url):
         return serialization
     else:
         return ""
-
-
-def refresh_items_list_old(item_nuevo, domain):
-    """
-    Actualiza la lista de items por dominio por cada item nuevo.
-    """
-    add_item = True
-
-    # Itera sobre la lista de items existentes
-    for item in items_list[domain]:
-        # add_item = True
-        # Si el item a comparar es DataCatalog
-        if item.itemtype == "[http://schema.org/Datacatalog]":
-
-            # Si el nuevo item es DataCatalog compara directo
-            if item_nuevo.itemtype == "[http://schema.org/Datacatalog]":
-
-                # Si ya existe modifica
-                if unicode(item.props['url'][0]) == unicode(item_nuevo.props['url'][0]):
-                    add_item = False
-
-                    # Agrega los nuevos atributos del item
-                    for name, values in item_nuevo.props.items():
-                        if not item.props[name]:
-                            for v in values:
-                                item.props[name].append(v)
-
-            # Si el nuevo item es DataSet busca entre sus datasets
-            elif item_nuevo.itemtype == "[http://schema.org/Dataset]":
-                for datasets in item.get_all('dataset'):
-                    for dataset in datasets:
-
-                        # Si el item ya existe modifica
-                        if unicode(dataset.props['url'][0]) == unicode(item_nuevo.props['url'][0]):
-                            add_item = False
-
-                            # Agrega los nuevos atributos del item
-                            for name, values in item_nuevo.props.items():
-                                if not dataset.props[name]:
-                                    for v in values:
-                                        dataset.props[name].append(v)
-
-        # Si el item a comparar es DataSet
-        else:
-
-            # Si el item nuevo es Dataset
-            if item_nuevo.itemtype == "[http://schema.org/Dataset]":
-
-                # Si el item ya existe modifica
-                if unicode(item.props['url'][0]) == unicode(item_nuevo.props['url'][0]):
-                    add_item = False
-
-                    # Agrega los nuevos atributos del item
-                    for name, values in item_nuevo.props.items():
-                        if not item.props[name]:
-                            for v in values:
-                                item.props[name].append(v)
-
-    # Si es un nuevo item agrega a la lista
-    if add_item:
-        items_list[domain].append(item_nuevo)
