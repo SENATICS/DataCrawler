@@ -16,3 +16,4 @@
 results*
 *.orig
 settings.py
+log.txt
