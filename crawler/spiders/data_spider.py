@@ -129,7 +129,7 @@ class DataSpider(CrawlSpider):
             domain = response.url[pos_second_bar:pos_third_bar]
             if domain not in items_list.keys():
                 items_list[domain] = []
-            self.log('Domain: %s' % domain)
+            #self.log('Domain: %s' % domain)
 
             transformar(response.url, domain)
 

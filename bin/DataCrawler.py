@@ -17,7 +17,7 @@
 # Free Software Foundation, accessible from <http://www.gnu.org/licenses/> or write
 # to Free Software Foundation (FSF) Inc., 51 Franklin St, Fifth Floor, Boston,
 # MA 02111-1301, USA.
-#---------------------------------------------------------------------------
+# ---------------------------------------------------------------------------
 # Este archivo es parte del Programa de Democracia y Gobernabilidad USAID-CEAMSO,
 # es distribuido como software libre con la esperanza que sea de utilidad,
 # pero sin NINGUNA GARANTÍA; sin garantía alguna implícita de ADECUACION a cualquier
@@ -34,7 +34,8 @@ import click
 import sys
 import os
 import time
-from multiprocessing import Process
+import signal
+import subprocess
 from twisted.internet import reactor
 from scrapy.crawler import Crawler
 from scrapy import log, signals
@@ -56,14 +57,14 @@ from importer.rest import CKANImporter
               help='The path of the virtual enviroment.')
 def main(file, virtualenv):
     # Iniciar splash
-    # p = Process(target=start_splash_server, args=(virtualenv,))
-    # p.start()
-    # time.sleep(10)
+    pro = subprocess.Popen('./run_splash.sh ' + virtualenv, stdout=subprocess.PIPE,
+                           shell=True, preexec_fn=os.setsid)
+    time.sleep(10)
     click.echo('File path: %s' % file)
     created_files = call_spider(file)
     import_to_ckan(created_files)
     # Finalizar splash
-    # p.terminate()
+    os.killpg(pro.pid, signal.SIGTERM)
 
 
 def call_spider(file):
@@ -111,11 +112,6 @@ def call_spider(file):
             created_files.append({'modalidad': 'data-hunting', 'archivo': filename})
 
         return created_files
-
-
-def start_splash_server(virtualenv):
-    os.system("chmod +x run_splash.sh")
-    os.system("./run_splash.sh " + virtualenv)
 
 
 results = []
