@@ -21,7 +21,7 @@ Setup and run
 
  `$ cd DataCrawler`
     
- `$ install.sh path_to_datacrawler`
+ `$ ./install.sh path_to_datacrawler`
  
  `$ python setup.py develop`
  
