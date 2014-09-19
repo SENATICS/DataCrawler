@@ -21,11 +21,6 @@ cd lib/
 # Copiar el archivo microdata.py dentro de rdflib/plugins/serializers
 cp microdata.py $PATH_PYTHON_VENV/lib/python2.7/site-packages/rdflib/plugins/serializers
 
-# DataCrawler Project dependencies
-cd ..
-#echo "--------- Setting and installing DataCrawler"
-#python setup.py develop
-
 # SIP
 cd lib
 cd sip
@@ -43,11 +38,17 @@ sudo make install
 pip install re2
 
 # PyQt4
-cd ../pyqt
-echo "--------- Installing PyQt 4.10.04"
+cd ../extras
+echo "--------- Downloading and Installing PyQt 4.10.04"
+wget http://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.10.4/PyQt-x11-gpl-4.10.4.tar.gz
+tar xzvf PyQt-x11-gpl-4.10.4.tar.gz
+cd PyQt-x11-gpl-4.10.4
 python configure-ng.py
 make
 sudo make install
+sudo cp -r /usr/lib/python2.7/dist-packages/PyQt4 $PATH_PYTHON_VENV/lib/python2.7/site-packages/
+sudo rm -f $PATH_PYTHON_VENV/lib/python2.7/site-packages/sip.so
+sudo cp /usr/lib/python2.7/dist-packages/sip.so $PATH_PYTHON_VENV/lib/python2.7/site-packages/
 
 cd ../..
 
