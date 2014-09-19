@@ -38,7 +38,7 @@ sudo make install
 pip install re2
 
 # PyQt4
-cd ../extras
+cd ..
 echo "--------- Downloading and Installing PyQt 4.10.04"
 wget http://sourceforge.net/projects/pyqt/files/PyQt4/PyQt-4.10.4/PyQt-x11-gpl-4.10.4.tar.gz
 tar xzvf PyQt-x11-gpl-4.10.4.tar.gz
