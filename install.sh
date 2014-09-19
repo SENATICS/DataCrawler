@@ -12,7 +12,7 @@ echo $1
 sudo apt-get install libffi-dev libxslt1-dev libxslt1.1 libxml2-dev libxml2 libssl-dev -y
 
 # PyQt4 dependencies
-sudo apt-get install python-dev python-qt4 python-qt4-dev python-sip python-sip-dev build-essential gfortran libqt4-dev qt4-qmake libpq-dev libsqlite3-dev qt4-dev-#tools qt4-doc unixodbc-dev pyqt4-dev-tools -y
+sudo apt-get install python-dev python-qt4 python-qt4-dev python-sip python-sip-dev build-essential gfortran libqt4-dev qt4-qmake libpq-dev libsqlite3-dev qt4-dev-tools qt4-doc unixodbc-dev pyqt4-dev-tools -y
 
 # RDFLib
 echo "--------- Installing RDFlib"
