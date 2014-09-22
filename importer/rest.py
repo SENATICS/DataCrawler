@@ -77,27 +77,25 @@ class CKANImporter(object):
         r = None
         exists, old = self.dataset_exists(dataset.name)
         confirm = ''
+        print dataset
         if exists:
-            print old
             while not confirm in ['s', 'n']:
                 confirm = raw_input("El dataset ya existe. Desea actualizarlo con los valores anteriores? (s/n) ")
             if confirm == 's':
                 r = self.update_dataset(dataset, old)
-                print 'Se ha actualizado el dataset %s' % dataset.name
                 return old
         else:
-            print dataset
             while not confirm in ['s', 'n']:
                 confirm = raw_input("Desea crear un nuevo dataset con los valores anteriores? (s/n) ")
             if confirm == 's':
                 r = self.create_dataset(dataset)
-                print 'Se ha creado el dataset %s' % dataset.name
 
     def create_dataset(self, dataset):
         url = self.base_url + 'package_create'
         dataset_dict = dataset.as_dict()
         r = requests.post(url, data=json.dumps(dataset_dict), headers=self.headers)
         if r.status_code == 200:
+            print 'Se ha creado el dataset %s' % dataset.name
             return r
 
 
@@ -107,6 +105,7 @@ class CKANImporter(object):
         merge_dict = self.merge_datasets(dataset_dict, current)
         r = requests.post(url, data=json.dumps(merge_dict), headers=self.headers)
         if r.status_code == 200:
+            print 'Se ha actualizado el dataset %s' % dataset.name
             return r
 
     def merge_datasets(self, a, b):
@@ -133,5 +132,5 @@ if __name__ == '__main__':
     sys.setdefaultencoding("utf-8")
     importer = CKANImporter()
     # Para pruebas sin ejecutar el crawler
-    importer.import_package('/home/desa2/PycharmProjects/DataCrawler/bin/results_17_09_14/datos.mec.gov.py/data.json',
+    importer.import_package('/home/andres/workspace/DataCrawler/results_22_09_14/datos.mec.gov.py/data.json',
                             'data-hunting')

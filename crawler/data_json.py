@@ -86,6 +86,8 @@ class DataJson:
 
                             keys_aux = property["keywords"][0]
                             keywords = keys_aux.split(",")
+                            if not keys_aux:
+                                keywords = []
 
                             """
                             Name cambia por title
@@ -165,6 +167,8 @@ class DataJson:
 
                                 keys_aux = dataproperty["keywords"][0]
                                 keywords = keys_aux.split(",")
+                                if not keys_aux:
+                                    keywords = []
 
                                 response.append({'title': dataproperty["name"][0],
                                                  'landingPage': url,
