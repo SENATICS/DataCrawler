@@ -39,7 +39,7 @@ LOG_LEVEL = 'INFO'
 COOKIES_ENABLED = False
 LOG_FILE = 'datacrawler.log'
 # Ubicacion donde se levanta el servidor splash
-SPLASH_URL = 'http://your_splash_location:8050/render.html?url='
+SPLASH_URL = 'http://your_splash_location:8050/'
 # URL del Catalogo
 CATALOG_URL = 'http://your_catalog_site/api/3/action/'
 # API Key del Catalago
