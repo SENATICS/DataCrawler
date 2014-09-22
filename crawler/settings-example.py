@@ -37,7 +37,7 @@ ALLOW_FILTER = ('\.htm', '\.html', '/')
 DENY_FILTER = ('\.pdf', '\.zip')
 LOG_LEVEL = 'INFO'
 COOKIES_ENABLED = False
-LOG_FILE = 'datacrowler.log'
+LOG_FILE = 'datacrawler.log'
 # Ubicacion donde se levanta el servidor splash
 SPLASH_URL = 'http://your_splash_location:8050/render.html?url='
 # URL del Catalogo
