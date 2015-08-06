@@ -1,23 +1,23 @@
 DataCrawler
 =========
 
-Simple crawler for public information annotated with microdata.
+Crawler sencillo para información publica anotada con microdata y rdfa.
 
-Setup and run
+Instalación y Ejecución
 ------------
-1. Create a python virtual enviroment
+1. Crear un entorno virtual de Python
     
  `$ virtualenv datacrawler`
     
-2. Activate the virtual enviroment
+2. Activar el entorno virtual
     
  `$ source path_to_datacrawler/bin/activate`
 
-3. Clone this repository
+3. Clonar este repositorio
 
- `$ git clone https://github.com/DataCrawler.git`
+ `$ git clone https://github.com/SENATICS/DataCrawler.git`
     
-4. Install the module:
+4. Instalar el módulo correspondiente:
 
  `$ cd DataCrawler`
     
@@ -43,12 +43,19 @@ Setup and run
     
     API_KEY: ‘1a2b3456-c7d8-91ef-a234-b567cd891e23’
 
-6. Run DataCrawler in a terminal window:
+6. Ejecutar DataCrawler en una terminal:
 
  `$ python DataCrawler/bin/DataCrawler.py --file=path_to_your_file_with_domains_to_crawl --virtualenv path_to_your_virtual_enviroment`
+
+Documentación
+------------
+
+El manual de usuario en formato PDF, que acompaña el código fuente de esta herramienta, se encuentra en el directorio **doc** de este repositorio.
  
  **Observaciones** 
 
  **path_to_your_file_with_domains_to_crawl**: ruta absoluta a la ubicación del arhcivo que contiene la lista de los dominios sobre los cuales se realizará el crawling.
 
  **path_to_your_virtual_enviroment**: ruta absoluta a la ubicación del entorno virtual donde se instaló el DataCrawler.
+
+

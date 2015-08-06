@@ -62,7 +62,7 @@ def main(file, virtualenv):
     time.sleep(10)
     click.echo('File path: %s' % file)
     created_files = call_spider(file)
-    #import_to_ckan(created_files)
+    import_to_ckan(created_files)
     # Finalizar splash
     os.killpg(pro.pid, signal.SIGTERM)
 
