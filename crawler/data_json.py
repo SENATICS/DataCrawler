@@ -57,7 +57,7 @@ class DataJson:
                     tipo = properties["type"][0].encode("utf-8")
 
                     """ Si es del tipo Dataset """
-                    if (tipo == 'http://schema.org/Dataset'):
+                    if (tipo == 'http://schema.org/Dataset' or tipo == 'https://schema.org/Dataset'):
                         property = properties["properties"]
                         """ Si tiene datos """
                         if property:
@@ -117,7 +117,7 @@ class DataJson:
                                              'distribution': distributionlist})
 
                     """ Si es del tipo DataCatalog """
-                    if (tipo == 'http://schema.org/DataCatalog'):
+                    if (tipo == 'http://schema.org/DataCatalog' or tipo == 'https://schema.org/DataCatalog'):
                         property = properties["properties"]
 
                         """

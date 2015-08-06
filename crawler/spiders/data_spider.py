@@ -36,6 +36,7 @@ import rdflib
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.utils.project import get_project_settings
+from scrapy import log
 from microdata import get_items
 from rdflib.serializer import Serializer
 
@@ -92,18 +93,27 @@ items_list = {}
 class DataSpider(CrawlSpider):
     name = "dspider"
     settings = get_project_settings()
-    rules = [
-        Rule(SgmlLinkExtractor(allow=settings['ALLOW_FILTER'], deny=settings['DENY_FILTER']), callback='parse_item',
-             follow=True)]
+
     ITEM_PIPELINES = [
         'tutorial.pipelines.JsonWriterPipeline'
     ]
 
+    rules = []
 
-    def __init__(self, domains, start_urls, *args, **kwargs):
+    def __init__(self, domains, start_urls, domain_type, *args, **kwargs):
         self.start_urls = start_urls
         self.allowed_domains = domains
         super(DataSpider, self).__init__(*args, **kwargs)
+        settings = get_project_settings()
+        if not domain_type:
+            allowRule = ['/datos']
+        else:
+            allowRule = settings['ALLOW_FILTER']
+        self.rules = [
+            Rule(SgmlLinkExtractor(allow=allowRule,
+                               deny=settings['DENY_FILTER']), callback='parse_item',
+                                follow=True)
+        ]
         self._compile_rules()
 
 
@@ -151,27 +161,39 @@ def transformar(url, domain):
     file_splash.write(str(html.read()))
     url_final = "splash.html"
 
-    serialization = rdfa_to_microdata(url_splash)
-    if serialization:
-        file = open('aux.html', 'wb')
-        file.write(serialization.encode('utf-8'))
-        url_final = "aux.html"
+    # ToDo Agregar extracción de datos rdf
+    # serialization = rdfa_to_microdata(url_splash)
+    # if serialization:
+    #     print 'serialization'
+    #     file = open('aux.html', 'wb')
+    #     file.write(serialization.encode('utf-8'))
+    #     url_final = "aux.html"
 
     items = get_items(urllib.urlopen(url_final))
 
     indice = 0
     # Si se cumple que por cada pagina hay un solo item
+    log_to_file("+++++++++++++++++++++++++++++++++++++++++++ transformar - url: " + url + "\n")
+    print url
+    print items
+    print len(items)
     if len(items) == 1:
+        print "++++++++++++++++++++ 1 solo datacatalog " + url
         # Si el item tiene atributos se agrega o modifca en la lista
         if items[indice].props:
+            print "++++++++++++++++++++ tien props " + url
             refresh_items_list(items[indice], domain)
 
 
 def refresh_items_list(item_nuevo, domain):
+    print "++++++++++++++++++++ refresh_items_list"
+    #print item_nuevo
+    print item_nuevo.itemtype[0]
     """
     Actualiza la lista de items por dominio por cada item nuevo.
     """
-    if str(item_nuevo.itemtype[0]) == "http://schema.org/DataCatalog":
+    if str(item_nuevo.itemtype[0]) == "http://schema.org/DataCatalog" or str(item_nuevo.itemtype[0]) == "https://schema.org/DataCatalog":
+        print "es DataCatalog"
         exist = find_datacatalog(item_nuevo, domain)
         if not exist:
             datasets = extract_datasets_from_datacatalog(item_nuevo, domain)
@@ -185,7 +207,8 @@ def refresh_items_list(item_nuevo, domain):
         else:
             add_new_att(item_nuevo, domain)
 
-    if str(item_nuevo.itemtype[0]) == "http://schema.org/Dataset":
+    if str(item_nuevo.itemtype[0]) == "http://schema.org/Dataset" or str(item_nuevo.itemtype[0]) == "https://schema.org/Dataset":
+        print "es Dataset"
         exist = find_dataset(item_nuevo, domain)
         if not exist:
             add_dataset(item_nuevo, domain)
@@ -197,9 +220,10 @@ def find_datacatalog(item_nuevo, domain):
     """
     Verificar si un item de tipo datacatalog existe o no en la lista.
     """
+    print 'find_datacatalog'
     exist = False
     for item in items_list[domain]:
-        if str(item.itemtype[0]) == "http://schema.org/Datacatalog":
+        if str(item.itemtype[0]) == "http://schema.org/Datacatalog" or str(item.itemtype[0]) == "https://schema.org/Datacatalog":
             if unicode(item.props['url'][0]) == unicode(item_nuevo.props['url'][0]):
                 exist = True
     return exist
@@ -209,6 +233,7 @@ def add_datacatalog(item_nuevo, domain):
     """
     Agregar un nuevo item de tipo datacatalog a la lista.
     """
+    print "Agregando datacalog"
     item_nuevo.props['dataset'] = []
     items_list[domain].append(item_nuevo)
 
@@ -217,10 +242,34 @@ def find_dataset(item_nuevo, domain):
     """
     Verificar si un item de tipo dataset existe o no en la lista.
     """
+    print 'find_dataset'
     exist = False
     for item in items_list[domain]:
-        if str(item.itemtype[0]) == "http://schema.org/Dataset":
-            if unicode(item.props['url'][0]) == unicode(item_nuevo.props['url'][0]):
+        if str(item.itemtype[0]) == "http://schema.org/Dataset" or str(item.itemtype[0]) == "https://schema.org/Dataset":
+
+            url_vieja = unicode(item.props['url'][0])
+
+            if url_vieja.find('https:', 0):
+                url_final = url_vieja[5:]
+            elif url_vieja.find('http:', 0):
+                url_final = url_vieja[6:]
+            else:
+                url_final = url_vieja
+
+            url_nueva =  unicode(item_nuevo.props['url'][0])
+
+            if url_nueva.find('https:', 0):
+                url_nueva_final = url_nueva[5:]
+            elif url_nueva.find('http:', 0):
+                url_nueva_final = url_nueva[6:]
+            else:
+                url_nueva_final = url_nueva
+
+            print 'urls a comparar'
+            print url_final
+            print url_nueva_final
+
+            if url_final == url_nueva_final:
                 exist = True
     return exist
 
@@ -229,6 +278,7 @@ def add_dataset(item_nuevo, domain):
     """
     Agregar un nuevo item de tipo dataset a la lista.
     """
+    print "Agregando dataset"
     items_list[domain].append(item_nuevo)
 
 
@@ -272,15 +322,18 @@ def copy_items_to_files():
     Por cada dominio existente copia los items extraidos a un archivo .json.
     """
     for domain in items_list.keys():
+        log_to_file("+++++++++++++++++++++++++++++++++++++++++++ items")
+
         file_name = domain + ".json"
         file = open(file_name, 'ab+')
         file.write('{ "root": [')
+        print items_list[domain]
         for item in items_list[domain]:
             file.write(str("{\"items\": [" + item.json() + "]},"))
         file.seek(0, 2)
         file.seek(file.tell() - 1, 0)
         val = file.read()
-        print val
+        #print val
         if (val == ','):
             file.truncate(file.tell() - 1)
         file.write(']}')

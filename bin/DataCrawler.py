@@ -62,7 +62,7 @@ def main(file, virtualenv):
     time.sleep(10)
     click.echo('File path: %s' % file)
     created_files = call_spider(file)
-    import_to_ckan(created_files)
+    #import_to_ckan(created_files)
     # Finalizar splash
     os.killpg(pro.pid, signal.SIGTERM)
 
@@ -79,7 +79,14 @@ def call_spider(file):
         created_files = []
         for u in list_url:
             domain = u.strip('\n')
-            url = "http://" + u.strip('\n') + "" + "/"
+            url_aux = domain.split("/")
+            domain_type = False
+            if (len(url_aux) > 1):
+                domain = url_aux[0]
+                url = "http://" + url_aux[0] + "/datos"
+            else:
+                url = "http://" + u.strip('\n') + ""
+                domain_type = True
             print "============= Domain " + domain
             print "============= Start url " + url
             response = requests.get(url + "/data.json")
@@ -90,7 +97,7 @@ def call_spider(file):
                 domains.append(domain)
                 urls.append(url)
 
-        spider = DataSpider(domains=domains, start_urls=urls)
+        spider = DataSpider(domains=domains, start_urls=urls, domain_type=domain_type)
         settings = get_project_settings()
         crawler = Crawler(settings)
         crawler.signals.connect(reactor.stop, signal=signals.spider_closed)

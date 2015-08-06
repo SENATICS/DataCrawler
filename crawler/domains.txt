@@ -1,1 +1,1 @@
-datos.mec.gov.py
+www.paraguay.gov.py/datos
