@@ -173,27 +173,25 @@ def transformar(url, domain):
 
     indice = 0
     # Si se cumple que por cada pagina hay un solo item
-    log_to_file("+++++++++++++++++++++++++++++++++++++++++++ transformar - url: " + url + "\n")
     print url
     print items
     print len(items)
     if len(items) == 1:
-        print "++++++++++++++++++++ 1 solo datacatalog " + url
+        #print "++++++++++++++++++++ 1 solo datacatalog " + url
         # Si el item tiene atributos se agrega o modifca en la lista
         if items[indice].props:
-            print "++++++++++++++++++++ tien props " + url
+            #print "++++++++++++++++++++ tien props " + url
             refresh_items_list(items[indice], domain)
 
 
 def refresh_items_list(item_nuevo, domain):
-    print "++++++++++++++++++++ refresh_items_list"
-    #print item_nuevo
-    print item_nuevo.itemtype[0]
+    #print "++++++++++++++++++++ refresh_items_list"
+    #print item_nuevo.itemtype[0]
     """
     Actualiza la lista de items por dominio por cada item nuevo.
     """
     if str(item_nuevo.itemtype[0]) == "http://schema.org/DataCatalog" or str(item_nuevo.itemtype[0]) == "https://schema.org/DataCatalog":
-        print "es DataCatalog"
+        #print "es DataCatalog"
         exist = find_datacatalog(item_nuevo, domain)
         if not exist:
             datasets = extract_datasets_from_datacatalog(item_nuevo, domain)
@@ -208,7 +206,7 @@ def refresh_items_list(item_nuevo, domain):
             add_new_att(item_nuevo, domain)
 
     if str(item_nuevo.itemtype[0]) == "http://schema.org/Dataset" or str(item_nuevo.itemtype[0]) == "https://schema.org/Dataset":
-        print "es Dataset"
+        #print "es Dataset"
         exist = find_dataset(item_nuevo, domain)
         if not exist:
             add_dataset(item_nuevo, domain)
@@ -220,7 +218,7 @@ def find_datacatalog(item_nuevo, domain):
     """
     Verificar si un item de tipo datacatalog existe o no en la lista.
     """
-    print 'find_datacatalog'
+    #print 'find_datacatalog'
     exist = False
     for item in items_list[domain]:
         if str(item.itemtype[0]) == "http://schema.org/Datacatalog" or str(item.itemtype[0]) == "https://schema.org/Datacatalog":
@@ -233,7 +231,7 @@ def add_datacatalog(item_nuevo, domain):
     """
     Agregar un nuevo item de tipo datacatalog a la lista.
     """
-    print "Agregando datacalog"
+    #print "Agregando datacalog"
     item_nuevo.props['dataset'] = []
     items_list[domain].append(item_nuevo)
 
@@ -242,7 +240,7 @@ def find_dataset(item_nuevo, domain):
     """
     Verificar si un item de tipo dataset existe o no en la lista.
     """
-    print 'find_dataset'
+    #print 'find_dataset'
     exist = False
     for item in items_list[domain]:
         if str(item.itemtype[0]) == "http://schema.org/Dataset" or str(item.itemtype[0]) == "https://schema.org/Dataset":
@@ -265,10 +263,6 @@ def find_dataset(item_nuevo, domain):
             else:
                 url_nueva_final = url_nueva
 
-            print 'urls a comparar'
-            print url_final
-            print url_nueva_final
-
             if url_final == url_nueva_final:
                 exist = True
     return exist
@@ -278,7 +272,7 @@ def add_dataset(item_nuevo, domain):
     """
     Agregar un nuevo item de tipo dataset a la lista.
     """
-    print "Agregando dataset"
+    #print "Agregando dataset"
     items_list[domain].append(item_nuevo)
 
 
@@ -322,12 +316,11 @@ def copy_items_to_files():
     Por cada dominio existente copia los items extraidos a un archivo .json.
     """
     for domain in items_list.keys():
-        log_to_file("+++++++++++++++++++++++++++++++++++++++++++ items")
 
         file_name = domain + ".json"
         file = open(file_name, 'ab+')
         file.write('{ "root": [')
-        print items_list[domain]
+        #print items_list[domain]
         for item in items_list[domain]:
             file.write(str("{\"items\": [" + item.json() + "]},"))
         file.seek(0, 2)

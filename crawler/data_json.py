@@ -141,7 +141,7 @@ class DataJson:
                         """ Iterar sobre los datasets """
                         dataset_aux = "dataset"
                         if dataset_aux in property.keys():
-                            print "Tiene datasets"
+                            #print "Tiene datasets"
                             for dataset in property["dataset"]:
                                 dataproperty = dataset["properties"]
                                 url = ""
