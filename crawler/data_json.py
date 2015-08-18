@@ -61,17 +61,20 @@ class DataJson:
                         property = properties["properties"]
                         """ Si tiene datos """
                         if property:
+                            #print property
                             url = ""
                             if url_aux in property.keys():
                                 url = property["url"][0]
 
                             """ Iterar sobre creator (publicador) """
-                            for creator in property["creator"]:
-                                creatorproperty = creator["properties"]
+                            if 'creator' in property.keys():
+                                for creator in property["creator"]:
+                                    creatorproperty = creator["properties"]
 
                             """ Iterar sobre provider (organizacion) """
-                            for provider in property["provider"]:
-                                providerproperty = provider["properties"]
+                            if 'provider' in property.keys():
+                                for provider in property["provider"]:
+                                    providerproperty = provider["properties"]
 
                             distributionlist = []
                             if distribution_aux in property.keys():
@@ -88,6 +91,10 @@ class DataJson:
                             keywords = keys_aux.split(",")
                             if not keys_aux:
                                 keywords = []
+
+                            temporalValue = '';
+                            if 'temporal' in property.keys():
+                                temporalValue = dataproperty["temporal"][0]
 
                             """
                             Name cambia por title
@@ -112,7 +119,7 @@ class DataJson:
                                              'accessLevel': "public",
                                              'version': property["version"][0],
                                              'license': property["license"][0],
-                                             'temporal': property["temporal"][0],
+                                             'temporal': temporalValue,
                                              'publisher': providerproperty["name"][0],
                                              'distribution': distributionlist})
 
@@ -170,6 +177,10 @@ class DataJson:
                                 if not keys_aux:
 				                    keywords = []
 
+                                temporalValue = '';
+                                if 'temporal' in property.keys():
+                                    temporalValue = dataproperty["temporal"][0]
+
                                 response.append({'title': dataproperty["name"][0],
                                                  'landingPage': url,
                                                  'description': dataproperty["description"][0],
@@ -179,7 +190,7 @@ class DataJson:
                                                  'accessLevel': "public",
                                                  'version': dataproperty["version"][0],
                                                  'license': dataproperty["license"][0],
-                                                 'temporal': dataproperty["temporal"][0],
+                                                 'temporal': temporalValue,
                                                  'publisher': providerproperty["name"][0],
                                                  'distribution': distributionlist})
         """ Escribe en el archivo final """
@@ -188,5 +199,4 @@ class DataJson:
         FileController.FileController().clean_item_tmp_file(domain)
 
         return filename
-
-# DataJson().convert("datos.mec.gov.py")
+#DataJson().convert("www.paraguay.gov.py")

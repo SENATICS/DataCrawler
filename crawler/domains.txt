@@ -1,1 +1,1 @@
-www.contrataciones.gov.py/datos
+www.paraguay.gov.py/datos
