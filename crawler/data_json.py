@@ -94,7 +94,7 @@ class DataJson:
 
                             temporalValue = '';
                             if 'temporal' in property.keys():
-                                temporalValue = dataproperty["temporal"][0]
+                                temporalValue = property["temporal"][0]
 
                             """
                             Name cambia por title

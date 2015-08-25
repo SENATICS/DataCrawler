@@ -221,7 +221,7 @@ def find_datacatalog(item_nuevo, domain):
     #print 'find_datacatalog'
     exist = False
     for item in items_list[domain]:
-        if str(item.itemtype[0]) == "http://schema.org/Datacatalog" or str(item.itemtype[0]) == "https://schema.org/Datacatalog":
+        if str(item.itemtype[0]) == "http://schema.org/DataCatalog" or str(item.itemtype[0]) == "https://schema.org/DataCatalog":
             if unicode(item.props['url'][0]) == unicode(item_nuevo.props['url'][0]):
                 exist = True
     return exist
