@@ -57,14 +57,14 @@ from importer.rest import CKANImporter
               help='The path of the virtual enviroment.')
 def main(file, virtualenv):
     # Iniciar splash
-    pro = subprocess.Popen('./run_splash.sh ' + virtualenv, stdout=subprocess.PIPE,
-                           shell=True, preexec_fn=os.setsid)
-    time.sleep(10)
+    #pro = subprocess.Popen('./run_splash.sh ' + virtualenv, stdout=subprocess.PIPE,
+    #                       shell=True, preexec_fn=os.setsid)
+    #time.sleep(10)
     click.echo('File path: %s' % file)
     created_files = call_spider(file)
     import_to_ckan(created_files)
     # Finalizar splash
-    os.killpg(pro.pid, signal.SIGTERM)
+    #os.killpg(pro.pid, signal.SIGTERM)
 
 
 def call_spider(file):
@@ -83,9 +83,11 @@ def call_spider(file):
             domain_type = False
             if (len(url_aux) > 1):
                 domain = url_aux[0]
-                url = "http://" + url_aux[0] + "/datos"
+                url = "http://" + url_aux[0] + "/datos/data"
+                if domain == 'www.paraguay.gov.py':
+                    url = "http://" + url_aux[0] + "/datos"
             else:
-                url = "http://" + u.strip('\n') + ""
+                url = "http://" + u.strip('\n') + "/data"
                 domain_type = True
             print "============= Domain " + domain
             print "============= Start url " + url
