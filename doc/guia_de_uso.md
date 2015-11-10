@@ -1,6 +1,11 @@
 Manual de uso - DataCrawler
 =========================
 
+Requerimientos
+--------------
+* Ubuntu 12.04 o mayor.
+* Python 2.7, virtualenv, python-pip, git.
+
 Instalación
 -----------
 
@@ -10,7 +15,7 @@ Instalación
 
 2. Activar el entorno virtual:
 
- `$ source path_to_datacrawler/bin/activate`
+ `$ source path_to_datacrawler_venv/bin/activate`
 
 3. Clonar el repositorio:
 
@@ -20,7 +25,7 @@ Instalación
 
  `$ cd DataCrawler`
 
- `$ ./install.sh path_to_datacrawler`
+ `$ ./install.sh path_to_datacrawler_venv`
  
  `$ python setup.py develop`
  
@@ -30,7 +35,7 @@ Ejecución y uso
 
 1. Activar el entorno virtual:
 
- `$ source path_to_datacrawler/bin/activate`
+ `$ source path_to_datacrawler_venv/bin/activate`
  
 2. Modificar el archivo settings.py
 
@@ -64,13 +69,13 @@ Ejecución y uso
  
 4. Ingresar al directorio DataCrawler/bin y ejecutar el siguiente comando en una terminal:
 
- `$ python DataCrawler/bin/DataCrawler.py --file=path_to_your_file_with_domains_to_crawl --virtualenv path_to_your_virtual_enviroment`
+ `$ python DataCrawler/bin/DataCrawler.py --file=path_to_your_file_with_domains_to_crawl --virtualenv path_to_datacrawler_venv`
 
 **Observaciones** 
 
 **path_to_your_file_with_domains_to_crawl**: ruta absoluta a la ubicación del arhcivo que contiene la lista de los dominios sobre los cuales se realizará el crawling.
 
-**path_to_your_virtual_enviroment**: ruta absoluta a la ubicación del entorno virtual donde se instaló el DataCrawler.
+**path_to_datacrawler_venv**: ruta absoluta a la ubicación del entorno virtual donde se instaló el DataCrawler.
 
 Resultados
 ----------
