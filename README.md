@@ -3,15 +3,20 @@ DataCrawler
 
 Crawler sencillo para información publica anotada con microdata y rdfa.
 
+Requerimientos
+--------------
+Ubuntu 12.04 o mayor.
+Python 2.7, virtualenv, python-pip, git.
+
 Instalación y Ejecución
-------------
+-----------------------
 1. Crear un entorno virtual de Python
     
  `$ virtualenv datacrawler`
     
 2. Activar el entorno virtual
     
- `$ source path_to_datacrawler/bin/activate`
+ `$ source path_to_datacrawler_venv/bin/activate`
 
 3. Clonar este repositorio
 
@@ -21,7 +26,7 @@ Instalación y Ejecución
 
  `$ cd DataCrawler`
     
- `$ ./install.sh path_to_datacrawler`
+ `$ ./install.sh path_to_datacrawler_venv`
  
  `$ python setup.py develop`
  
@@ -45,7 +50,7 @@ Instalación y Ejecución
 
 6. Ejecutar DataCrawler en una terminal:
 
- `$ python DataCrawler/bin/DataCrawler.py --file=path_to_your_file_with_domains_to_crawl --virtualenv path_to_your_virtual_enviroment`
+ `$ python DataCrawler/bin/DataCrawler.py --file=path_to_your_file_with_domains_to_crawl --virtualenv path_to_datacrawler_venv`
 
 Documentación
 ------------
@@ -56,6 +61,4 @@ El manual de usuario en formato PDF, que acompaña el código fuente de esta her
 
  **path_to_your_file_with_domains_to_crawl**: ruta absoluta a la ubicación del arhcivo que contiene la lista de los dominios sobre los cuales se realizará el crawling.
 
- **path_to_your_virtual_enviroment**: ruta absoluta a la ubicación del entorno virtual donde se instaló el DataCrawler.
-
-
+ **path_to_datacrawler_venv**: ruta absoluta a la ubicación del entorno virtual donde se instaló el DataCrawler.
