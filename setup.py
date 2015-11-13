@@ -38,7 +38,6 @@ setup(
     entry_points = {'scrapy': ['settings = crawler.settings']},
     scripts = ['bin/DataCrawler.py'],
     install_requires=[
-          'lxml', 'scrapy', 'ipython', 'click', 'service_identity==1.0.0', 'requests', 'microdata==0.5',
-          'qt4reactor', 'psutil', 'adblockparser', 'Pillow'
+          'lxml==3.3.5', 'scrapy==0.24.4', 'ipython==2.2.0', 'click==3.1', 'service_identity==1.0.0', 'requests==2.4.0', 'microdata==0.5', 'pyasn1==0.1.8'
     ],
 )

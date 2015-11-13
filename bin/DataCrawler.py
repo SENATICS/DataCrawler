@@ -50,12 +50,12 @@ from importer.rest import CKANImporter
 
 @click.command()
 @click.option('--file',  # prompt='Path to your file with domains to crawl',
-              default="/home/desa2/PycharmProjects/DataCrawler/crawler/domains.txt",
+              default="/home/verena/DataCrawler/crawler/domains.txt",
               help='The list of domains to crawl.')
-@click.option('--virtualenv',  # prompt='Path to your virtual enviroment',
-              default="/home/desa2/datos",
-              help='The path of the virtual enviroment.')
-def main(file, virtualenv):
+#@click.option('--virtualenv',  # prompt='Path to your virtual enviroment',
+#              default="/home/desa2/datos",
+#              help='The path of the virtual enviroment.')
+def main(file):
     # Iniciar splash
     #pro = subprocess.Popen('./run_splash.sh ' + virtualenv, stdout=subprocess.PIPE,
     #                       shell=True, preexec_fn=os.setsid)
